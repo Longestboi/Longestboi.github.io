@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Andrew Long</title><subtitle>Blog & Such</subtitle><updated>2021-03-20T19:28:42-07:00</updated><id>LongestBoi.github.io/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.19">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="LongestBoi.github.io/" /><link rel="self" type="application/atom+xml" href="LongestBoi.github.io/feed.xml" /><author><name>Andrew Long</name><uri>LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><entry><title>Games With a Sndata Header Section</title><id>LongestBoi.github.io/2021/03/games-with-a-sndata-header-section.html</id><link rel="alternate" type="text/html" href="LongestBoi.github.io/2021/03/games-with-a-sndata-header-section.html" /><published>2021-03-20T00:00:00-07:00</published><updated>2021-03-20T19:28:24-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="LongestBoi.github.io/">
+          
+            &lt;style&gt;
+  .excerpt {
+    font-size: 60%;
+    background-color: hsl(var(--bg-color-h), var(--bg-color-s), calc(var(--bg-color-l) * .7));
+    padding: .5em .5em .5em .5em;
+    border-radius: 8px;
+    border: 2px solid;
+    border-color: hsl(var(--bg-color-h), var(--bg-color-s), calc(var(--bg-color-l) / .7));
+    width: 100%;
+
+  }
+
+  .excerpt&gt;p {
+    margin-bottom: unset;
+  }
+
+  summary {
+    font-weight: bold;
+  }
+
+  summary:hover {
+    font-weight: bold;
+    color: var(--link-color);
+  }
+
+  .content details {
+    margin-bottom: unset;
+  }
+
+  h2.sernum {
+    margin-left: 8px;
+    margin-top: 5px;
+    margin-bottom: unset !important;
+  }
+
+  .seps {
+    font-size: 120%;
+    padding-top: .5em;
+    padding-bottom: .1em;
+  }
+&lt;/style&gt;
+
+&lt;script&gt;
+  // Borrowed from www.c-sharpcorner.com/blogs/load-text-file-in-javascript1
+  function parseTXT(Textfile, ID) {
+    var txtFile = new XMLHttpRequest();
+    txtFile.open(&quot;GET&quot;, Textfile, true);
+    txtFile.onreadystatechange = function() {
+      if (txtFile.readyState === 4) {
+        // Makes sure the document is ready to parse.
+        if (txtFile.status === 200) {
+          // Makes sure it's found the file.
+          var temp = txtFile.responseText;
+          temp = temp.replaceAll(&quot;\n&quot;, &quot;&lt;br&gt;&quot;);
+
+          document.getElementById(ID).innerHTML = temp;
+          temp = null;
+        }
+      }
+    }
+    txtFile.send(null)
+  }
+&lt;/script&gt;
+
+&lt;h1&gt;Sndata Header section.&lt;/h1&gt;
+&lt;p&gt;&lt;small&gt;
+  The SN Systems PRODG PS2 SDK will leave a section header labeled “.sndata” this header section contains debug symbols.
+  The section header is, unfortunately, proprietary.
+  However, based on the work of &lt;a href=&quot;https://twitter.com/diwidog/status/1188831332635267072&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Kiwidoggie&lt;/a&gt;,
+  I’ve written a Python script to go to the section header and find the memory address location of the functions and function names.
+  Then, take those functions and function names and put them into a “.txt” for Ghidra or a Python script for IDA (untested).
+&lt;/small&gt;&lt;/p&gt;
+
+&lt;!--end_excerpt--&gt;
+
+&lt;h2 style=&quot;font-size: 70%; margin-top: unset;&quot;&gt;
+  &lt;a href=&quot;https://github.com/Longestboi/sndata-converter&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Sndata-converter.py&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;div&gt;
+  &lt;h1&gt;List games with .sndata header sections.&lt;/h1&gt;
+  &lt;p style=&quot;font-size: 80%; margin-bottom: unset;&quot;&gt;Click on the game title to view debug symbols in Ghidra format&lt;/p&gt;
+
+  
+
+  
+
+  &lt;h1 class=&quot;seps&quot;&gt;Retail Games&lt;/h1&gt;
+
+  &lt;!-- AFL Premiership 2006 --&gt;
+  &lt;details&gt;
+    &lt;summary onclick=&quot;parseTXT('/assets/txt/AFLP06d.txt', 'AFLP06d')&quot;&gt;
+      &lt;div style=&quot;display: flex;&quot;&gt;AFL Premiership 2006 (Demo)
+        &lt;h2 class=&quot;sernum&quot;&gt;SCES-54068&lt;/h2&gt;
+      &lt;/div&gt;
+    &lt;/summary&gt;
+    &lt;a href=&quot;/assets/txt/AFLP06d.txt&quot; download=&quot;&quot;&gt;⇩ Download&lt;/a&gt;
+    &lt;span style=&quot;font-weight: bold; float:right;&quot;&gt;97 Symbols&lt;/span&gt;
+    &lt;div class=&quot;excerpt&quot;&gt;&lt;code id=&quot;AFLP06d&quot;&gt;&lt;/code&gt;&lt;/div&gt;
+  &lt;/details&gt;
+
+  &lt;!-- MLB 2005 --&gt;
+  &lt;details&gt;
+    &lt;summary onclick=&quot;parseTXT('/assets/txt/MLB05.txt', 'MLB05')&quot;&gt;
+      &lt;div style=&quot;display: flex;&quot;&gt;MLB 2005
+        &lt;h2 class=&quot;sernum&quot;&gt;SCUS-97326&lt;/h2&gt;
+      &lt;/div&gt;
+    &lt;/summary&gt;
+    &lt;a style=&quot;&quot; href=&quot;/assets/txt/MLB05.txt&quot; download=&quot;&quot;&gt;⇩ Download&lt;/a&gt;
+    &lt;span style=&quot;font-weight: bold; float:right;&quot;&gt;3978 Symbols&lt;/span&gt;
+    &lt;div class=&quot;excerpt&quot;&gt;&lt;code id=&quot;MLB05&quot;&gt;&lt;/code&gt;&lt;/div&gt;
+  &lt;/details&gt;
+
+  &lt;!-- MLB 2006 --&gt;
+  &lt;details&gt;
+    &lt;summary onclick=&quot;parseTXT('/assets/txt/MLB06.txt', 'MLB06')&quot;&gt;
+      &lt;div style=&quot;display: flex;&quot;&gt;MLB 2006
+        &lt;h2 class=&quot;sernum&quot;&gt;SCUS-97347&lt;/h2&gt;
+      &lt;/div&gt;
+    &lt;/summary&gt;
+    &lt;a style=&quot;&quot; href=&quot;/assets/txt/MLB06.txt&quot; download=&quot;&quot;&gt;⇩ Download&lt;/a&gt;
+    &lt;span style=&quot;font-weight: bold; float:right;&quot;&gt;1773 Symbols&lt;/span&gt;
+    &lt;div class=&quot;excerpt&quot;&gt;&lt;code id=&quot;MLB06&quot;&gt;&lt;/code&gt;&lt;/div&gt;
+  &lt;/details&gt;
+
+  &lt;!-- My Street --&gt;
+  &lt;details&gt;
+    &lt;summary onclick=&quot;parseTXT('/assets/txt/myst.txt', 'MYST')&quot;&gt;
+      &lt;div style=&quot;display: flex;&quot;&gt;My Street
+        &lt;h2 class=&quot;sernum&quot;&gt;SCUS-97212&lt;/h2&gt;
+      &lt;/div&gt;
+    &lt;/summary&gt;
+    &lt;div style=&quot;display: flex;&quot;&gt;
+      &lt;a href=&quot;/assets/txt/myst.txt&quot; download=&quot;&quot;&gt;⇩ Download&lt;/a&gt;
+      &lt;span&gt;
+        &lt;h2 style=&quot;margin: unset; padding-left: 5px; font-size: 50%; margin-top: 1em;&quot;&gt;
+          *Also has normal debug info
+        &lt;/h2&gt;
+      &lt;/span&gt;
+      &lt;span class=&quot;pull-right&quot; style=&quot;font-weight: bold; margin: auto 0 auto auto;&quot;&gt;388 Symbols&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;excerpt&quot;&gt;&lt;code id=&quot;MYST&quot;&gt;&lt;/code&gt;&lt;/div&gt;
+  &lt;/details&gt;
+
+  &lt;!-- Neopets: the Darkest Faerie --&gt;
+  &lt;details&gt;
+    &lt;summary onclick=&quot;parseTXT('/assets/txt/npdf.txt', 'NPDF')&quot;&gt;
+      &lt;div style=&quot;display: flex;&quot;&gt;Neopets: the Darkest Faerie
+        &lt;h2 class=&quot;sernum&quot;&gt;SCUS-97367&lt;/h2&gt;
+      &lt;/div&gt;
+    &lt;/summary&gt;
+    &lt;a style=&quot;&quot; href=&quot;/assets/txt/npdf.txt&quot; download=&quot;&quot;&gt;⇩ Download&lt;/a&gt;
+    &lt;span style=&quot;font-weight: bold; float:right;&quot;&gt;396 Symbols&lt;/span&gt;
+    &lt;div class=&quot;excerpt&quot;&gt;&lt;code id=&quot;NPDF&quot;&gt;&lt;/code&gt;&lt;/div&gt;
+  &lt;/details&gt;
+
+  &lt;!-- Resident Evil 4 --&gt;
+  &lt;details&gt;
+    &lt;summary onclick=&quot;parseTXT('/assets/txt/re4.txt', 'RE4')&quot;&gt;
+      &lt;div style=&quot;display: flex;&quot;&gt;Resident Evil 4
+        &lt;h2 class=&quot;sernum&quot;&gt;SLUS-21134&lt;/h2&gt;
+      &lt;/div&gt;
+    &lt;/summary&gt;
+    &lt;a href=&quot;/assets/txt/re4.txt&quot; download=&quot;&quot;&gt;⇩ Download&lt;/a&gt;
+    &lt;span style=&quot;font-weight: bold; float:right;&quot;&gt;7407 Symbols&lt;/span&gt;
+    &lt;div class=&quot;excerpt&quot;&gt;&lt;code id=&quot;RE4&quot;&gt;&lt;/code&gt;&lt;/div&gt;
+  &lt;/details&gt;
+
+  
+
+  &lt;h1 class=&quot;seps&quot;&gt;Demos&lt;/h1&gt;
+
+  &lt;!-- MLB 2006 (Demo) --&gt;
+  &lt;details&gt;
+    &lt;summary onclick=&quot;parseTXT('/assets/txt/MLB06d.txt', 'MLB06D')&quot;&gt;
+      &lt;div style=&quot;display: flex;&quot;&gt;MLB 2006 (Demo)
+        &lt;h2 class=&quot;sernum&quot;&gt;SCUS-97460&lt;/h2&gt;
+      &lt;/div&gt;
+    &lt;/summary&gt;
+    &lt;a style=&quot;&quot; href=&quot;/assets/txt/MLB06d.txt&quot; download=&quot;&quot;&gt;⇩ Download&lt;/a&gt;
+    &lt;span style=&quot;font-weight: bold; float:right;&quot;&gt;1785 Symbols&lt;/span&gt;
+    &lt;div class=&quot;excerpt&quot;&gt;&lt;code id=&quot;MLB06D&quot;&gt;&lt;/code&gt;&lt;/div&gt;
+  &lt;/details&gt;
+
+  &lt;!-- Neopets: the Darkest Faerie (Demo) --&gt;
+  &lt;details&gt;
+    &lt;summary onclick=&quot;parseTXT('/assets/txt/npdfd.txt', 'NPDFD')&quot;&gt;
+      &lt;div style=&quot;display: flex;&quot;&gt;Neopets: the Darkest Faerie (Demo)
+        &lt;h2 class=&quot;sernum&quot;&gt;SCUS-97469&lt;/h2&gt;
+      &lt;/div&gt;
+    &lt;/summary&gt;
+    &lt;a href=&quot;/assets/txt/npdfd.txt&quot; download=&quot;&quot;&gt;⇩ Download&lt;/a&gt;
+    &lt;span style=&quot;font-weight: bold; float:right;&quot;&gt;337 Symbols&lt;/span&gt;
+    &lt;div class=&quot;excerpt&quot;&gt;&lt;code id=&quot;NPDFD&quot;&gt;&lt;/code&gt;&lt;/div&gt;
+  &lt;/details&gt;
+&lt;/div&gt;
+
+          
+          
+        
+      
+        </content><summary>Sndata Header section.  The SN Systems PRODG PS2 SDK will leave a section header labeled “.sndata” this header section contains debug symbols.  The section header is, unfortunately, proprietary.  However, based on the work of Kiwidoggie,  I’ve written a Python script to go to the section header and find the memory address location of the functions and function names.  Then, take those functions and function names and put them into a “.txt” for Ghidra or a Python script for IDA (untested).</summary></entry></feed>

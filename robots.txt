@@ -1,0 +1,3 @@
+Sitemap: LongestBoi.github.io/sitemap.xml
+
+User-agent: *
