@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Andrew Long</title><subtitle>Blog & Such</subtitle><updated>2022-08-01T17:19:49-07:00</updated><id>LongestBoi.github.io/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.19">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="LongestBoi.github.io/" /><link rel="self" type="application/atom+xml" href="LongestBoi.github.io/feed.xml" /><author><name>Andrew Long</name><uri>LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><entry><title>Games With a Sndata Header Section</title><id>LongestBoi.github.io/2021/03/games-with-a-sndata-header-section.html</id><link rel="alternate" type="text/html" href="LongestBoi.github.io/2021/03/games-with-a-sndata-header-section.html" /><published>2021-03-20T00:00:00-07:00</published><updated>2021-03-20T19:28:24-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="LongestBoi.github.io/">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Andrew Long</title>
+  <subtitle>Blog & Such</subtitle>
+  <updated>2022-08-03T11:19:02-07:00</updated>
+  <id>LongestBoi.github.io/</id>
+  <generator uri="https://sparanoid.com/lab/amsf/" version="2.0.19">Almace Scaffolding</generator>
+
+  <link rel="alternate" type="text/html" hreflang="en" href="LongestBoi.github.io/" />
+  <link rel="self" type="application/atom+xml" href="LongestBoi.github.io/feed.xml" />
+
+  <author>
+    <name>Andrew Long</name>
+    <uri>LongestBoi.github.io/</uri>
+    <email>AndrewRLong02@gmail.com</email>
+  </author>
+
+  
+    
+      
+
+      
+
+      <entry>
+        <title>Games With a Sndata Header Section</title>
+        <id>LongestBoi.github.io/2021/03/games-with-a-sndata-header-section.html</id>
+        <link rel="alternate" type="text/html" href="LongestBoi.github.io/2021/03/games-with-a-sndata-header-section.html" />
+        <published>2021-03-20T00:00:00-07:00</published>
+
+        
+          <updated>2021-03-20T19:28:24-07:00</updated>
+        
+
+        <author>
+          <name>Andrew Long</name>
+          <uri>https://LongestBoi.github.io/</uri>
+          <email>AndrewRLong02@gmail.com</email>
+        </author>
+
+        <content type="html" xml:base="LongestBoi.github.io/">
           
             &lt;style&gt;
   .excerpt {
@@ -204,4 +242,12 @@
           
         
       
-        </content><summary>Sndata Header section.  The SN Systems PRODG PS2 SDK will leave a section header labeled “.sndata” this header section contains debug symbols.  The section header is, unfortunately, proprietary.  However, based on the work of Kiwidoggie,  I’ve written a Python script to go to the section header and find the memory address location of the functions and function names.  Then, take those functions and function names and put them into a “.txt” for Ghidra or a Python script for IDA (untested).</summary></entry></feed>
+        </content>
+
+        
+          <summary>Sndata Header section.  The SN Systems PRODG PS2 SDK will leave a section header labeled “.sndata” this header section contains debug symbols.  The section header is, unfortunately, proprietary.  However, based on the work of Kiwidoggie,  I’ve written a Python script to go to the section header and find the memory address location of the functions and function names.  Then, take those functions and function names and put them into a “.txt” for Ghidra or a Python script for IDA (untested).</summary>
+        
+      </entry>
+    
+  
+</feed>
