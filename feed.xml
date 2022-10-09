@@ -1,4 +1,153 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Andrew Long</title><subtitle>Blog & Such</subtitle><updated>2022-10-06T22:51:04-07:00</updated><id>https://longestboi.github.io/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.19">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://longestboi.github.io/" /><link rel="self" type="application/atom+xml" href="https://longestboi.github.io/feed.xml" /><author><name>Andrew Long</name><uri>https://longestboi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><entry><title>Project 1&amp;#58; Engine Basics Teachback</title><id>https://longestboi.github.io/2022/09/project-1-engine-basics-teachback.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/09/project-1-engine-basics-teachback.html" /><published>2022-09-25T00:00:00-07:00</published><updated>2022-09-25T23:36:35-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Andrew Long</title><subtitle>Blog & Such</subtitle><updated>2022-10-09T15:43:04-07:00</updated><id>https://longestboi.github.io/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.19">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://longestboi.github.io/" /><link rel="self" type="application/atom+xml" href="https://longestboi.github.io/feed.xml" /><author><name>Andrew Long</name><uri>https://longestboi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><entry><title>Project 1&amp;#58; Functions</title><id>https://longestboi.github.io/2022/10/project-1-functions.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/10/project-1-functions.html" /><published>2022-10-09T00:00:00-07:00</published><updated>2022-10-09T15:41:03-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
+          
+            &lt;script&gt;window.top.document.title = &quot;Project 1: Functions&quot;;&lt;/script&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/pcss/classwork.css&quot; /&gt;
+
+&lt;head1 style=&quot;text-align: center;&quot;&gt;Project 1 Teachback&lt;/head1&gt;
+&lt;hr class=&quot;line&quot; /&gt;
+
+&lt;p&gt;In this post, I'll be going over some C# and Unity concepts and expanding on how they are utilized and how I have used them.&lt;/p&gt;
+&lt;p&gt;I won't be providing the source code to my project, but there will be screenshots of the code and the output of that code when applicable.&lt;/p&gt;
+&lt;div class=&quot;toc&quot; style=&quot;&quot;&gt;
+	&lt;div class=&quot;tocHead&quot;&gt;Contents:&lt;/div&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+	&lt;ol&gt;
+		&lt;li&gt;&lt;a href=&quot;#coroutines&quot;&gt;Coroutines&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#delegates&quot;&gt;Delegates&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#lambdas&quot;&gt;Lambdas&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#generics&quot;&gt;Generics&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#multithreading&quot;&gt;Multithreading&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+	&lt;/ol&gt;
+	
+&lt;/div&gt;
+&lt;break&gt;&lt;/break&gt;
+
+&lt;div id=&quot;coroutines&quot; style=&quot;display: inline-block; &quot;&gt;
+	&lt;head2&gt;Coroutines:&lt;/head2&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img title=&quot;Coroutines in Unity project&quot; class=&quot;cImg&quot; style=&quot;width: 100% !important; margin-top: -1em !important; margin-bottom: -1em !important;&quot; src=&quot;/assets/img/Project 1 - functions/Coroutine.png&quot; /&gt;&lt;/p&gt;
+
+&lt;div style=&quot;display: inline-block;&quot;&gt;
+	&lt;head3&gt;What's a coroutine?&lt;/head3&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;A coroutine is a way of spreading tasks across multiple frames. It functions similarly to the &lt;code&gt;Update()&lt;/code&gt; function provided by MonoBehaviour in that they execute code on individual frames.&lt;br /&gt;They are different, however. You can run code across as many frames as you need with coroutines. &lt;/p&gt;
+&lt;p&gt;My code above runs like the &lt;code&gt;Update()&lt;/code&gt;, so it's not very complex.&lt;/p&gt;
+&lt;div style=&quot;display: inline-block;&quot;&gt;
+	&lt;head3&gt;let's walk through the code:&lt;/head3&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;The way I use coroutines is needlessly complex, but it works!&lt;/p&gt;
+&lt;p&gt;In the &lt;code&gt;Start()&lt;/code&gt; function, I set my &lt;code&gt;IEnumerator inputCoroutine&lt;/code&gt; equal to a reference to the &lt;code&gt;WaitForInput()&lt;/code&gt; function.&lt;/p&gt;
+&lt;p&gt;Inside the &lt;code&gt;WaitForInput()&lt;/code&gt; function is an infinite while loop that returns with &lt;code&gt;yield return null&lt;/code&gt;, which will continue code execution on the next frame.&lt;/p&gt;
+&lt;p&gt;The rest of the function unsets the input of the previous frame, then scans the held inputs, and then sets the inputs again. &lt;/p&gt;
+
+&lt;div id=&quot;delegates&quot; style=&quot;display: inline-block;&quot;&gt;
+	&lt;head2&gt;Delegates:&lt;/head2&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img title=&quot;Demonstration of a delegate in Unity&quot; class=&quot;cImg&quot; style=&quot;width: 100% !important; margin-top: -1em !important; margin-bottom: -1em !important;&quot; src=&quot;/assets/img/Project 1 - functions/Delegate.png&quot; /&gt;&lt;/p&gt;
+&lt;div style=&quot;display: inline-block;&quot;&gt;
+	&lt;head3&gt;What's a delegate?&lt;/head3&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;A delegate is a type that holds a reference to a function. A delegate can have multiple functions appended to it as well. The function references in a delegate execute from the top down&lt;/p&gt;
+&lt;div style=&quot;display: inline-block;&quot;&gt;
+	&lt;head3&gt;let's walk through the code:&lt;/head3&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;My usage of delegates is a bit pitiful, but it works as a decent demonstration.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;onUse&lt;/code&gt; delegate is defined as &lt;code&gt;delegate void onUse();&lt;/code&gt;, sso the functions we want to cast to the delegate have to return nothing and take no arguments. As you can see, my &lt;code&gt;Error()&lt;/code&gt; &amp;amp; &lt;code&gt;LaterUpdate()&lt;/code&gt; functions adhere to the delegate definition, so they can be cast to the &lt;code&gt;useFlashLight&lt;/code&gt; delegate.&lt;/p&gt;
+&lt;p&gt;My functions in the delegate are simple. All they do is print to the Unity console. This is why I called my demonstration pitiful, as delegates are much more powerful than what I'm using them for.&lt;/p&gt;
+&lt;p&gt;The output of the delegate to the Unity console looks like this:&lt;/p&gt;
+&lt;p&gt;&lt;img title=&quot;output of the delegate to the Unity console&quot; class=&quot;cImg&quot; style=&quot;width: 70%;&quot; src=&quot;/assets/img/Project 1 - functions/Output-from-the-Delgate.png&quot; /&gt;&lt;/p&gt;
+
+&lt;div id=&quot;lambdas&quot; style=&quot;display: inline-block;&quot;&gt;
+	&lt;head2&gt;Lambdas:&lt;/head2&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img title=&quot;Lambda being used as a compare function&quot; class=&quot;cImg&quot; style=&quot;width: 100% !important; margin-top: -1em !important; margin-bottom: -1em !important;&quot; src=&quot;/assets/img/Project 1 - functions/Lambda.png&quot; /&gt;&lt;/p&gt;
+
+&lt;div style=&quot;display: inline-block;&quot;&gt;
+	&lt;head3&gt;What are lambdas?&lt;/head3&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;Lambda functions can be super helpful in many different ways. Do you need a comparison function but don't want to write tons of functions you'll never use again? Do you have identical lines of code in multiple switch statement cases?&lt;/p&gt;
+&lt;p&gt;Well, you should be using lambdas!&lt;/p&gt;
+&lt;p&gt;Lambda functions are anonymous, meaning the lambda can not be called outside the function the lambda is defined in.&lt;/p&gt;
+
+&lt;div style=&quot;display: inline-block;&quot;&gt;
+	&lt;head3&gt;let's walk through the code:&lt;/head3&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;In the code above, you can see a list of &lt;code&gt;IinventoryItems&lt;/code&gt; named &lt;code&gt;inventorySpace&lt;/code&gt;. The function &lt;code&gt;SortInvetory()&lt;/code&gt; takes an enum of the sorting method, then a switch statement jumps to the method used. In those switch cases, they call the &lt;code&gt;Sort&lt;/code&gt; method of the list object. The sort method takes a function as an argument, so this is where we use the lambda function.&lt;/p&gt;
+&lt;p&gt;My lambda functions take two arguments, &lt;code&gt;a&lt;/code&gt; &amp;amp; &lt;code&gt;b&lt;/code&gt;, the variables to be compared.&lt;/p&gt;
+&lt;p&gt;In the name sorting lambda, I compare the first char of both compared variables.&lt;/p&gt;
+&lt;p&gt;In the amount sorting lambda, I compare the number of items in the inventory slots passed to the lambda.&lt;/p&gt;
+
+&lt;div id=&quot;generics&quot; style=&quot;display: inline-block;&quot;&gt;
+	&lt;head2&gt;Generics:&lt;/head2&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img title=&quot;Premade Generic in Unity&quot; class=&quot;cImg&quot; style=&quot;width: 100% !important; margin-top: -1em !important; margin-bottom: -1em !important;&quot; src=&quot;/assets/img/Project 1 - functions/Generics.png&quot; /&gt;&lt;/p&gt;
+
+&lt;div style=&quot;display: inline-block;&quot;&gt;
+	&lt;head3&gt;What's a generic?&lt;/head3&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;A generic is a way to get a compiler to generate code to conform to the passed data type.&lt;/p&gt;
+&lt;p&gt;Generics in Unity can be incredibly useful. Do you want to add two numbers together? But you don't want to write hundreds of functions that handle each data type you want to add together?&lt;/p&gt;
+&lt;p&gt;Use generics to make the compiler do that for you!&lt;/p&gt;
+&lt;p&gt;I personally have no use for generics in my game yet, so I'll be demonstrating the use of premade generics in my code walkthrough.&lt;/p&gt;
+
+&lt;div style=&quot;display: inline-block;&quot;&gt;
+	&lt;head3&gt;let's walk through the code:&lt;/head3&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;The list of objects with an &lt;code&gt;IInventoryItem&lt;/code&gt; interface uses generics to store said objects.&lt;/p&gt;
+&lt;p&gt;The way it does this is that the compiler makes a new version of the List object that conforms to the &lt;code&gt;IInventoryItem&lt;/code&gt; interface.&lt;/p&gt;
+
+&lt;div id=&quot;multithreading&quot; style=&quot;display: inline-block;&quot;&gt;
+	&lt;head2&gt;Multithreading:&lt;/head2&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img title=&quot;Demonstration of multithreading in Unity&quot; class=&quot;cImg&quot; style=&quot;width: 100% !important; margin-top: -1em !important; margin-bottom: -1em !important;&quot; src=&quot;/assets/img/Project 1 - functions/Multithreading.png&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;div style=&quot;display: inline-block;&quot;&gt;
+	&lt;head3&gt;What's Multithreading?&lt;/head3&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Multithreading is running code &lt;span class=&quot;underline-nh&quot; title=&quot;at the same time, dividing the task between threads&quot;&gt;concurrently	&lt;/span&gt; or in &lt;span class=&quot;underline-nh&quot; title=&quot;simultaniously&quot;&gt;parallel&lt;/span&gt; on a &lt;span class=&quot;underline-nh&quot; title=&quot;Central Processing Unit&quot;&gt;CPU&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Multithreading in Unity is a bit tricky. The Unity API is not thread-safe, meaning you can't use &lt;code&gt;RigidBody&lt;/code&gt;, &lt;code title=&quot;The Unity API version of Vec3, anyway&quot;&gt;Vector3&lt;/code&gt;, or the &lt;code title=&quot;Again, the Unity API version&quot;&gt;Debug&lt;/code&gt; namespace.&lt;/p&gt;
+&lt;p&gt;This is a massive detriment and limits the use of threads in Unity. With a cursory look around the internet, I only found a few usages for threads in Unity. Some include AI, pathfinding, and file operations; Out of the three, I could see file operations usage as the most useful.&lt;/p&gt;
+
+&lt;div style=&quot;display: inline-block;&quot;&gt;
+	&lt;head3&gt;let's walk through the code:&lt;/head3&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;In the &lt;code&gt;Start()&lt;/code&gt; function, we start by making a new thread that take	s &lt;code&gt;ThreadFunction()&lt;/code&gt; as an argument, then I start the thread.&lt;/p&gt;
+&lt;p&gt;In the &lt;code&gt;ThreadFunction()&lt;/code&gt;, I put a lock on the code to ensure the function cannot be run on a separate thread without the thread already executing the code if it has yet to return. The while loop runs forever, checking if &lt;code&gt;counter&lt;/code&gt; is equal to 1000 and setting &lt;code&gt;counter&lt;/code&gt; to 0 if &lt;code&gt;counter&lt;/code&gt; is. Incrementing count then waiting 1 millisecond.&lt;/p&gt;
+&lt;p&gt;Here is what &lt;code&gt;counter&lt;/code&gt; looks like in the Unity editor:&lt;/p&gt;
+&lt;p&gt;&lt;img title=&quot;Choppy, low-quality gif of count incrementing to 1000 in one second&quot; class=&quot;cImg&quot; style=&quot;width: 40%;&quot; src=&quot;/assets/img/Project 1 - functions/MultiThreadTest.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;div id=&quot;conclusion&quot; style=&quot;display: inline-block;&quot;&gt;
+	&lt;head2&gt;Conclusion:&lt;/head2&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;It's my first time writing something of this style, and I think I did, at best, ok.&lt;/p&gt;
+&lt;p&gt;It was rushed, the stylings hard to read, and the single GIF on this page is poor quality. I can't say much more other than I hope I can do better on project 2 teach back.&lt;/p&gt;
+
+
+          
+          
+        
+      
+        </content><summary>Project 1 TeachbackIn this post, I'll be going over some C# and Unity concepts and expanding on how they are utilized and how I have used them.I won't be providing the source code to my project, but there will be screenshots of the code and the output of that code when applicable.	Contents:				Coroutines		Delegates		Lambdas		Generics		Multithreading		Conclusion			Coroutines:		What's a coroutine?	A coroutine is a way of spreading tasks across multiple frames. It functions similarly to the Update() function provided by MonoBehaviour in that they execute code on individual frames.They are different, however. You can run code across as many frames as you need with coroutines. My code above runs like the Update(), so it's not very complex.	let's walk through the code:	The way I use coroutines is needlessly complex, but it works!In the Start() function, I set my IEnumerator inputCoroutine equal to a reference to the WaitForInput() function.Inside the WaitForInput() function is an infinite while loop that returns with yield return null, which will continue code execution on the next frame.The rest of the function unsets the input of the previous frame, then scans the held inputs, and then sets the inputs again. 	Delegates:		What's a delegate?	A delegate is a type that holds a reference to a function. A delegate can have multiple functions appended to it as well. The function references in a delegate execute from the top down	let's walk through the code:	My usage of delegates is a bit pitiful, but it works as a decent demonstration.The onUse delegate is defined as delegate void onUse();, sso the functions we want to cast to the delegate have to return nothing and take no arguments. As you can see, my Error() &amp;amp; LaterUpdate() functions adhere to the delegate definition, so they can be cast to the useFlashLight delegate.My functions in the delegate are simple. All they do is print to the Unity console. This is why I called my demonstration pitiful, as delegates are much more powerful than what I'm using them for.The output of the delegate to the Unity console looks like this:	Lambdas:		What are lambdas?	Lambda functions can be super helpful in many different ways. Do you need a comparison function but don't want to write tons of functions you'll never use again? Do you have identical lines of code in multiple switch statement cases?Well, you should be using lambdas!Lambda functions are anonymous, meaning the lambda can not be called outside the function the lambda is defined in.	let's walk through the code:	In the code above, you can see a list of IinventoryItems named inventorySpace. The function SortInvetory() takes an enum of the sorting method, then a switch statement jumps to the method used. In those switch cases, they call the Sort method of the list object. The sort method takes a function as an argument, so this is where we use the lambda function.My lambda functions take two arguments, a &amp;amp; b, the variables to be compared.In the name sorting lambda, I compare the first char of both compared variables.In the amount sorting lambda, I compare the number of items in the inventory slots passed to the lambda.	Generics:		What's a generic?	A generic is a way to get a compiler to generate code to conform to the passed data type.Generics in Unity can be incredibly useful. Do you want to add two numbers together? But you don't want to write hundreds of functions that handle each data type you want to add together?Use generics to make the compiler do that for you!I personally have no use for generics in my game yet, so I'll be demonstrating the use of premade generics in my code walkthrough.	let's walk through the code:	The list of objects with an IInventoryItem interface uses generics to store said objects.The way it does this is that the compiler makes a new version of the List object that conforms to the IInventoryItem interface.	Multithreading:		What's Multithreading?	Multithreading is running code concurrently	 or in parallel on a CPU.Multithreading in Unity is a bit tricky. The Unity API is not thread-safe, meaning you can't use RigidBody, Vector3, or the Debug namespace.This is a massive detriment and limits the use of threads in Unity. With a cursory look around the internet, I only found a few usages for threads in Unity. Some include AI, pathfinding, and file operations; Out of the three, I could see file operations usage as the most useful.	let's walk through the code:	In the Start() function, we start by making a new thread that take	s ThreadFunction() as an argument, then I start the thread.In the ThreadFunction(), I put a lock on the code to ensure the function cannot be run on a separate thread without the thread already executing the code if it has yet to return. The while loop runs forever, checking if counter is equal to 1000 and setting counter to 0 if counter is. Incrementing count then waiting 1 millisecond.Here is what counter looks like in the Unity editor:	Conclusion:	It's my first time writing something of this style, and I think I did, at best, ok.It was rushed, the stylings hard to read, and the single GIF on this page is poor quality. I can't say much more other than I hope I can do better on project 2 teach back.</summary></entry><entry><title>Project 1&amp;#58; Engine Basics Teachback</title><id>https://longestboi.github.io/2022/09/project-1-engine-basics-teachback.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/09/project-1-engine-basics-teachback.html" /><published>2022-09-25T00:00:00-07:00</published><updated>2022-09-25T23:36:35-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
           
             &lt;script&gt;window.top.document.title = &quot;Project 1: Engine Basics Teachback&quot;;&lt;/script&gt;
 
