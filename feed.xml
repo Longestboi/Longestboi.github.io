@@ -1,4 +1,234 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Andrew Long</title><subtitle>Blog & Such</subtitle><updated>2022-10-09T15:43:04-07:00</updated><id>https://longestboi.github.io/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.19">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://longestboi.github.io/" /><link rel="self" type="application/atom+xml" href="https://longestboi.github.io/feed.xml" /><author><name>Andrew Long</name><uri>https://longestboi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><entry><title>Project 1&amp;#58; Functions</title><id>https://longestboi.github.io/2022/10/project-1-functions.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/10/project-1-functions.html" /><published>2022-10-09T00:00:00-07:00</published><updated>2022-10-09T15:41:03-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Andrew Long</title><subtitle>Blog & Such</subtitle><updated>2022-10-09T23:37:44-07:00</updated><id>https://longestboi.github.io/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.19">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://longestboi.github.io/" /><link rel="self" type="application/atom+xml" href="https://longestboi.github.io/feed.xml" /><author><name>Andrew Long</name><uri>https://longestboi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><entry><title>3 Blog Post For ENG301</title><id>https://longestboi.github.io/2022/10/eng301-3-blog-posts.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/10/eng301-3-blog-posts.html" /><published>2022-10-09T00:00:00-07:00</published><updated>2022-10-09T21:01:30-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
+          
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/pcss/blogSummary.css&quot; /&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/pcss/classwork.css&quot; /&gt;
+
+&lt;div id=&quot;intro-head&quot;&gt;
+	&lt;head1 style=&quot;text-align: center;&quot;&gt;3 Blog Posts Landing Page&lt;/head1&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indent&quot;&gt;This notes post is to corral the three individual blog posts I need to submit for an assignment.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;break&gt;&lt;/break&gt;
+
+&lt;div style=&quot;display: block;&quot;&gt;
+ &lt;div id=&quot;three-blog-posts&quot; style=&quot;display: inline-block;&quot;&gt;
+  &lt;head2&gt;The 3 Blog Posts:&lt;/head2&gt;
+  &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;post-header&quot;&gt;
+   &lt;a&gt;&lt;!-- List snippets --&gt;
+
+&lt;!-- Dynamic link color based on post color scheme --&gt;
+
+
+&lt;!-- Dynamic background color based on post color scheme --&gt;
+
+
+&lt;section class=&quot;new-list&quot;&gt;
+  &lt;a&gt;
+    &lt;!-- Item title --&gt;
+    &lt;a class=&quot;blog-posts&quot; href=&quot;/2022/10/studying-game-industry-infographic.html&quot;&gt;Studying a infographic about the games industry&lt;/a&gt;
+
+    &lt;!-- External link indicator --&gt;
+    
+  &lt;/a&gt;
+&lt;/section&gt;
+&lt;/a&gt;
+   &lt;div class=&quot;dateAndTag&quot;&gt;
+     &lt;span class=&quot;date&quot;&gt;⌜2022-10-09⌟&lt;/span&gt;
+     &lt;span class=&quot;tags&quot;&gt;Tags:
+     
+     &lt;a href=&quot;/_pages/sort-by-tags.html#eng301&quot; class=&quot;sub-tags&quot; style=&quot;text-decoration: none;&quot;&gt;#ENG301&lt;/a&gt;
+     
+     &lt;a href=&quot;/_pages/sort-by-tags.html#technical-writing&quot; class=&quot;sub-tags&quot; style=&quot;text-decoration: none;&quot;&gt;#Technical Writing&lt;/a&gt;
+     
+     &lt;/span&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+&lt;div class=&quot;excerpt&quot;&gt;
+    &lt;p&gt;Infographic about the Games industry Finding an infographic about the part of the games industry I am going into was challenging. So challenging I could not find one. So, I have chosen a more generic infographic to analyze. Attributions: The EAS Analysis of the infographic: The average age of the...&lt;/p&gt;
+   &lt;/div&gt;
+
+&lt;div class=&quot;post-header&quot;&gt;
+   &lt;a&gt;&lt;!-- List snippets --&gt;
+
+&lt;!-- Dynamic link color based on post color scheme --&gt;
+
+
+&lt;!-- Dynamic background color based on post color scheme --&gt;
+
+
+&lt;section class=&quot;new-list&quot;&gt;
+  &lt;a&gt;
+    &lt;!-- Item title --&gt;
+    &lt;a class=&quot;blog-posts&quot; href=&quot;/2022/10/how-to-gain-employment-in-games-programming.html&quot;&gt;How to Gain Employment in Games Programming&lt;/a&gt;
+
+    &lt;!-- External link indicator --&gt;
+    
+  &lt;/a&gt;
+&lt;/section&gt;
+&lt;/a&gt;
+   &lt;div class=&quot;dateAndTag&quot;&gt;
+     &lt;span class=&quot;date&quot;&gt;⌜2022-10-09⌟&lt;/span&gt;
+     &lt;span class=&quot;tags&quot;&gt;Tags:
+     
+     &lt;a href=&quot;/_pages/sort-by-tags.html#eng301&quot; class=&quot;sub-tags&quot; style=&quot;text-decoration: none;&quot;&gt;#ENG301&lt;/a&gt;
+     
+     &lt;a href=&quot;/_pages/sort-by-tags.html#technical-writing&quot; class=&quot;sub-tags&quot; style=&quot;text-decoration: none;&quot;&gt;#Technical Writing&lt;/a&gt;
+     
+     &lt;/span&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+&lt;div class=&quot;excerpt&quot;&gt;
+    &lt;p&gt;Gaining Employment in Games Programming Gaining employment in the game programming industry can be tricky. A degree in game programming often makes it easier for you to get hired in the game industry. That is because the degree effectively vouches for you. If you are not college educated, the likelihood...&lt;/p&gt;
+   &lt;/div&gt;
+
+&lt;div class=&quot;post-header&quot;&gt;
+   &lt;a&gt;&lt;!-- List snippets --&gt;
+
+&lt;!-- Dynamic link color based on post color scheme --&gt;
+
+
+&lt;!-- Dynamic background color based on post color scheme --&gt;
+
+
+&lt;section class=&quot;new-list&quot;&gt;
+  &lt;a&gt;
+    &lt;!-- Item title --&gt;
+    &lt;a class=&quot;blog-posts&quot; href=&quot;/2022/10/a-day-in-the-life-video.html&quot;&gt;A Day in the Life of a Game Programmer Video&lt;/a&gt;
+
+    &lt;!-- External link indicator --&gt;
+    
+  &lt;/a&gt;
+&lt;/section&gt;
+&lt;/a&gt;
+   &lt;div class=&quot;dateAndTag&quot;&gt;
+     &lt;span class=&quot;date&quot;&gt;⌜2022-10-09⌟&lt;/span&gt;
+     &lt;span class=&quot;tags&quot;&gt;Tags:
+     
+     &lt;a href=&quot;/_pages/sort-by-tags.html#eng301&quot; class=&quot;sub-tags&quot; style=&quot;text-decoration: none;&quot;&gt;#ENG301&lt;/a&gt;
+     
+     &lt;a href=&quot;/_pages/sort-by-tags.html#technical-writing&quot; class=&quot;sub-tags&quot; style=&quot;text-decoration: none;&quot;&gt;#Technical Writing&lt;/a&gt;
+     
+     &lt;/span&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+&lt;div class=&quot;excerpt&quot;&gt;
+    &lt;p&gt;A Day in the Life of a Game Programmer While I could have found a video about a day in the life of an American game developer, I have already seen &quot;Day in the Life of a Japanese Game Programmer,&quot; so I would like to introduce this video to you....&lt;/p&gt;
+   &lt;/div&gt;
+
+
+          
+          
+        
+      
+        </content><summary>	3 Blog Posts Landing Page	This notes post is to corral the three individual blog posts I need to submit for an assignment.   The 3 Blog Posts:                Studying a infographic about the games industry                  ⌜2022-10-09⌟     Tags:          #ENG301          #Technical Writing                    Infographic about the Games industry Finding an infographic about the part of the games industry I am going into was challenging. So challenging I could not find one. So, I have chosen a more generic infographic to analyze. Attributions: The EAS Analysis of the infographic: The average age of the...                How to Gain Employment in Games Programming                  ⌜2022-10-09⌟     Tags:          #ENG301          #Technical Writing                    Gaining Employment in Games Programming Gaining employment in the game programming industry can be tricky. A degree in game programming often makes it easier for you to get hired in the game industry. That is because the degree effectively vouches for you. If you are not college educated, the likelihood...                A Day in the Life of a Game Programmer Video                  ⌜2022-10-09⌟     Tags:          #ENG301          #Technical Writing                    A Day in the Life of a Game Programmer While I could have found a video about a day in the life of an American game developer, I have already seen &quot;Day in the Life of a Japanese Game Programmer,&quot; so I would like to introduce this video to you....   </summary></entry><entry><title>Studying a infographic about the games industry</title><id>https://longestboi.github.io/2022/10/studying-game-industry-infographic.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/10/studying-game-industry-infographic.html" /><published>2022-10-09T00:00:00-07:00</published><updated>2022-10-09T23:32:07-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
+          
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/pcss/classwork.css&quot; /&gt;
+
+&lt;!-- Head of the post --&gt;
+&lt;div id=&quot;intro-head&quot;&gt;
+	&lt;head1 style=&quot;text-align: center;&quot;&gt;Infographic about the Games industry&lt;/head1&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indent&quot;&gt;Finding an infographic about the part of the games industry I am going into was challenging. So challenging I could not find one. So, I have chosen a more generic infographic to analyze.&lt;/p&gt;
+
+&lt;!-- Infographic --&gt;
+&lt;div&gt;
+ &lt;div&gt;
+  &lt;img class=&quot;cImg&quot; title=&quot;Infographic about the affect of games on the general public&quot; style=&quot;width: 100%; margin-bottom: 0em;&quot; src=&quot;https://www.theesa.com/wp-content/uploads/2021/07/Final-EF-Infographic.png&quot; /&gt;
+ &lt;/div&gt;
+ &lt;div&gt;
+  &lt;span class=&quot;citation-nh&quot; style=&quot;display: inline;&quot;&gt;Attributions: &lt;/span&gt;
+  &lt;a class=&quot;citation&quot; target=&quot;_blank&quot; href=&quot;https://www.theesa.com/resource/2021-essential-facts-about-the-video-game-industry/&quot;&gt;The EAS&lt;/a&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Analysis --&gt;
+&lt;div style=&quot;display: block;&quot;&gt;
+ &lt;div id=&quot;analysis&quot; style=&quot;display: inline-block;&quot;&gt;
+  &lt;head2&gt;Analysis of the infographic:&lt;/head2&gt;
+  &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p class=&quot;indent&quot;&gt;The average age of the games consumer, according to the figure above, is 31 years old; This can be important when you are developing a game as some aspects of the game may not be captivating to that audience. Of course, nobody says you have to target the average video game player.&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;An interesting thing that many may not seem important is that 45 percent of all players identify as female; This, to me, is interesting as games are, generally, not targeted toward women, and if they are, they are for small children.&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;Though targeting games toward women would likely backfire, as it could many would see it as pandering, many women do not play games that use this sort of targeting.&lt;/p&gt;
+
+          
+          
+        
+      
+        </content><summary>	Infographic about the Games industry	Finding an infographic about the part of the games industry I am going into was challenging. So challenging I could not find one. So, I have chosen a more generic infographic to analyze.       Attributions:   The EAS    Analysis of the infographic:   The average age of the games consumer, according to the figure above, is 31 years old; This can be important when you are developing a game as some aspects of the game may not be captivating to that audience. Of course, nobody says you have to target the average video game player.An interesting thing that many may not seem important is that 45 percent of all players identify as female; This, to me, is interesting as games are, generally, not targeted toward women, and if they are, they are for small children.Though targeting games toward women would likely backfire, as it could many would see it as pandering, many women do not play games that use this sort of targeting.</summary></entry><entry><title>How to Gain Employment in Games Programming</title><id>https://longestboi.github.io/2022/10/how-to-gain-employment-in-games-programming.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/10/how-to-gain-employment-in-games-programming.html" /><published>2022-10-09T00:00:00-07:00</published><updated>2022-10-09T23:34:38-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
+          
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/pcss/classwork.css&quot; /&gt;
+
+&lt;div id=&quot;intro-head&quot;&gt;
+	&lt;head1 style=&quot;text-align: center; font-size: 150%;&quot;&gt;Gaining Employment in Games Programming&lt;/head1&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p class=&quot;indent&quot;&gt;Gaining employment in the game programming industry can be tricky. A degree in game programming often makes it easier for you to get hired in the game industry. That is because the degree effectively vouches for you.&lt;/p&gt;
+
+&lt;p class=&quot;indent&quot;&gt;If you are not college educated, the likelihood of getting a job decreases dramatically, and the only way to get past this is to have released games under your belt.&lt;/p&gt;
+
+&lt;div&gt;
+ &lt;img class=&quot;cImg&quot; title=&quot;A graph of unemployment rates and and weekley earnings of education levels&quot; style=&quot;width: 100%; margin-bottom: 0em;&quot; src=&quot;http://frontrangeblog.wpengine.com/wp-content/uploads/2011/08/education-pays.gif&quot; /&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+ &lt;span class=&quot;citation-nh&quot; style=&quot;display: inline;&quot;&gt;Attributions: &lt;/span&gt;
+ &lt;a class=&quot;citation&quot; target=&quot;_blank&quot; href=&quot;https://blog.frontrange.edu/2013/01/07/is-a-college-education-really-worth-it/&quot;&gt;Front Range EDUs blog&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;!-- With College Degree --&gt;
+&lt;div style=&quot;display: block;&quot;&gt;
+ &lt;div id=&quot;analysis&quot; style=&quot;display: inline-block;&quot;&gt;
+  &lt;head2&gt;With College Degree:&lt;/head2&gt;
+  &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indent&quot;&gt;With a college degree, people are more likely to assume your accreditations. Typically, though, graduating from colleges that offer game programming degrees, you need to make a game. And you are more likely to get hired if you have a higher number of polished games on your resume.&lt;/p&gt;
+
+&lt;!-- Without College Degree --&gt;
+&lt;div style=&quot;display: block;&quot;&gt;
+ &lt;div id=&quot;analysis&quot; style=&quot;display: inline-block;&quot;&gt;
+  &lt;head2&gt;Without College Degree:&lt;/head2&gt;
+  &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indent&quot;&gt;Without a college degree, it is a requirement to have made more polished games or hope your game gets incredibly popular. More recently, however, the focus of game consumers has shifted to indie games. And from what some professors at &lt;span title=&quot;University of Advancing Technology&quot; class=&quot;underline-nh&quot;&gt;UAT&lt;/span&gt; have said, working in indie games, then going to the industry is relatively common today.&lt;/p&gt;
+
+
+          
+          
+        
+      
+        </content><summary>	Gaining Employment in Games Programming	Gaining employment in the game programming industry can be tricky. A degree in game programming often makes it easier for you to get hired in the game industry. That is because the degree effectively vouches for you.If you are not college educated, the likelihood of getting a job decreases dramatically, and the only way to get past this is to have released games under your belt.  Attributions:  Front Range EDUs blog   With College Degree:   With a college degree, people are more likely to assume your accreditations. Typically, though, graduating from colleges that offer game programming degrees, you need to make a game. And you are more likely to get hired if you have a higher number of polished games on your resume.   Without College Degree:   Without a college degree, it is a requirement to have made more polished games or hope your game gets incredibly popular. More recently, however, the focus of game consumers has shifted to indie games. And from what some professors at UAT have said, working in indie games, then going to the industry is relatively common today.</summary></entry><entry><title>A Day in the Life of a Game Programmer Video</title><id>https://longestboi.github.io/2022/10/a-day-in-the-life-video.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/10/a-day-in-the-life-video.html" /><published>2022-10-09T00:00:00-07:00</published><updated>2022-10-09T23:35:42-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
+          
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/pcss/classwork.css&quot; /&gt;
+
+&lt;div id=&quot;intro-head&quot;&gt;
+	&lt;head1 style=&quot;text-align: center; font-size: 160%;&quot;&gt;A Day in the Life of a Game Programmer&lt;/head1&gt;
+	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indent&quot;&gt;While I could have found a video about a day in the life of an American game developer, I have already seen &quot;Day in the Life of a Japanese Game Programmer,&quot; so I would like to introduce this video to you.&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;The video goes through many things that aren't video game industry-related, but regardless, it shows that video game programmers are normal people.&lt;/p&gt;
+
+&lt;div&gt;
+	&lt;iframe width=&quot;854&quot; height=&quot;480&quot; src=&quot;https://www.youtube.com/embed/e_TxH59MclA&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+          
+          
+        
+      
+        </content><summary>	A Day in the Life of a Game Programmer	While I could have found a video about a day in the life of an American game developer, I have already seen &quot;Day in the Life of a Japanese Game Programmer,&quot; so I would like to introduce this video to you.The video goes through many things that aren't video game industry-related, but regardless, it shows that video game programmers are normal people.	</summary></entry><entry><title>Project 1&amp;#58; Functions</title><id>https://longestboi.github.io/2022/10/project-1-functions.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/10/project-1-functions.html" /><published>2022-10-09T00:00:00-07:00</published><updated>2022-10-09T15:41:03-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
           
             &lt;script&gt;window.top.document.title = &quot;Project 1: Functions&quot;;&lt;/script&gt;
 
@@ -153,7 +383,7 @@
 
 &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/pcss/classwork.css&quot; /&gt;
 
-&lt;div style=&quot;display: inline-block;&quot;&gt;
+&lt;div id=&quot;intro-head&quot;&gt;
 	&lt;head1 style=&quot;text-align: center;&quot;&gt;The Basic Setup of Unity VR on Linux&lt;/head1&gt;
 	&lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
 &lt;/div&gt;
