@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Andrew Long</title><subtitle>Blog & Such</subtitle><updated>2022-10-30T17:45:14-07:00</updated><id>https://longestboi.github.io/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.19">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://longestboi.github.io/" /><link rel="self" type="application/atom+xml" href="https://longestboi.github.io/feed.xml" /><author><name>Andrew Long</name><uri>https://longestboi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><entry><title>Project 2&amp;#58; Game Programming Essentials</title><id>https://longestboi.github.io/2022/10/project-2-gpe338.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/10/project-2-gpe338.html" /><published>2022-10-30T00:00:00-07:00</published><updated>2022-10-30T17:42:07-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Andrew Long</title><subtitle>Blog & Such</subtitle><updated>2022-10-31T00:11:09-07:00</updated><id>https://longestboi.github.io/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.19">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://longestboi.github.io/" /><link rel="self" type="application/atom+xml" href="https://longestboi.github.io/feed.xml" /><author><name>Andrew Long</name><uri>https://longestboi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><entry><title>Project 2&amp;#58; Game Programming Essentials</title><id>https://longestboi.github.io/2022/10/project-2-gpe338.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/10/project-2-gpe338.html" /><published>2022-10-30T00:00:00-07:00</published><updated>2022-10-31T00:10:45-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
           
             &lt;!-- Set the window title. Before, it had &quot;&amp;#58&quot; as plaintext in the title. --&gt;
 &lt;script&gt;window.top.document.title = &quot;Project 2&quot;;&lt;/script&gt;
@@ -15,14 +15,15 @@
 	}
 	
 	video.vid{
-	  width: 100%;
-	  margin-left: auto;
-	  margin-right: auto;
-	  margin-top: -.5em;
+	  width: 89%;
 	}
 	
 	break{
 	  margin-bottom: 2.5em !important;
+	}
+	
+	#quicklistfix::before{
+	  content: &quot;2.&quot; !important;
 	}
 &lt;/style&gt;
 
@@ -50,7 +51,7 @@
 				&lt;li&gt;&lt;a href=&quot;#oopencapsulation&quot;&gt;Encapsulation&lt;/a&gt;&lt;/li&gt;
 				&lt;li&gt;&lt;a href=&quot;#oopabstraction&quot;&gt;Abstraction&lt;/a&gt;&lt;/li&gt;
 			&lt;/ol&gt;
-                	&lt;li&gt;&lt;a href=&quot;#iandp&quot;&gt;Inheritence &amp;amp; Polymorphism:&lt;/a&gt;&lt;/li&gt;
+                	&lt;li id=&quot;quicklistfix&quot;&gt;&lt;a href=&quot;#iandp&quot;&gt;Inheritence &amp;amp; Polymorphism:&lt;/a&gt;&lt;/li&gt;
                 	&lt;ol style=&quot;padding-left: 2em;&quot;&gt;
 				&lt;li&gt;&lt;a href=&quot;#oopinheritance&quot;&gt;Inheritence&lt;/a&gt;&lt;/li&gt;
                         	&lt;li&gt;&lt;a href=&quot;#ooppolymorphism&quot;&gt;Polymorphism&lt;/a&gt;&lt;/li&gt;
@@ -67,10 +68,11 @@
 &lt;/div&gt;
 &lt;p&gt;&lt;img title=&quot;Json Loader class in my loader namespace&quot; class=&quot;cImg codeImg&quot; src=&quot;/assets/img/Project 2/JsonLoad.png&quot; /&gt;&lt;/p&gt;
 &lt;p class=&quot;indent&quot;&gt;For whatever reason, I couldn't get regular JSON loading through Unity's resource loader. So, I used bog standard C# functions.&lt;br /&gt;To get JSON data from a file, call the &lt;code&gt;jsonLoad.GetJsonFromPaths()&lt;/code&gt; function. &lt;br /&gt;I've implemented this class like this in my playerSave class:&lt;/p&gt;
-&lt;p&gt;&lt;img title=&quot;Json Loader class in my loader namespace&quot; class=&quot;cImg codeImg imgUnderText&quot; src=&quot;/assets/img/Project 2/LoadingFromJson.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img title=&quot;Demo code for Json Loader&quot; class=&quot;cImg codeImg imgUnderText&quot; src=&quot;/assets/img/Project 2/LoadingFromJson.png&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Here is what the code looks like when running in the game:&lt;/p&gt;
-&lt;video class=&quot;vid&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot;&gt;&lt;source src=&quot;/assets/img/Project 2/JSONSave.webm&quot; type=&quot;video/webm&quot; /&gt;&lt;/video&gt;
+&lt;video title=&quot;Demo of demo code above&quot; class=&quot;vid&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot;&gt;&lt;source src=&quot;/assets/img/Project 2/JSONSave.webm&quot; type=&quot;video/webm&quot; /&gt;&lt;/video&gt;
 &lt;break&gt;&lt;/break&gt;
+
 &lt;!-- Loading From Resources --&gt;
 &lt;div id=&quot;lresource&quot; style=&quot;display: inline-block; &quot;&gt;
         &lt;head2&gt;Loading From Resource Folder:&lt;/head2&gt;
@@ -78,9 +80,9 @@
 &lt;/div&gt;
 &lt;p&gt;&lt;img title=&quot;Resource Loader class in my loader namespace&quot; class=&quot;cImg codeImg&quot; src=&quot;/assets/img/Project 2/TextureLoad.png&quot; /&gt;&lt;/p&gt;
 &lt;p class=&quot;indent&quot;&gt;Loading assets from the resource folder is relatively easy. All you have to do is pass the path of the asset to the &lt;code&gt;Resources.Load&lt;/code&gt; function. &lt;br /&gt;Just remember that the path of the resources folder is relative to &lt;code&gt;Assets/Resources&lt;/code&gt; in your Unity project. Also, don't pass the file extension with the file path.&lt;br /&gt;My implementation uses the function above like so:&lt;/p&gt;
-&lt;p&gt;&lt;img title=&quot;Resource Loader class in my loader namespace&quot; class=&quot;cImg codeImg imgUnderText&quot; src=&quot;/assets/img/Project 2/LoadFromResources.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img title=&quot;Demo code for Resource folder loading&quot; class=&quot;cImg codeImg imgUnderText&quot; src=&quot;/assets/img/Project 2/LoadFromResources.png&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Here is what the code looks like when running in the game:&lt;/p&gt;
-&lt;video class=&quot;vid&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot;&gt;&lt;source src=&quot;/assets/img/Project 2/TextureLoad.webm&quot; type=&quot;video/webm&quot; /&gt;&lt;/video&gt;
+&lt;video title=&quot;Demo of demo code above&quot; class=&quot;vid&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot;&gt;&lt;source src=&quot;/assets/img/Project 2/TextureLoad.webm&quot; type=&quot;video/webm&quot; /&gt;&lt;/video&gt;
 &lt;break&gt;&lt;/break&gt;
 &lt;!-- Using Interfaces --&gt;
 &lt;div id=&quot;uinterface&quot; style=&quot;display: inline-block;&quot;&gt;
@@ -107,7 +109,6 @@
 &lt;p&gt;&lt;img title=&quot;Getters and Setters in my playerSave struct&quot; class=&quot;cImg codeImg&quot; src=&quot;/assets/img/Project 2/GetterAndSetter.png&quot; /&gt;&lt;/p&gt;
 &lt;p class=&quot;indent&quot;&gt;Getters and Setters are functions that &lt;em&gt;get&lt;/em&gt; and &lt;em&gt;set&lt;/em&gt; private variables.&lt;/p&gt;
 &lt;p class=&quot;indent&quot;&gt;I've used getters and setters to interact with a private variable when the programmer sets or gets a public variable.&lt;/p&gt;
-
 &lt;hr /&gt;
 
 &lt;!-- Four principles --&gt;
