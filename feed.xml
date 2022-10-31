@@ -1,4 +1,177 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Andrew Long</title><subtitle>Blog & Such</subtitle><updated>2022-10-30T17:42:35-07:00</updated><id>https://longestboi.github.io/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.19">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://longestboi.github.io/" /><link rel="self" type="application/atom+xml" href="https://longestboi.github.io/feed.xml" /><author><name>Andrew Long</name><uri>https://longestboi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><entry><title>3 Blog Post For ENG301</title><id>https://longestboi.github.io/2022/10/eng301-3-blog-posts.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/10/eng301-3-blog-posts.html" /><published>2022-10-09T00:00:00-07:00</published><updated>2022-10-09T21:01:30-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Andrew Long</title><subtitle>Blog & Such</subtitle><updated>2022-10-30T17:45:14-07:00</updated><id>https://longestboi.github.io/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.19">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://longestboi.github.io/" /><link rel="self" type="application/atom+xml" href="https://longestboi.github.io/feed.xml" /><author><name>Andrew Long</name><uri>https://longestboi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><entry><title>Project 2&amp;#58; Game Programming Essentials</title><id>https://longestboi.github.io/2022/10/project-2-gpe338.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/10/project-2-gpe338.html" /><published>2022-10-30T00:00:00-07:00</published><updated>2022-10-30T17:42:07-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
+          
+            &lt;!-- Set the window title. Before, it had &quot;&amp;#58&quot; as plaintext in the title. --&gt;
+&lt;script&gt;window.top.document.title = &quot;Project 2&quot;;&lt;/script&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/pcss/classwork.css&quot; /&gt;
+
+&lt;style&gt;
+	head2{
+	  color: var(--text-color-80);
+	}
+
+	img.imgUnderText{
+	  margin-top: -2.5em !important;
+	}
+	
+	video.vid{
+	  width: 100%;
+	  margin-left: auto;
+	  margin-right: auto;
+	  margin-top: -.5em;
+	}
+	
+	break{
+	  margin-bottom: 2.5em !important;
+	}
+&lt;/style&gt;
+
+&lt;!-- Header --&gt;
+&lt;div id=&quot;intro-head&quot;&gt;
+        &lt;head1 style=&quot;text-align: center;&quot;&gt;Project 2&lt;/head1&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indent&quot;&gt;This project, the first without a given title, was surprisingly easy. It did make me stretch a bit as I haven't embedded videos in HTML before. Did you know you have to have a video muted just for it to play? It doesn't even play if the video has no audio!&lt;/p&gt;
+
+&lt;!-- TOC --&gt;
+&lt;div class=&quot;toc&quot; style=&quot;&quot;&gt;
+        &lt;div class=&quot;tocHead&quot;&gt;Contents:&lt;/div&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+        &lt;ol&gt;
+                &lt;li&gt;&lt;a href=&quot;#ljson&quot;&gt;Loading From JSON&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#lresource&quot;&gt;Loading From Resource Folder&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#uinterface&quot;&gt;Using Interfaces&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#unamespace&quot;&gt;Using Namespaces&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#getset&quot;&gt;Getters &amp;amp; Setters&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#fouroopprinciples&quot;&gt;Four Principles of Object Oriented Programming&lt;/a&gt;&lt;/li&gt;
+                &lt;ol style=&quot;padding-left: 1em;&quot;&gt;
+			&lt;li&gt;&lt;a href=&quot;#eanda&quot;&gt;Encapsulation &amp;amp; Abstraction:&lt;/a&gt;&lt;/li&gt;
+                	&lt;ol style=&quot;padding-left: 2em;&quot;&gt;
+				&lt;li&gt;&lt;a href=&quot;#oopencapsulation&quot;&gt;Encapsulation&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#oopabstraction&quot;&gt;Abstraction&lt;/a&gt;&lt;/li&gt;
+			&lt;/ol&gt;
+                	&lt;li&gt;&lt;a href=&quot;#iandp&quot;&gt;Inheritence &amp;amp; Polymorphism:&lt;/a&gt;&lt;/li&gt;
+                	&lt;ol style=&quot;padding-left: 2em;&quot;&gt;
+				&lt;li&gt;&lt;a href=&quot;#oopinheritance&quot;&gt;Inheritence&lt;/a&gt;&lt;/li&gt;
+                        	&lt;li&gt;&lt;a href=&quot;#ooppolymorphism&quot;&gt;Polymorphism&lt;/a&gt;&lt;/li&gt;
+			&lt;/ol&gt;
+		&lt;/ol&gt;
+        &lt;/ol&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;!-- Loading From JSON --&gt;
+&lt;div id=&quot;ljson&quot; style=&quot;display: inline-block; &quot;&gt;
+        &lt;head2&gt;Loading From JSON:&lt;/head2&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img title=&quot;Json Loader class in my loader namespace&quot; class=&quot;cImg codeImg&quot; src=&quot;/assets/img/Project 2/JsonLoad.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;For whatever reason, I couldn't get regular JSON loading through Unity's resource loader. So, I used bog standard C# functions.&lt;br /&gt;To get JSON data from a file, call the &lt;code&gt;jsonLoad.GetJsonFromPaths()&lt;/code&gt; function. &lt;br /&gt;I've implemented this class like this in my playerSave class:&lt;/p&gt;
+&lt;p&gt;&lt;img title=&quot;Json Loader class in my loader namespace&quot; class=&quot;cImg codeImg imgUnderText&quot; src=&quot;/assets/img/Project 2/LoadingFromJson.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Here is what the code looks like when running in the game:&lt;/p&gt;
+&lt;video class=&quot;vid&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot;&gt;&lt;source src=&quot;/assets/img/Project 2/JSONSave.webm&quot; type=&quot;video/webm&quot; /&gt;&lt;/video&gt;
+&lt;break&gt;&lt;/break&gt;
+&lt;!-- Loading From Resources --&gt;
+&lt;div id=&quot;lresource&quot; style=&quot;display: inline-block; &quot;&gt;
+        &lt;head2&gt;Loading From Resource Folder:&lt;/head2&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img title=&quot;Resource Loader class in my loader namespace&quot; class=&quot;cImg codeImg&quot; src=&quot;/assets/img/Project 2/TextureLoad.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;Loading assets from the resource folder is relatively easy. All you have to do is pass the path of the asset to the &lt;code&gt;Resources.Load&lt;/code&gt; function. &lt;br /&gt;Just remember that the path of the resources folder is relative to &lt;code&gt;Assets/Resources&lt;/code&gt; in your Unity project. Also, don't pass the file extension with the file path.&lt;br /&gt;My implementation uses the function above like so:&lt;/p&gt;
+&lt;p&gt;&lt;img title=&quot;Resource Loader class in my loader namespace&quot; class=&quot;cImg codeImg imgUnderText&quot; src=&quot;/assets/img/Project 2/LoadFromResources.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Here is what the code looks like when running in the game:&lt;/p&gt;
+&lt;video class=&quot;vid&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot;&gt;&lt;source src=&quot;/assets/img/Project 2/TextureLoad.webm&quot; type=&quot;video/webm&quot; /&gt;&lt;/video&gt;
+&lt;break&gt;&lt;/break&gt;
+&lt;!-- Using Interfaces --&gt;
+&lt;div id=&quot;uinterface&quot; style=&quot;display: inline-block;&quot;&gt;
+        &lt;head2&gt;Using Interfaces:&lt;/head2&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img title=&quot;Inventory item interface&quot; class=&quot;cImg codeImg&quot; src=&quot;/assets/img/Project 2/Interface.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;Interfaces are like classes in that they can be inherited. They are different in a few ways, though. Interfaces don't contain function definitions. Instead, they contain function declarations. The functions inherited have to be defined inside the inheriter.&lt;/p&gt;
+
+&lt;!-- Using Namespaces --&gt;
+&lt;div id=&quot;unamespace&quot; style=&quot;display: inline-block; &quot;&gt;
+        &lt;head2&gt;Using Namespaces:&lt;/head2&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img title=&quot;Namespace example in my Unity project&quot; class=&quot;cImg codeImg&quot; src=&quot;/assets/img/Project 2/namespace.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;Namespaces allow you to import all of the classes inside the namespace into another C# script.&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;I've implemented namespaces to separate my loading functions and ordering them under specific classes.&lt;/p&gt;
+
+&lt;!-- Getters &amp; Setters --&gt;
+&lt;div id=&quot;getset&quot; style=&quot;display: inline-block; &quot;&gt;
+        &lt;head2&gt;Getters &amp;amp; Setters:&lt;/head2&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img title=&quot;Getters and Setters in my playerSave struct&quot; class=&quot;cImg codeImg&quot; src=&quot;/assets/img/Project 2/GetterAndSetter.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;Getters and Setters are functions that &lt;em&gt;get&lt;/em&gt; and &lt;em&gt;set&lt;/em&gt; private variables.&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;I've used getters and setters to interact with a private variable when the programmer sets or gets a public variable.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;!-- Four principles --&gt;
+&lt;div id=&quot;fouroopprinciples&quot; style=&quot;display: inline-block;&quot;&gt;
+        &lt;head1&gt;Four Principals of&lt;br /&gt;Object Oriented Programming&lt;/head1&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indent&quot;&gt;I've seperated out two of the principles because because of the way I've implemented them.&lt;/p&gt;
+
+&lt;!-- E &amp; A --&gt;
+&lt;div id=&quot;eanda&quot; style=&quot;display: inline-block;&quot;&gt;
+        &lt;head1&gt;Encapsulation &amp;amp; Abstraction:&lt;/head1&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img title=&quot;An image representing 2/4 principals of OOP&quot; class=&quot;cImg codeImg&quot; src=&quot;/assets/img/Project 2/OOPAbstraction.png&quot; /&gt;&lt;/p&gt;
+
+&lt;!-- OOP Encapsulation --&gt;
+&lt;div id=&quot;oopencapsulation&quot; style=&quot;display: inline-block; &quot;&gt;
+        &lt;head2&gt;Encapsulation:&lt;/head2&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indent&quot;&gt;Encapsulation is making variables public, private, or protected.&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;The way it's implemented here is pretty simplistic. I've made the text of the JSON file private, so anything outside the function can't modify it.&lt;/p&gt;
+
+&lt;!-- OOP Abstraction --&gt;
+&lt;div id=&quot;oopabstraction&quot; style=&quot;display: inline-block; &quot;&gt;
+        &lt;head2&gt;Abstraction:&lt;/head2&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indent&quot;&gt;Abstraction is the process of making private variables accessible through public functions.&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;The way I've implemented abstraction is a bit different than most examples. I've used a public variable and its getters and setters to interact with the private variables.&lt;/p&gt;
+
+&lt;!-- I &amp; P --&gt;
+&lt;div id=&quot;iandp&quot; style=&quot;display: inline-block;&quot;&gt;
+        &lt;head1&gt;Inheritence &amp;amp; Polymorphism:&lt;/head1&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img title=&quot;An image representing 2/4 principals of OOP&quot; class=&quot;cImg codeImg&quot; src=&quot;/assets/img/Project 2/OOP.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;&lt;/p&gt;
+
+&lt;!-- OOP Inheritance --&gt;
+&lt;div id=&quot;oopinheritance&quot; style=&quot;display: inline-block; &quot;&gt;
+        &lt;head2&gt;Inheritence:&lt;/head2&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indent&quot;&gt;Inheritance is when you make a class derive from another class.&lt;br /&gt;
+It &lt;em&gt;inherits&lt;/em&gt; &lt;span class=&quot;underline-nh&quot; title=&quot;variables&quot;&gt;properties&lt;/span&gt; and &lt;span class=&quot;underline-nh&quot; title=&quot;functions&quot;&gt;methods&lt;/span&gt; from the parent class.&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;My &lt;code&gt;FlashLight&lt;/code&gt; class above inherits from my &lt;code&gt;item&lt;/code&gt; class.&lt;br /&gt;The &lt;code&gt;item&lt;/code&gt; class provides variables like &lt;code&gt;itemName&lt;/code&gt;, which stores the item name.&lt;/p&gt;
+
+&lt;!-- OOP Polymorphism --&gt;
+&lt;div id=&quot;ooppolymorphism&quot; style=&quot;display: inline-block; &quot;&gt;
+        &lt;head2&gt;Polymorphism:&lt;/head2&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indent&quot;&gt;Polymorphism in &lt;span class=&quot;underline-nh&quot; title=&quot;Object-oriented Programming&quot;&gt;OOP&lt;/span&gt; is both overloading and overiding functions.&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;Overloading a function is when you make a function with the same name but give it different parameters. This is to give a single function multiple uses under the same function.&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;Overriding is used when a virtual function is defined in a parent class, and you need to change the function to conform to what the current class needs.&lt;/p&gt;
+
+
+          
+          
+        
+      
+        </content><summary>        Project 2        This project, the first without a given title, was surprisingly easy. It did make me stretch a bit as I haven't embedded videos in HTML before. Did you know you have to have a video muted just for it to play? It doesn't even play if the video has no audio!        Contents:                                Loading From JSON                Loading From Resource Folder                Using Interfaces                Using Namespaces                Getters &amp;amp; Setters                Four Principles of Object Oriented Programming                			Encapsulation &amp;amp; Abstraction:                					Encapsulation				Abstraction			                	Inheritence &amp;amp; Polymorphism:                					Inheritence                        	Polymorphism					                Loading From JSON:        For whatever reason, I couldn't get regular JSON loading through Unity's resource loader. So, I used bog standard C# functions.To get JSON data from a file, call the jsonLoad.GetJsonFromPaths() function. I've implemented this class like this in my playerSave class:Here is what the code looks like when running in the game:        Loading From Resource Folder:        Loading assets from the resource folder is relatively easy. All you have to do is pass the path of the asset to the Resources.Load function. Just remember that the path of the resources folder is relative to Assets/Resources in your Unity project. Also, don't pass the file extension with the file path.My implementation uses the function above like so:Here is what the code looks like when running in the game:        Using Interfaces:        Interfaces are like classes in that they can be inherited. They are different in a few ways, though. Interfaces don't contain function definitions. Instead, they contain function declarations. The functions inherited have to be defined inside the inheriter.        Using Namespaces:        Namespaces allow you to import all of the classes inside the namespace into another C# script.I've implemented namespaces to separate my loading functions and ordering them under specific classes.        Getters &amp;amp; Setters:        Getters and Setters are functions that get and set private variables.I've used getters and setters to interact with a private variable when the programmer sets or gets a public variable.        Four Principals ofObject Oriented Programming        I've seperated out two of the principles because because of the way I've implemented them.        Encapsulation &amp;amp; Abstraction:                Encapsulation:        Encapsulation is making variables public, private, or protected.The way it's implemented here is pretty simplistic. I've made the text of the JSON file private, so anything outside the function can't modify it.        Abstraction:        Abstraction is the process of making private variables accessible through public functions.The way I've implemented abstraction is a bit different than most examples. I've used a public variable and its getters and setters to interact with the private variables.        Inheritence &amp;amp; Polymorphism:                Inheritence:        Inheritance is when you make a class derive from another class.It inherits properties and methods from the parent class.My FlashLight class above inherits from my item class.The item class provides variables like itemName, which stores the item name.        Polymorphism:        Polymorphism in OOP is both overloading and overiding functions.Overloading a function is when you make a function with the same name but give it different parameters. This is to give a single function multiple uses under the same function.Overriding is used when a virtual function is defined in a parent class, and you need to change the function to conform to what the current class needs.</summary></entry><entry><title>3 Blog Post For ENG301</title><id>https://longestboi.github.io/2022/10/eng301-3-blog-posts.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/10/eng301-3-blog-posts.html" /><published>2022-10-09T00:00:00-07:00</published><updated>2022-10-09T21:01:30-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
           
             &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/pcss/blogSummary.css&quot; /&gt;
 
