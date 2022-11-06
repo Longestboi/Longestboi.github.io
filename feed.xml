@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Andrew Long</title><subtitle>Blog & Such</subtitle><updated>2022-10-31T00:20:17-07:00</updated><id>https://longestboi.github.io/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.19">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://longestboi.github.io/" /><link rel="self" type="application/atom+xml" href="https://longestboi.github.io/feed.xml" /><author><name>Andrew Long</name><uri>https://longestboi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><entry><title>Project 2&amp;#58; Game Programming Essentials</title><id>https://longestboi.github.io/2022/10/project-2-gpe338.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/10/project-2-gpe338.html" /><published>2022-10-30T00:00:00-07:00</published><updated>2022-10-31T00:15:50-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Andrew Long</title><subtitle>Blog & Such</subtitle><updated>2022-11-06T12:59:56-08:00</updated><id>https://longestboi.github.io/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.19">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://longestboi.github.io/" /><link rel="self" type="application/atom+xml" href="https://longestboi.github.io/feed.xml" /><author><name>Andrew Long</name><uri>https://longestboi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><entry><title>Project 2&amp;#58; Game Programming Essentials</title><id>https://longestboi.github.io/2022/10/project-2-gpe338.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/10/project-2-gpe338.html" /><published>2022-10-30T00:00:00-07:00</published><updated>2022-11-04T02:22:56-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
           
             &lt;!-- Set the window title. Before, it had &quot;&amp;#58&quot; as plaintext in the title. --&gt;
 &lt;script&gt;window.top.document.title = &quot;Project 2&quot;;&lt;/script&gt;
@@ -13,11 +13,11 @@
 	img.imgUnderText{
 	  margin-top: -2.5em !important;
 	}
-	
+
 	break{
 	  margin-bottom: 2.5em !important;
 	}
-	
+
 	#quicklistfix::before{
 	  content: &quot;2.&quot; !important;
 	}
@@ -162,7 +162,6 @@ It &lt;em&gt;inherits&lt;/em&gt; &lt;span class=&quot;underline-nh&quot; title=&
 &lt;p class=&quot;indent&quot;&gt;Polymorphism in &lt;span class=&quot;underline-nh&quot; title=&quot;Object-oriented Programming&quot;&gt;OOP&lt;/span&gt; is both overloading and overiding functions.&lt;/p&gt;
 &lt;p class=&quot;indent&quot;&gt;Overloading a function is when you make a function with the same name but give it different parameters. This is to give a single function multiple uses under the same function.&lt;/p&gt;
 &lt;p class=&quot;indent&quot;&gt;Overriding is used when a virtual function is defined in a parent class, and you need to change the function to conform to what the current class needs.&lt;/p&gt;
-
 
           
           
