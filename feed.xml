@@ -1,4 +1,92 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Andrew Long</title><subtitle>Blog & Such</subtitle><updated>2022-12-06T15:31:55-08:00</updated><id>https://longestboi.github.io/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.19">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://longestboi.github.io/" /><link rel="self" type="application/atom+xml" href="https://longestboi.github.io/feed.xml" /><author><name>Andrew Long</name><uri>https://longestboi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><entry><title>Project 2&amp;#58; Game Programming Essentials</title><id>https://longestboi.github.io/2022/10/project-2-gpe338.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/10/project-2-gpe338.html" /><published>2022-10-30T00:00:00-07:00</published><updated>2022-11-04T02:22:56-07:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Andrew Long</title><subtitle>Blog & Such</subtitle><updated>2022-12-08T21:50:00-08:00</updated><id>https://longestboi.github.io/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.19">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://longestboi.github.io/" /><link rel="self" type="application/atom+xml" href="https://longestboi.github.io/feed.xml" /><author><name>Andrew Long</name><uri>https://longestboi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><entry><title>Project 4&amp;#58; Game Programming Essentials</title><id>https://longestboi.github.io/2022/12/project-4-gpe338.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/12/project-4-gpe338.html" /><published>2022-12-07T00:00:00-08:00</published><updated>2022-12-08T21:46:37-08:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
+          
+            &lt;!-- Set the window title. Before, it had &quot;&amp;#58&quot; as plaintext in the title. --&gt;
+&lt;script&gt;window.top.document.title = &quot;Project 4&quot;;&lt;/script&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/pcss/classwork.css&quot; /&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/pcss/blogSummary.css&quot; /&gt;
+
+&lt;!-- Header --&gt;
+&lt;div id=&quot;intro-head&quot;&gt;
+        &lt;head1 style=&quot;text-align: center;&quot;&gt;Project 4&lt;/head1&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indent&quot;&gt;Project 4 is one of the easiest yet, that doesn't mean I didn't have any issues however. When I first tried to do something akin to property drawers, I immediately disregarded property drawers and went straight to editor scripting and it was the worst mistake I could have made. I did this well before Project 4 was even talked about, so maybe that's why I find the concepts here easy.&lt;/p&gt;
+
+&lt;!-- TOC --&gt;
+&lt;div class=&quot;toc&quot; style=&quot;&quot;&gt;
+        &lt;div class=&quot;tocHead&quot;&gt;Contents:&lt;/div&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+        &lt;ol&gt;
+                &lt;li&gt;&lt;a href=&quot;#edscript&quot;&gt;Editor Scripting&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#attr&quot;&gt;Attributes&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#pd&quot;&gt;Property Drawer&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#bitmask&quot;&gt;Bitmasking&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#so&quot;&gt;Scriptable Objects&lt;/a&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+&lt;/div&gt;
+&lt;p class=&quot;indent&quot;&gt;&lt;/p&gt;
+
+&lt;div id=&quot;edscript&quot; style=&quot;display: inline-block; &quot;&gt;
+        &lt;head2&gt;Editor Scripting:&lt;/head2&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img title=&quot;Editor script for depreciation warning.&quot; class=&quot;cImg codeImg&quot; src=&quot;/assets/img/Project 4 - GPE338/EditorScripting.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;Editor scripting can be easy, only if you make it easy. Editor scripting is also incredibly powerful, but if you would like to keep the rest of the editor intact while modifying on property, use a property drawer instead. &lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;In my own example, I keep the code super simple. I draw a warning, then I draw the regular editor inspector.&lt;/p&gt;
+&lt;p&gt;&lt;img title=&quot;Depreciation warning shown in inspector.&quot; class=&quot;cImg&quot; style=&quot;width: 100% !important; margin-top: -3em !important; margin-bottom: -3em; !important&quot; src=&quot;/assets/img/Project 4 - GPE338/EditorScriptingDone.png&quot; /&gt;&lt;/p&gt;
+
+&lt;div id=&quot;attr&quot; style=&quot;display: inline-block; &quot;&gt;
+        &lt;head2&gt;Attributes:&lt;/head2&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img title=&quot;Multiple attributes.&quot; class=&quot;cImg codeImg&quot; src=&quot;/assets/img/Project 4 - GPE338/Attributes.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;From hiding variables in the editor or using custom property drawers, there are many reasons to use attributes in Unity. In the code above I use an attribute and a custom property drawer to hide a property depending on an enum variables value.&lt;/p&gt;
+&lt;p&gt;The inspector when the attributes are applied:&lt;/p&gt;
+&lt;p&gt;&lt;img title=&quot;Custom property drawer in inspector&quot; class=&quot;cImg codeImg&quot; style=&quot;width: 100% !important; margin-top: -3em !important; margin-bottom: -3em; !important&quot; src=&quot;/assets/img/Project 4 - GPE338/Custom_Property_Drawer.png&quot; /&gt;&lt;/p&gt;
+
+&lt;div id=&quot;pd&quot; style=&quot;display: inline-block; &quot;&gt;
+        &lt;head2&gt;Property Drawer:&lt;/head2&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img title=&quot;Complex looking property drawer code.&quot; class=&quot;cImg codeImg&quot; src=&quot;/assets/img/Project 4 - GPE338/EnumDraw.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;Property drawers in Unity are really useful if you need to change how one property is drawn. The code above looks absolutely insane, but all it does is get the value of an enum variable and disables the gui of the property if its value is passed to the attribute.&lt;/p&gt;
+&lt;p&gt;This is the product of the code:&lt;/p&gt;
+&lt;p&gt;&lt;img title=&quot;Custom property drawer in inspector&quot; class=&quot;cImg codeImg&quot; style=&quot;width: 100% !important; margin-top: -3em !important; margin-bottom: -3em; !important&quot; src=&quot;/assets/img/Project 4 - GPE338/Custom_Property_Drawer.png&quot; /&gt;&lt;/p&gt;
+
+&lt;div id=&quot;bitmask&quot; style=&quot;display: inline-block; &quot;&gt;
+        &lt;head2&gt;Bitmasking:&lt;/head2&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img title=&quot;Bitmasking code&quot; class=&quot;cImg codeImg&quot; src=&quot;/assets/img/Project 4 - GPE338/bitmask.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;This certainly isn't the method of bitmasking you'd be expecting in Unity, but this is bit masking. This function finds the position of duplicate characters in a string. More documentation on the methodologies behind this function can be found &lt;a class=&quot;underline&quot; target=&quot;_blank&quot; href=&quot;https://docs.google.com/document/d/1ZJhWrIwxs3e2ctn2m7Fqu29j7LCXNXrfgtt4Jq5dn6Q/edit?usp=sharing&quot;&gt;here&lt;/a&gt;, written in Python3.&lt;/p&gt;
+
+&lt;p&gt;With the code:&lt;/p&gt;
+&lt;div class=&quot;excerpt&quot;&gt;&lt;span class=&quot;codeExt&quot;&gt;FindDuplicateChars.PrintList(&lt;br /&gt;&amp;emsp;&amp;emsp;FindDuplicateChars.FindDuplicateCharInString(&quot;tmpt&quot;)&lt;br /&gt;&amp;nbsp;);&lt;/span&gt;&lt;/div&gt;
+&lt;p&gt;prints out this:&lt;/p&gt;
+&lt;p&gt;&lt;img title=&quot;Duplicates printed to the console&quot; class=&quot;cImg codeImg&quot; style=&quot;width: 100% !important; margin-top: -3em !important; margin-bottom: -3em; !important&quot; src=&quot;/assets/img/Project 4 - GPE338/duplicateFound.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;The reason the duplicate is found at 3 and not 4, is because strings are zero indexed.&lt;/p&gt;
+
+&lt;div id=&quot;so&quot; style=&quot;display: inline-block; &quot;&gt;
+        &lt;head2&gt;Scriptable Objects:&lt;/head2&gt;
+        &lt;hr class=&quot;line&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img title=&quot;Scriptable Object code&quot; class=&quot;cImg codeImg&quot; src=&quot;/assets/img/Project 4 - GPE338/ScriptableObjectCode.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;To create a scriptable object you need to add a &lt;code&gt;CreateAssetMenu&lt;/code&gt; attribute above the &lt;code&gt;ScriptableObject&lt;/code&gt; deriving class.&lt;/p&gt;
+&lt;p&gt;&lt;img title=&quot;Scriptable Object code&quot; class=&quot;cImg codeImg&quot; src=&quot;/assets/img/Project 4 - GPE338/ScriptableObjectProperty.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;The GameManager above has a references to the scriptable object and prints to the console if the debug setting in the scriptable object is true.&lt;/p&gt;
+&lt;p class=&quot;indent&quot;&gt;To complete the reference, drag the scriptable object onto the pointer property in the inspector.&lt;/p&gt;
+
+&lt;p&gt;&lt;img title=&quot;Scriptable Object code&quot; class=&quot;cImg backDrop&quot; src=&quot;/assets/img/Project 4 - GPE338/UnityScriptableObjectScreenshot.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;indent&quot;&gt;Scriptable objects are not typically edited because they are used as psuedo templates, but in my case it is being edited because the scriptable object holds setting data.&lt;/p&gt;
+
+          
+          
+        
+      
+        </content><summary>        Project 4        Project 4 is one of the easiest yet, that doesn't mean I didn't have any issues however. When I first tried to do something akin to property drawers, I immediately disregarded property drawers and went straight to editor scripting and it was the worst mistake I could have made. I did this well before Project 4 was even talked about, so maybe that's why I find the concepts here easy.        Contents:                                Editor Scripting                Attributes                Property Drawer		Bitmasking                Scriptable Objects                Editor Scripting:        Editor scripting can be easy, only if you make it easy. Editor scripting is also incredibly powerful, but if you would like to keep the rest of the editor intact while modifying on property, use a property drawer instead. In my own example, I keep the code super simple. I draw a warning, then I draw the regular editor inspector.        Attributes:        From hiding variables in the editor or using custom property drawers, there are many reasons to use attributes in Unity. In the code above I use an attribute and a custom property drawer to hide a property depending on an enum variables value.The inspector when the attributes are applied:        Property Drawer:        Property drawers in Unity are really useful if you need to change how one property is drawn. The code above looks absolutely insane, but all it does is get the value of an enum variable and disables the gui of the property if its value is passed to the attribute.This is the product of the code:        Bitmasking:        This certainly isn't the method of bitmasking you'd be expecting in Unity, but this is bit masking. This function finds the position of duplicate characters in a string. More documentation on the methodologies behind this function can be found here, written in Python3.With the code:FindDuplicateChars.PrintList(&amp;emsp;&amp;emsp;FindDuplicateChars.FindDuplicateCharInString(&quot;tmpt&quot;)&amp;nbsp;);prints out this:The reason the duplicate is found at 3 and not 4, is because strings are zero indexed.        Scriptable Objects:        To create a scriptable object you need to add a CreateAssetMenu attribute above the ScriptableObject deriving class.The GameManager above has a references to the scriptable object and prints to the console if the debug setting in the scriptable object is true.To complete the reference, drag the scriptable object onto the pointer property in the inspector.Scriptable objects are not typically edited because they are used as psuedo templates, but in my case it is being edited because the scriptable object holds setting data.</summary></entry><entry><title>Project 2&amp;#58; Game Programming Essentials</title><id>https://longestboi.github.io/2022/10/project-2-gpe338.html</id><link rel="alternate" type="text/html" href="https://longestboi.github.io/2022/10/project-2-gpe338.html" /><published>2022-10-30T00:00:00-07:00</published><updated>2022-12-08T21:33:10-08:00</updated><author><name>Andrew Long</name><uri>https://LongestBoi.github.io/</uri><email>AndrewRLong02@gmail.com</email></author><content type="html" xml:base="https://longestboi.github.io/">
           
             &lt;!-- Set the window title. Before, it had &quot;&amp;#58&quot; as plaintext in the title. --&gt;
 &lt;script&gt;window.top.document.title = &quot;Project 2&quot;;&lt;/script&gt;
@@ -66,7 +154,7 @@
 &lt;p class=&quot;indent&quot;&gt;For whatever reason, I couldn't get regular JSON loading through Unity's resource loader. So, I used bog standard C# functions.&lt;br /&gt;To get JSON data from a file, call the &lt;code&gt;jsonLoad.GetJsonFromPaths()&lt;/code&gt; function. &lt;br /&gt;I've implemented this class like this in my playerSave class:&lt;/p&gt;
 &lt;p&gt;&lt;img title=&quot;Demo code for Json Loader&quot; class=&quot;cImg codeImg imgUnderText&quot; src=&quot;/assets/img/Project 2/LoadingFromJson.png&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Here is what the code looks like when running in the game:&lt;/p&gt;
-&lt;video title=&quot;Demo of demo code above&quot; class=&quot;vid&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot;&gt;&lt;source src=&quot;/assets/img/Project 2/JSONSave.webm&quot; type=&quot;video/webm&quot; /&gt;&lt;/video&gt;
+&lt;video title=&quot;Demo of demo code above&quot; class=&quot;backDrop center&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot;&gt;&lt;source src=&quot;/assets/img/Project 2/JSONSave.webm&quot; type=&quot;video/webm&quot; /&gt;&lt;/video&gt;
 &lt;break&gt;&lt;/break&gt;
 
 &lt;!-- Loading From Resources --&gt;
@@ -78,7 +166,7 @@
 &lt;p class=&quot;indent&quot;&gt;Loading assets from the resource folder is relatively easy. All you have to do is pass the path of the asset to the &lt;code&gt;Resources.Load&lt;/code&gt; function. &lt;br /&gt;Just remember that the path of the resources folder is relative to &lt;code&gt;Assets/Resources&lt;/code&gt; in your Unity project. Also, don't pass the file extension with the file path.&lt;br /&gt;My implementation uses the function above like so:&lt;/p&gt;
 &lt;p&gt;&lt;img title=&quot;Demo code for Resource folder loading&quot; class=&quot;cImg codeImg imgUnderText&quot; src=&quot;/assets/img/Project 2/LoadFromResources.png&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Here is what the code looks like when running in the game:&lt;/p&gt;
-&lt;video title=&quot;Demo of demo code above&quot; class=&quot;vid&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot;&gt;&lt;source src=&quot;/assets/img/Project 2/TextureLoad.webm&quot; type=&quot;video/webm&quot; /&gt;&lt;/video&gt;
+&lt;video title=&quot;Demo of demo code above&quot; class=&quot;backDrop center&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot;&gt;&lt;source src=&quot;/assets/img/Project 2/TextureLoad.webm&quot; type=&quot;video/webm&quot; /&gt;&lt;/video&gt;
 &lt;break&gt;&lt;/break&gt;
 &lt;!-- Using Interfaces --&gt;
 &lt;div id=&quot;uinterface&quot; style=&quot;display: inline-block;&quot;&gt;
