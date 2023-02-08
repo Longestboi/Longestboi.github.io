@@ -1,1 +1,0 @@
-let t=TrelloPowerUp.iframe();function closePopup(){t.closePopup()}t.render((function(){t.sizeTo("#warning").done()}));
