@@ -1,0 +1,61 @@
+.blog-list-dl > dd {
+    margin-left: .8vmax;
+}
+
+.blog-list-header {
+    margin-bottom: 1.5vmax;
+}
+
+.blog-list-header > span {
+    font-size: 2vmax;
+    line-height: 1em;
+}
+
+.blog-list-header > hr {
+    width: 120%;
+}
+
+.blog-list-item {
+    margin-bottom: 1.5vmax; 
+    line-height: 1em;
+    width: auto;
+}
+
+.blog-list-item a {
+    text-decoration: none;
+}
+
+.blog-list-item-title {
+    font-size: 1.6vmax;
+}
+
+.blog-list-item::before {
+    content: "⎹";
+    color: var(--text-color-30);
+    font-size: 230%;
+    position: absolute;
+    transform: translate(-120%, 55%);
+    transition: transform 0.2s ease-in-out;
+}
+
+.blog-list-item:hover::before {
+    color: var(--link-color);
+    transform: translate(-135%, 55%);
+    transition: transform 0.2s ease-in-out
+}
+
+.blog-list-item-tag > *, .blog-list-item-tag > * > a {
+    font-size: 1vmax;
+    color: var(--text-color-80);
+}
+
+.blog-list-item-authors, .blog-list-item-authors > a {
+    font-size: 1.2vmax;
+    color: var(--text-color-80);
+}
+
+.blog-list-item-authors > a:hover,
+.blog-list-item-tag > * > a:hover {
+    color: var(--link-color);
+    text-decoration: none;
+}

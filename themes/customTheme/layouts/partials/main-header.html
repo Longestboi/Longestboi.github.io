@@ -1,0 +1,7 @@
+<div class="index-header-wrapper" style="background-image: url({{ if .Params.bannerImage }}{{.Params.bannerImage}}{{ else }}/{{ end }});">
+    <div class="index-header">
+        <img class="profile-image" alt="Profile image of GitHub user {{ .Site.Data.Accounts.Github }}" src="https://avatars.githubusercontent.com/{{ .Site.Data.Accounts.Github }}">
+        <p class="index-name">{{ .Site.Data._author.name }}</p>
+        <p class="index-splash">{{ .Site.Data._author.splash }}</p>
+    </div>
+</div>

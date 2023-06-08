@@ -1,0 +1,150 @@
+
+*,
+*::before,
+*::after {
+    font-family: 'LINESeedKR-Bd';
+    color: var(--text-color);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1.5vmax;
+}
+
+/* horizontal line */
+hr.dots {
+    border: none;
+}
+
+code {
+    font-size: .8em;
+    padding: .2em;
+    padding-top: .3em;
+    border-radius: .2em;
+    background: #282828;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+hr.dots:after {
+    --dots-diameter: .30em;
+    --dots-color: var(--text-color-50);
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    content: "";
+
+    background: var(--dots-color);
+    height: var(--dots-diameter);
+    width: var(--dots-diameter);
+    border-radius: 50%;
+
+    box-shadow: calc(2 * var(--dots-diameter)) 0 0 0 var(--dots-color), calc((-2 * var(--dots-diameter))) 0 0 0 var(--dots-color);
+    margin-bottom: 1em;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+div#content.site-gen,
+.blog-header > p, .page-header > p {
+    margin-left: var(--site-margin-side);
+    margin-right: var(--site-margin-side);
+}
+
+div#content.site-blog {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div#content.site-blog > main {
+    width: 75em;
+}
+
+div#content-left-bar,
+div#content-right-bar {
+    width: 25em;
+    display: flex;
+    justify-content: center;
+}
+
+main > article {
+    margin:auto;
+}
+
+article, footer, main {
+    margin-top: 1vmax;
+}
+
+p {
+    margin-bottom: 1vmax;
+}
+
+footer > .foot-selectables {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    /* background-color: aqua; */
+}
+
+footer > .foot-selectables > * {
+    text-decoration: none;
+    padding: var(--nav-padding);
+    background-color: var(--bg-color);
+}
+
+footer > .foot-selectables > *:not(.footer-name) {
+    margin-right: var(--nav-spacing);
+    transition: filter 0.2s ease-in-out;
+}
+
+footer > .foot-selectables > *:hover {
+    filter: invert(1);
+    transition: filter 0.2s ease-in-out;
+    color: var(--text-color);
+}
+
+footer > .foot-line {
+    color: var(--text-color-60);
+}
+
+a:hover::before, a:hover, a:hover::after{
+    color: var(--link-color);
+    transition: color 0.2s ease-in-out;
+}
+
+a {
+    transition: color 0.2s ease-in-out;
+    text-decoration: var(--link-color) underline .2vmax;
+}
+
+
+ul, dd {
+    padding-left: 1em;
+}
+
+/* Summary */
+
+summary {
+    cursor: pointer;
+    padding-left: 1.5vmax;
+}
+
+summary::marker {
+    content: none;
+}
+
+summary:before {
+    content: "▲";
+    font-size: 70%;
+    transform: translate(-1.5vmax, .2vmax) rotate(90deg);
+    transition: transform .1s ease;
+    position: absolute;
+}
+
+details[open] > summary:before {
+    transform: translate(-1.5vmax, .2vmax) rotate(180deg);
+    transition: transform .1s ease;
+}

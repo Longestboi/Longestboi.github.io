@@ -1,0 +1,28 @@
+.section-container {
+    padding-bottom: 2vmax;
+}
+
+.item-section {
+    display: flex;
+    font-size: 2vmax;
+    justify-content: space-between;
+    align-content: baseline;
+}
+
+.item-section > .item-section-text {
+    font-size: 5dvw !important;
+}
+
+.item-section > a.item-section-text {
+    text-decoration: none;
+}
+
+a.item-section-all {
+    align-self: end;
+}
+
+a.item-section-all::after {
+    content: "All →";
+    display: flex;
+    font-size: 3.8dvw !important;
+}

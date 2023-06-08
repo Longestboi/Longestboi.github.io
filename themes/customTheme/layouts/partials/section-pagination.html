@@ -1,0 +1,26 @@
+<div class="section-container">
+    {{ range (where .context.Pages "Section" .sect ) }}
+        {{/*  Check if .sectName is defined  */}}
+        {{ $titled := "ERROR" }}
+        {{ if $.sectName  }}
+            {{ $titled = $.sectName | title }}
+        {{ else }}
+            {{ $titled = $.sect | title }}
+        {{ end }}
+
+
+        {{ partial "main-section.html" (dict "context" . "Section" $titled "href" .Section ) }}
+        
+        {{ $f := true }}
+        {{ range first $.numPan .Pages }}
+
+            {{ if eq $f true }}<div class="panel-container">{{ end }}
+            {{ partial "panel.html" . }}
+            {{ if eq $f false }}</div> {{ end }}
+
+            {{ $f = not $f }}
+        {{ end }}
+        
+        {{ if eq $f false }}</div>{{ end }}
+    {{ end }}
+</div>

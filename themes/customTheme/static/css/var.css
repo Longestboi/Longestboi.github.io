@@ -1,0 +1,100 @@
+:root {
+    /* Text Color */
+    --text-color-h: 60;
+    --text-color-s: 3%;
+    --text-color-l: 91%;
+    --text-color-hsl: var( --text-color-h), var( --text-color-s), var( --text-color-l);
+    
+    --text-color: hsl(var(--text-color-hsl));
+    --text-color-10: hsl(var(--text-color-h), var(--text-color-s), calc(var(--text-color-l) * .1));
+    --text-color-20: hsl(var(--text-color-h), var(--text-color-s), calc(var(--text-color-l) * .2));
+    --text-color-30: hsl(var(--text-color-h), var(--text-color-s), calc(var(--text-color-l) * .3));
+    --text-color-40: hsl(var(--text-color-h), var(--text-color-s), calc(var(--text-color-l) * .4));
+    --text-color-50: hsl(var(--text-color-h), var(--text-color-s), calc(var(--text-color-l) * .5));
+    --text-color-60: hsl(var(--text-color-h), var(--text-color-s), calc(var(--text-color-l) * .6));
+    --text-color-70: hsl(var(--text-color-h), var(--text-color-s), calc(var(--text-color-l) * .7));
+    --text-color-80: hsl(var(--text-color-h), var(--text-color-s), calc(var(--text-color-l) * .8));
+    --text-color-90: hsl(var(--text-color-h), var(--text-color-s), calc(var(--text-color-l) * .9));
+
+    --text-color-a-10: hsla(var(--text-color-hsl), .1);
+    --text-color-a-20: hsla(var(--text-color-hsl), .2);
+    --text-color-a-30: hsla(var(--text-color-hsl), .3);
+    --text-color-a-40: hsla(var(--text-color-hsl), .4);
+    --text-color-a-50: hsla(var(--text-color-hsl), .5);
+    --text-color-a-60: hsla(var(--text-color-hsl), .6);
+    --text-color-a-70: hsla(var(--text-color-hsl), .7);
+    --text-color-a-80: hsla(var(--text-color-hsl), .8);
+    --text-color-a-90: hsla(var(--text-color-hsl), .9);
+
+    /* Link Color */
+    --link-color-h: 342;
+    --link-color-s: 94%;
+    --link-color-l: 62%;
+    --link-color-hsl: var(--link-color-h), var(--link-color-s), var(--link-color-l);
+
+    --link-color: hsl(var(--link-color-hsl));
+    --link-color-10: hsl(var(--link-color-h), var(--link-color-s), calc(var(--link-color-l) * .1));
+    --link-color-20: hsl(var(--link-color-h), var(--link-color-s), calc(var(--link-color-l) * .2));
+    --link-color-30: hsl(var(--link-color-h), var(--link-color-s), calc(var(--link-color-l) * .3));
+    --link-color-40: hsl(var(--link-color-h), var(--link-color-s), calc(var(--link-color-l) * .4));
+    --link-color-50: hsl(var(--link-color-h), var(--link-color-s), calc(var(--link-color-l) * .5));
+    --link-color-60: hsl(var(--link-color-h), var(--link-color-s), calc(var(--link-color-l) * .6));
+    --link-color-70: hsl(var(--link-color-h), var(--link-color-s), calc(var(--link-color-l) * .7));
+    --link-color-80: hsl(var(--link-color-h), var(--link-color-s), calc(var(--link-color-l) * .8));
+    --link-color-90: hsl(var(--link-color-h), var(--link-color-s), calc(var(--link-color-l) * .9));
+
+    --link-color-a-10: hsla(var(--link-color-hsl), .1);
+    --link-color-a-20: hsla(var(--link-color-hsl), .2);
+    --link-color-a-30: hsla(var(--link-color-hsl), .3);
+    --link-color-a-40: hsla(var(--link-color-hsl), .4);
+    --link-color-a-50: hsla(var(--link-color-hsl), .5);
+    --link-color-a-60: hsla(var(--link-color-hsl), .6);
+    --link-color-a-70: hsla(var(--link-color-hsl), .7);
+    --link-color-a-80: hsla(var(--link-color-hsl), .8);
+    --link-color-a-90: hsla(var(--link-color-hsl), .9);
+
+
+    /* Background Color */
+    --bg-color-h: 270;
+    --bg-color-s: 24%;
+    --bg-color-l: 11%;
+    --bg-color-hsl: var( --bg-color-h), var( --bg-color-s), var( --bg-color-l);
+
+    --bg-color: hsl(var(--bg-color-hsl));
+    --bg-color-10: hsl(var(--bg-color-h), var(--bg-color-s), calc(var(--bg-color-l) * .1));
+    --bg-color-20: hsl(var(--bg-color-h), var(--bg-color-s), calc(var(--bg-color-l) * .2));
+    --bg-color-30: hsl(var(--bg-color-h), var(--bg-color-s), calc(var(--bg-color-l) * .3));
+    --bg-color-40: hsl(var(--bg-color-h), var(--bg-color-s), calc(var(--bg-color-l) * .4));
+    --bg-color-50: hsl(var(--bg-color-h), var(--bg-color-s), calc(var(--bg-color-l) * .5));
+    --bg-color-60: hsl(var(--bg-color-h), var(--bg-color-s), calc(var(--bg-color-l) * .6));
+    --bg-color-70: hsl(var(--bg-color-h), var(--bg-color-s), calc(var(--bg-color-l) * .7));
+    --bg-color-80: hsl(var(--bg-color-h), var(--bg-color-s), calc(var(--bg-color-l) * .8));
+    --bg-color-90: hsl(var(--bg-color-h), var(--bg-color-s), calc(var(--bg-color-l) * .9));
+
+    --bg-color-a-10: hsla(var(--bg-color-hsl), .1);
+    --bg-color-a-20: hsla(var(--bg-color-hsl), .2);
+    --bg-color-a-30: hsla(var(--bg-color-hsl), .3);
+    --bg-color-a-40: hsla(var(--bg-color-hsl), .4);
+    --bg-color-a-50: hsla(var(--bg-color-hsl), .5);
+    --bg-color-a-60: hsla(var(--bg-color-hsl), .6);
+    --bg-color-a-70: hsla(var(--bg-color-hsl), .7);
+    --bg-color-a-80: hsla(var(--bg-color-hsl), .8);
+    --bg-color-a-90: hsla(var(--bg-color-hsl), .9);
+
+    --nav-padding: .50vmax;
+    --nav-spacing: .3vmax;
+
+    --filter-text-color: invert(100%) sepia(2%) saturate(798%) hue-rotate(347deg) brightness(95%) contrast(92%);
+    --filter-bg-color: invert(6%) sepia(9%) saturate(1672%) hue-rotate(201deg) brightness(94%) contrast(93%);
+
+    --site-margin-side: 15vmax;
+    --blog-margin-side: 20vmax;
+}
+
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}

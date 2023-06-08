@@ -1,0 +1,19 @@
+{{ if .Param "authors" }}
+	{{/* Handle if .Params.authors is string slice */}}
+    {{ $is_sli := reflect.IsSlice .Params.authors }}
+    {{ if not $is_sli }}
+        <a href="/authors/{{ .Params.authors | urlize }}">{{ .Params.authors }}</a>
+    {{ else }}
+        {{ $len := .Params.authors | len }}
+        {{ $f := index .Params.authors (sub $len 1)}}
+
+        {{ range $n := .Params.authors }}
+            {{/* Stop last name in blog post from having comma */}}
+            {{ if not (eq $f $n) }}
+                <a href="/authors/{{ $n | urlize }}">{{ $n }}</a>, 
+            {{ else }}
+                <a href="/authors/{{ $n | urlize }}">{{ $n }}</a>
+            {{ end }}
+        {{ end }} {{/* author range */}}
+    {{ end }}
+{{ end }}

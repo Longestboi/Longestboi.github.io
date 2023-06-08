@@ -1,0 +1,68 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+div.toc-wrapper {
+    position: relative;
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    /* bottom: 0; */
+    /* (-1 * (x / 2) ) - 7.5 */
+    /* transform: translateX(calc((calc(-1 * var(--blog-margin-side)) / 2 ) - 7.5vmax)) ; */
+}
+
+div.toc-wrapper a {
+    text-decoration: none;
+}
+
+div.toc {
+    position: sticky;
+    overflow: visible;
+    z-index: 100;
+    top: calc(1.5vmax + 3.5vmax);
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    background-color: var(--bg-color-80);
+    border: 2px solid var(--bg-color-40);
+    border-radius: 10px;
+    padding-left: 1vmax;
+    padding-right: 1vmax;
+    padding-top: .5vmax;
+    padding-bottom: .5vmax;
+}
+
+div.toc  div.tocCont > ol {
+    padding-left: 2vmax;
+    margin-bottom: auto;
+}
+
+div.toc summary {
+    display: flex;
+    padding-left: auto;
+}
+
+div.toc div.tocHead {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5vmax;
+    width: 100%;
+}
+
+div.toc div.tocHead {
+    margin-bottom: .5vmax;
+}
+
+div.toc div.tocCont  ol > li{
+    text-align: left;
+    font-size: 1vmax;
+    word-wrap: break-word;
+    margin-left: 1em;
+}
+
+div.toc div.tocCont  ol > li> a{
+    font-weight: 100;
+    font-size: 1.2vmax;
+}

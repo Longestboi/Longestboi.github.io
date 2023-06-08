@@ -1,0 +1,14 @@
+{{ define "header" }}
+    {{ partial "main-header.html" . }}
+{{ end }} {{/* header */}}
+
+{{ define "main" }}
+    <article class="text-section">
+        {{ .Content }}
+        
+        {{ partial "section-pagination.html" (dict "context" . "sect" "games" "numPan" "4") }}
+        {{ partial "section-pagination.html" (dict "context" . "sect" "projects" "numPan" "2") }}
+        {{ partial "section-pagination.html" (dict "context" . "sect" "blog" "sectName" "Blog Posts" "numPan" "2") }}
+
+    </article>
+{{ end }} {{/* main */}} 

@@ -1,0 +1,134 @@
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    background: var(--bg-color-50) !important;
+    width: 17vmax !important;
+    /* max-width: 3vmax; */
+    box-shadow: -5px 10px 10px 5px var(--text-color-a-30);
+    right: 0;
+    top: 2.8vmax;
+}
+
+/* Spacing inbetween buttons in dropdown */
+.dropbtn {
+    margin-top: calc(var(--nav-spacing) / 2);
+    margin-bottom: calc(var(--nav-spacing) / 2);
+    background-color: var(--bg-color);
+}
+
+/* For anchor tag interactable space */
+.dropbtn > a {
+    padding-top: var(--nav-padding);
+    padding-bottom: var(--nav-padding);
+    display: block;
+}
+
+.dropbtn:not(.drop-top-spacer):hover {
+    filter: invert(1);
+}
+
+.dropbtn, .dropbtn:hover {
+    transition: filter .2s ease-in-out;
+}
+
+.dropbtn::marker {
+    content: "";
+}
+
+.dropbtn > * {
+    font-size: 1.5vmax;
+}
+
+/* a.dropbtn:hover{
+    filter: invert(1);
+} */
+
+.drop-top-spacer, .drop-bot-spacer {
+    display: none !important;
+}
+
+
+.dropbtn-top {
+    margin-top: 0;
+}
+
+.dropbtn-bottom {
+    margin-bottom: 0;
+}
+
+.dropdown-content > * > a {
+    display: block;
+}
+
+.dropdown:active .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    visibility: visible;
+}
+
+.socmed-bar {
+    display: flex;
+    background-color: var(--bg-color);
+    justify-content: space-between;
+    padding: calc(var(--nav-padding) * 2);
+    height: 4vmax;
+    margin-top: calc(var(--nav-spacing) / 2);
+}
+
+li.dropbtn > a, .socmed-btn {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: filter .1s ease-in-out;
+}
+
+.socmed-btn:hover, .socmed-btn {
+    -webkit-mask-size: 2vmax;
+    mask-size: 2vmax;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    transition: background-color .2s ease-in-out;
+}
+
+.socmed-btn {
+    background-color: white;
+}
+
+.socmed-btn:hover {
+    background-color: var(--link-color);
+}
+
+.linkedin-svg, .github-svg, .email-svg,
+.twitter-svg, .youtube-svg, .discord-svg {
+    display: flex;
+    width: 2vmax;
+}
+
+.linkedin-svg {
+    mask-image: url(/svg/LinkedIn.svg);
+}
+
+.github-svg {
+    mask-image: url(/svg/GitHub.svg);
+}
+
+.email-svg {
+    mask-image: url(/svg/Gmail.svg);
+}
+
+.twitter-svg {
+    mask-image: url(/svg/Twitter.svg);
+}
+
+.youtube-svg {
+    mask-image: url(/svg/YouTube.svg);
+}
+
+.discord-svg {
+    mask-image: url(/svg/discord-icon.svg);
+}

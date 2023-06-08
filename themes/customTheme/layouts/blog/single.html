@@ -1,0 +1,17 @@
+{{ define "header"}}
+    {{ partial "blog-header.html" . }}
+{{ end }} {{/* header */}}
+
+{{ define "main" }}
+	<div id="content-left-bar">
+	    {{- partial "toc.html" . -}}
+	</div>
+	<main>
+        {{ .Content }}
+        {{- partialCached "footer.html" . -}}
+	</main>
+	<div id="content-right-bar">
+	    {{ .Params.right }}
+	</div>
+{{ end }} {{/* main */}}
+

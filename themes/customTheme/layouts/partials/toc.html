@@ -1,0 +1,24 @@
+{{ if or .Params.toc (eq .Params.toc true)  }}
+
+<link rel="stylesheet" href="/css/toc.css">
+<div class="toc-wrapper" >
+    <style>
+        {{ if .Params.tocEndlevel }}
+            #TableOfContents {{ range (seq .Params.tocEndlevel) }}{{ printf "ol " }}{{ end }} {
+    	        display: none;
+    	    }
+    	{{ end }}
+    </style>
+    <div class="toc" >
+        <div class="tocHead">
+            Contents:
+            <hr class="line">
+        </div>
+        <div class="tocCont">
+            	{{.TableOfContents}}
+        </div>
+        <div class="tocFoot"></div>
+    </div>
+</div>
+
+{{ end }}

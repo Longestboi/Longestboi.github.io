@@ -1,0 +1,20 @@
+<div class="panel" style="background-image: url({{ if .Params.pannelImage }}{{ .Permalink }}{{.Params.pannelImage}}{{ else }}.Params.bannerImage{{ end }});">
+    <div class="panel-content">
+        <div class="panel-top">
+            <div class="panel-title-section">
+                <p class="panel-title">{{ .Title }}</p>
+                <p class="panel-date">{{ if eq .Params.isGame true }}⌜{{ .Date.Format "2006" }}⌟{{ end }}</p>
+            </div>
+            <div class="panel-desc">
+                <p>{{ .Summary }}</p>
+                
+            </div>
+        </div>
+        <div class="panel-bottom">
+            <div class="panel-roles">
+            {{ if .Params.roles }}{{ partial "getgameroles.html" . }}{{ else }}<span></span>{{ end }}
+            </div>
+            <a href="{{ .Permalink }}" class="panel-more" aria-label="More about {{ .Title }}"></a>
+        </div>
+    </div>
+</div>

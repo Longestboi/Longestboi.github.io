@@ -1,0 +1,9 @@
+<div align="center" style="overflow: hidden;">
+    <video title="{{ if .Get "title" }}{{ .Get "title" }}{{ else }}{{ end }}"
+    style="
+        width: {{ if .Get "width" }}{{ .Get "width" }}{{ else }}100%{{end}};
+    "
+    autoplay loop muted>
+    <source src="{{ .Get "src" }}" type="video/webm">
+    </video>
+</div>

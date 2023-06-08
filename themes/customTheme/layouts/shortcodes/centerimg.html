@@ -1,0 +1,9 @@
+<div align="center" style="overflow: hidden;">
+    <img  title="{{ if .Get "title" }}{{ .Get "title" }}{{ else }}{{ end }}"
+        style="
+            margin-top: {{ if .Get "margin" }}{{ .Get "margin" }}{{ else }}0{{end}};
+            margin-bottom: {{ if .Get "margin" }}{{ .Get "margin" }}{{ else }}0{{end}};
+            width: {{ if .Get "width" }}{{ .Get "width" }}{{ else }}100%{{end}};
+        "
+        src="{{ .Get "src" }}">
+</div>

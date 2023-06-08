@@ -1,0 +1,10 @@
+<div class="blog-header-wrapper" style="background-image: url({{ if .Params.bannerImage }}{{ .Permalink }}{{.Params.bannerImage}}{{ else }}/{{ end }});">
+    <div class="blog-header">
+        <p class="blog-title">{{ .Params.title }}</p>
+        <p class="blog-attrib">by {{ partial "getpageauthors.html" . }} on ⌜{{ .Params.date | time.Format ":date_medium" }}⌟
+        </p>
+        <p class="blog-tags">
+            {{ partial "getpagetags.html" . }}
+        </p>
+    </div>
+</div>

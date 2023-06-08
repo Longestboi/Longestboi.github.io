@@ -1,0 +1,45 @@
+<nav class="navigation">
+
+    <div class="nav-left">
+        <div class="nav-name">
+            <a class="nav-name-link" href="{{ .Site.Home.RelPermalink }}">
+                {{ .Site.Data._author.name }}
+            </a>
+        </div>
+    </div>
+    
+    <div class="nav-right">
+        <div class="nav-int">
+            <a href="/projects">Projects</a>
+            <a href="/games">Games</a>
+            <a href="/blog">Blog</a>
+        </div>
+
+        <div class="nav-menu dropdown">
+            <button class="nav-menu-icon" aria-label="Hamburger Menu Button">
+                <svg class="hamburger-menu" viewBox="0 0 100 100" width="40" fill="var(--text-color)"> 
+                    <rect class="line ham-top" width="80" height="10" x="10" y="25" rx="5"></rect>
+                    <rect class="line ham-mid" width="80" height="10" x="10" y="45" rx="5"></rect>
+                    <rect class="line ham-bot" width="80" height="10" x="10" y="65" rx="5"></rect>
+                </svg>
+            </button>
+            <nav class="dropdown-content">
+                <ul>
+                    <li class="dropbtn drop-top-spacer">&nbsp;</li>
+                    <li class="dropbtn dropbtn-top"><a href="/portfolio">Portfolio</a></li>
+                    <li class="dropbtn"><a href="/boards">Boards</a></li>
+                    <li class="dropbtn"><a href="/contacts">Contacts</a></li>
+                    <li class="dropbtn dropbtn-bottom"><a href="/about">About</a></li>
+                    <div class="socmed-bar">
+                        <a class="socmed-btn linkedin-svg" target="_blank" rel="noopener noreferrer" title="LinkedIn" href="https://www.linkedin.com/in/{{ .Site.Data.Accounts.Linkedin }}"></a>
+                        <a class="socmed-btn github-svg" target="_blank" rel="noopener noreferrer" title="GitHub" href="https://github.com/{{ .Site.Data.Accounts.Github }}"></a>
+                        <a class="socmed-btn email-svg" target="_blank" rel="noopener noreferrer" title="Email" href="mailto:{{ .Site.Data.Accounts.Email }}"></a>
+                        <a class="socmed-btn discord-svg" target="_blank" rel="noopener noreferrer" title="Discord" href="https://www.discordapp.com/users/{{ .Site.Data.Accounts.Discord }}"></a>
+                        <a class="socmed-btn youtube-svg" target="_blank" rel="noopener noreferrer" title="Youtube" href="https://www.youtube.com/@{{ .Site.Data.Accounts.Youtube }}"></a>
+                        <a class="socmed-btn twitter-svg" target="_blank" rel="noopener noreferrer" title="Twitter" href="https://twitter.com/{{ .Site.Data.Accounts.Twitter }}"></a>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</nav>

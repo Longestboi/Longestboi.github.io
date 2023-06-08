@@ -1,0 +1,88 @@
+
+.navigation {
+    display: flex;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    justify-content: space-between;
+    overflow: visible;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    box-shadow: 0 .2vmax var(--text-color);
+}
+
+.navigation * {
+    font-size: 4dvw;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left > div, .nav-right > div {
+    display: flex;
+}
+
+.navigation > .nav-left > * > a,
+.navigation > .nav-right > * > a {
+    padding: calc(var(--nav-padding));
+    margin: calc(var(--nav-spacing) / 2);
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.navigation > .nav-left > *:not(.nav-name) > a,
+.navigation > .nav-right > * > a {
+    background-color: var(--bg-color);
+    transition: filter 0.2s ease-in-out;    
+}
+
+.navigation > .nav-left > *:not(.nav-name) > a:hover,
+.navigation > .nav-right > * > a:hover {
+    filter: invert(1);
+    transition: filter 0.2s ease-in-out;
+}
+
+.nav-name {
+    margin-left: var(--nav-spacing);
+}
+
+.nav-name:hover {
+    filter: brightness(150%);
+}
+
+.nav-name, .nav-name:hover {
+    transition: filter .5s ease-in-out;
+}
+
+.nav-menu {
+    margin-right: calc(var(--nav-spacing) * 1.5);
+}
+
+.nav-menu-icon {
+    display: flex;
+    background-color: var(--bg-color);
+    border: 0;
+    z-index: 20;
+    
+    height: 7dvw;
+    width: 7dvw;
+}
+
+.nav-menu-icon:hover {
+    filter: invert(1);
+}
+
+.nav-menu-icon, .nav-menu-icon:hover {
+    transition: filter .2s ease-in-out;
+} 
+
+/*.nav-menu-icon::after {
+    content: url(https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg);
+    filter: var(--filter-text-color);
+}*/
+
+.nav-menu-icon:focus-within {
+    filter: invert(1);
+}

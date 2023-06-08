@@ -1,0 +1,18 @@
+{{ if .Param "roles" }}
+	{{/*  Handle if there is only one role  */}}
+    {{ $is_sli := reflect.IsSlice .Params.roles }}
+    <span>
+    {{ if not $is_sli }}
+    	<span>Role: </span><div class="tag-wrapper"><a class="game-role" href="/roles/{{ .Params.roles | urlize }}">{{ .Params.roles }}</a></div>
+    {{ else }}
+        <span>Roles: </span>
+
+        {{ $len := .Params.roles | len }}
+        {{ $f := index .Params.roles (sub $len 1)}}
+
+        {{ range $tag := .Params.roles }}
+            <div class="tag-wrapper"><a class="game-role" href="/roles/{{ $tag | urlize }}">{{ $tag }}</a></div>
+        {{ end }} {{/* author range */}}
+    {{ end }}
+    </span>
+{{ end }}

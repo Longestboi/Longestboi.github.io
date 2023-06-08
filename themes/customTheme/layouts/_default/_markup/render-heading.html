@@ -1,0 +1,21 @@
+
+{{ if eq .Level 1}}
+<div class="short-intro-head">
+	<head{{ .Level }} class="short-article-main-header">{{ .Text }}</head{{ .Level }}>
+	<hr class="short-intro-line">
+</div>
+{{ else if eq .Level 2}}
+<div class="blog-head-2-wrapper" style="display: inline-block; ">
+	<div id="{{ .Anchor }}" style="position: relative; width: 0; height: 5em; margin-top: -5em;"></div>
+	<head{{ .Level }} class="blog-head-2">{{ htmlUnescape .Text }}</head{{ .Level }}>
+	<hr class="line" style="width: 110%;">
+</div>
+{{ else if eq .Level 3 }}
+<div style="display: inline-block;" id="{{ .Anchor }}" class="blog-head-3">
+	<head{{ .Level }}>{{ htmlUnescape .Text }}</head{{ .Level }}>
+	<hr class="line" style="width: 100%;">
+</div>
+{{ else }}
+<h{{ .Level }}>{{ .Text }}</h{{ .Level }}>
+{{ end }}
+

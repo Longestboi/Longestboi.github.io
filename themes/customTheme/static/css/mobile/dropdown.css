@@ -1,0 +1,147 @@
+.dropdown {
+    position: relative;
+    /* background-color: none; */
+}
+
+.dropdown-content {
+    visibility: hidden;
+    position: absolute;
+    width: 100vw !important;
+    width: 100dvw !important;
+    height: 100vh;
+    height: 100dvh;
+    box-shadow: none;
+    right: calc(-1 * calc(var(--nav-spacing) * 1.5));
+    top: 0;
+    z-index: 0;
+    /*background-color: var(--bg-color) !important;*/
+}
+
+.dropdown-content > ul {
+    background: var(--bg-color-50);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-content a, .dropdown-content li {
+    font-size: 5dvh;
+}
+
+/* Spacing inbetween buttons in dropdown */
+.dropbtn {
+    margin-top: calc(var(--nav-spacing) / 2);
+    margin-bottom: calc(var(--nav-spacing) / 2);
+    background-color: var(--bg-color);
+}
+
+/* For anchor tag interactable space */
+.dropbtn > a {
+    padding-top: var(--nav-padding);
+    padding-bottom: var(--nav-padding);
+    display: block;
+    text-align: center;
+}
+
+.dropbtn:not(.drop-top-spacer):hover {
+    filter: invert(1);
+}
+
+.dropbtn, .dropbtn:hover {
+    transition: filter .2s ease-in-out;
+}
+
+.dropbtn::marker {
+    content: "";
+}
+
+.dropbtn > * {
+    font-size: 1.5vmax;
+}
+
+.drop-top-spacer {
+    display: block !important;
+    margin-top: 0vmax !important;
+    height: calc(4vmax + calc(var(--nav-spacing) / 2));
+}
+
+.dropbtn-bottom {
+}
+
+.dropdown:active .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    visibility: visible;
+}
+
+.socmed-bar {
+    position: absolute;
+    margin-bottom: 0;
+    bottom: 0;
+    display: flex;
+    background-color: var(--bg-color);
+    justify-content: space-between;
+    padding: calc(var(--nav-padding) * 2);
+    height: 8vmax;
+    width: 100%;
+    margin-top: calc(var(--nav-spacing) / 2);
+}
+
+li.dropbtn > a, .socmed-btn {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: filter .1s ease-in-out;
+}
+
+.socmed-btn:hover, .socmed-btn {
+    -webkit-mask-size: 6vmax;
+    mask-size: 6vmax;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    transition: background-color .2s ease-in-out;
+}
+
+.socmed-btn {
+    background-color: white;
+}
+
+.socmed-btn:hover {
+    background-color: var(--link-color);
+}
+
+.linkedin-svg, .github-svg, .email-svg,
+.twitter-svg, .youtube-svg, .discord-svg {
+    display: flex;
+    width: 10vmax;
+}
+
+.linkedin-svg {
+    -webkit-mask-image: url(/svg/LinkedIn.svg);
+    mask-image: url(/svg/LinkedIn.svg);
+}
+
+.github-svg {
+    -webkit-mask-image: url(/svg/GitHub.svg);
+    mask-image: url(/svg/GitHub.svg);
+}
+
+.email-svg {
+    -webkit-mask-image: url(/svg/Gmail.svg);
+    mask-image: url(/svg/Gmail.svg);
+}
+
+.twitter-svg {
+    -webkit-mask-image: url(/svg/Twitter.svg);
+    mask-image: url(/svg/Twitter.svg);
+}
+
+.youtube-svg {
+    -webkit-mask-image: url(/svg/YouTube.svg);
+    mask-image: url(/svg/YouTube.svg);
+}
+
+.discord-svg {
+    -webkit-mask-image: url(/svg/discord-icon.svg);
+    mask-image: url(/svg/discord-icon.svg);
+}

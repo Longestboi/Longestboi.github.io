@@ -1,0 +1,57 @@
+pre.code-block {
+    background: #282828;
+    padding: .5em;
+    border-radius: .2em;
+    margin-bottom: .5em;
+}
+pre.code-block > *,
+pre.code-block > * > * {
+    font-size: .92em;
+    font-family: Iosevka Web,Consolas,Courier,monospace;
+    font-weight: 500;
+}
+
+pre.code-block > span {
+    display: inline-block;
+    line-height: 1.3em;
+    --cyan: #8ec07c;
+    --green: #b8bb26;
+    --yellow: #fabd2f;
+    --red: #fb4934;
+    --purple: #d3869b;
+    --grey: #7c6f64;
+}
+
+span.renpy-code-block > span.token.comment,
+span.rpy-code-block > span.token.comment,
+span.python-code-block > span.token.comment {
+    color: var(--grey);
+}
+
+span.python-code-block > span.token.operator{
+    color: var(--cyan);
+}
+  
+span.renpy-code-block > span.token.tag,
+span.rpy-code-block > span.token.tag {
+    color: var(--red);
+}
+  
+span.renpy-code-block > span.token.property,
+span.renpy-code-block > span.token.function,
+span.rpy-code-block > span.token.property,
+span.rpy-code-block > span.token.function,
+span.python-code-block > span.token.function {
+    color: var(--yellow);
+}
+  
+span.renpy-code-block > span.token.string,
+span.rpy-code-block > span.token.string,
+span.python-code-block > span.token.string{
+    color: var(--green);
+}
+  
+span.renpy-code-block > span.token.number,
+span.rpy-code-block > span.token.number {
+    color: var(--purple);
+}

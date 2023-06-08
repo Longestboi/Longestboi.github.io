@@ -1,0 +1,101 @@
+
+*,
+*::before,
+*::after {
+    font-family: 'LINESeedKR-Bd';
+    color: var(--text-color);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 3vmax;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+div#content.site-gen,
+.blog-header > p, .page-header > p {
+    margin-left: 1vmax;
+    margin-right: 1vmax;
+}
+
+div#content.site-blog {
+    margin-left: 1vmax;
+    margin-right: 1vmax;
+}
+
+main > article {
+    margin:auto;
+}
+
+article, footer, main {
+    margin-top: 1vmax;
+}
+
+p {
+    margin-bottom: 1vmax;
+}
+
+footer > .foot-selectables {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    /* background-color: aqua; */
+}
+
+footer > .foot-selectables > * {
+    text-decoration: none;
+    padding: var(--nav-padding);
+    background-color: var(--bg-color);
+}
+
+footer > .foot-selectables > *:not(.footer-name) {
+    margin-right: var(--nav-spacing);
+    transition: filter 0.2s ease-in-out;
+}
+
+footer > .foot-selectables > *:hover {
+    filter: invert(1);
+    transition: filter 0.2s ease-in-out;
+    color: var(--text-color);
+}
+
+footer > .foot-line {
+    color: var(--text-color-60);
+}
+
+a:hover::before, a:hover, a:hover::after{
+    color: var(--link-color);
+    transition: color 0.2s ease-in-out;
+}
+
+a {
+    transition: color 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+
+/* Summary */
+
+summary {
+    cursor: pointer;
+    padding-left: 1.5vmax;
+}
+
+summary::marker {
+    content: none;
+}
+
+summary:before {
+    content: "▲";
+    font-size: 70%;
+    transform: translate(-1.5vmax, .2vmax) rotate(90deg);
+    transition: transform .1s ease;
+    position: absolute;
+}
+
+details[open] > summary:before {
+    transform: translate(-1.5vmax, .2vmax) rotate(180deg);
+    transition: transform .1s ease;
+}

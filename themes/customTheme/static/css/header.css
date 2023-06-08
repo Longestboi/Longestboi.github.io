@@ -1,0 +1,75 @@
+.index-header {
+    align-items: center;
+}
+
+.index-header > p, .blog-header > p, .page-header > p {
+    margin-bottom: 0;
+}
+
+img.profile-image {
+    display: flex;
+    height: 15vw;
+    height: 15dvw;
+    border-radius: 50%;
+    border: .5vmax solid var(--bg-color);
+}
+
+.index-name {
+    font-size: 2.5vw;
+    font-size: 2.5dvw;
+}
+
+p.index-splash {
+    font-size: 1.2vw;
+    font-size: 1.2dvw;
+}
+
+.blog-header-wrapper, .page-header-wrapper, .index-header-wrapper {
+    background-color: var(--text-color-50);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.blog-header, .page-header, .index-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 25vmax;
+    backdrop-filter: blur(5px);
+}
+
+.blog-header > *, .page-header > *, .index-header > * {
+    --text-backdrop: drop-shadow(.1em .1em .05em var(--text-color-10));
+    filter: var(--text-backdrop);
+}
+
+.blog-header a, .page-header a {
+    text-decoration: none;
+}
+
+.page-title {
+    align-self: center;
+    font-size: 5vmax;
+}
+
+.blog-title {
+    font-size: 4vmax;
+    line-height: 95%;
+}
+
+.blog-attrib {
+    font-size: 1.5vmax;
+    margin-top: .5vmax;
+}
+
+.blog-tags {
+    font-size: 1.1vmax;
+    /* margin-top: .5vmax; */
+    color: var(--text-color-90);
+}
+
+.blog-tags > * {
+    color: var(--text-color-90);
+    font-size: 100%;
+}

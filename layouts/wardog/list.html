@@ -1,0 +1,70 @@
+{{ define "header"}}
+    {{- partial "page-header.html" . -}}
+{{ end }} {{/* header */}}
+
+{{ define "main" }}
+<head>
+    <link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/blog-list.css">
+</head>
+{{/* Check if type is blog so we can enable or disable this... */}}
+<div id="content-left-bar"></div>
+<main>
+<style>
+    	div.subsection-title > a > span::after {
+    	    content: "→";
+    	    padding-left: .25em;
+    	    color: var(--text-color-50);
+    	    transition: color 0.2s ease-in;
+    	}
+    	
+    	div.subsection-title > a:hover > span::after {
+    	    color: var(--link-color);
+    	    transition: color 0.2s ease-in;
+    	}
+    	
+    	div.subsection-title > a:hover > span {
+    	    transform: translatex(20%) !important;
+    	    transition: transform 0.3s;
+    	}
+
+    	div.subsection-title > a > span {
+    	    font-size: 1em;
+    	    position: absolute;
+    	    transform: translatex(0%) !important;
+    	    transition: transform 0.3s;
+    	}
+
+    	div.subsection-title > a {
+    	    font-size: 1.3em;
+    	    text-decoration: none;
+    	}
+    
+    </style>
+    
+    <!-- Ranges through content/posts/*.md -->
+    {{ $secs := "" }}
+
+    {{ range .Data.Pages }}
+        {{/* Absolutely disgusting, but I have no idea how to do this any other way. */}}
+    	{{ $tmp := replace (replace "<div class=\"subsection-title\"><a href=\"PERM\">TITLE<span class=\"arrow\"></span></a></div>" "PERM" .RelPermalink) "TITLE" .Title }}
+        {{ $secs = merge $secs (dict .Title $tmp) }}
+    {{ end }}
+    
+    {{ $mp := dict "%%book-like%%" "Book-Like" }}
+    
+    <article>
+        <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
+        {{ $fullpage := .Content }}
+        {{ range $k, $v := $secs }}
+            {{ range $ks, $vs := $.Params.replace }}
+                {{ if eq $k $vs }}
+                    {{ $fullpage = (replace $fullpage $ks $v) }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+        {{ $fullpage | safeHTML }}
+    </article>
+</main>
+<div id="content-right-bar"></div>
+{{ end }}

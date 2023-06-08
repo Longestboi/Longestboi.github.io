@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{- partial "head.html" . -}}
+    <body>
+        {{- partialCached "nav.html" . -}}
+        {{- block "header" . }}{{- end }}
+        <div id="content" class="site-gen">
+            {{- block "main" . }}{{- end }}
+            {{- partialCached "footer.html" . -}}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,109 @@
+.panel-container {
+    display: flex;
+    width: 100%;
+    /* flex-wrap: wrap; */
+}
+
+.panel-content {
+    --big-text-size: 1em;
+    --date-text-size: .8em;
+    --desc-text-size: .84em;
+    --role-text-size: .8em;
+    --text-backdrop: drop-shadow(.1em .1em .05em var(--text-color-10));
+    
+    --content-size: 10;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(var(--content-size) * 1em);
+    -webkit-backdrop-filter: blur(2px) brightness(90%);;
+    backdrop-filter: blur(2px) brightness(90%);;
+    transition: backdrop-filter 0.2s ease-in-out;
+    padding: .5vmax .5vmax .2vmax;
+}
+
+.panel {
+    margin: .5%;
+    width: 100%;
+    background-color: var(--text-color-40);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+div.panel-content:hover {
+    -webkit-backdrop-filter: blur(15px) brightness(70%);
+    backdrop-filter: blur(15px) brightness(70%);
+    transition: backdrop-filter 0.5s ease-in-out;
+}
+
+.panel-title-section {
+    display: flex;
+}
+
+.panel-title-section p {
+    margin-bottom: 0;
+}
+
+.panel-title {
+    font-size: var(--big-text-size);
+    filter: var(--text-backdrop);
+    /* color: var(--text-color); */
+}
+
+.panel-date {
+    align-self: end;
+    font-size: var(--date-text-size);
+    padding-left: .5vmax;
+    filter: var(--text-backdrop);
+}
+
+div.panel-desc {
+    padding-left: .5vmax;
+    padding-top: .2vmax;
+    filter: var(--text-backdrop);
+}
+
+div.panel-desc > * {
+    font-size: var(--desc-text-size);
+    color: var(--text-color-90);
+}
+
+.panel-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.panel-roles > span {
+    display: flex;
+    align-items: center;
+}
+
+.panel-roles > span > span {
+    font-size: var(--big-text-size);
+    filter: var(--text-backdrop);
+}
+
+.panel-roles > span > .game-role {
+    font-size: var(--role-text-size);
+    filter: var(--text-backdrop);
+}
+
+.panel-roles > span > .tag-wrapper {
+    padding-left: calc(var(--role-text-size) / 4);
+}
+
+.panel-bottom a {
+    font-size: var(--role-text-size);
+    text-decoration: none;
+}
+
+.panel-more {
+    text-decoration: none;
+}
+
+.panel-more::after {
+    content: "More →";
+    filter: var(--text-backdrop);
+}

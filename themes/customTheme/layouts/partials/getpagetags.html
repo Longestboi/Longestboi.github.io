@@ -1,0 +1,24 @@
+{{ if .Param "tags" }}
+	{{/*  Handle if there is only one tag  */}}
+    {{ $is_sli := reflect.IsSlice .Params.tags }}
+
+    <span>
+    {{ if not $is_sli }}
+    	Tag: <a href="/tags/{{ .Params.tags | urlize }}">#{{ .Params.tags }}</a>
+    {{ else }}
+        Tags:
+
+        {{ $len := .Params.tags | len }}
+        {{ $f := index .Params.tags (sub $len 1)}}
+
+        {{ range $tag := .Params.tags }}
+            {{/* Stop last name in blog post from having comma */}}
+            {{ if not (eq $f $tag) }}
+                <a href="/tags/{{ $tag | urlize }}">#{{ $tag }}</a>, 
+            {{ else }}
+                <a href="/tags/{{ $tag | urlize }}">#{{ $tag }}</a>
+            {{ end }}
+        {{ end }} {{/* author range */}}
+    {{ end }}
+    </span>
+{{ end }}

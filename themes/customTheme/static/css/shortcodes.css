@@ -1,0 +1,22 @@
+/* ArticleHeader shortcode */
+.short-intro-head {
+    text-align: center;
+}
+
+.short-article-main-header {
+    font-size: 180%;
+}
+
+.short-intro-line {
+    width: 100%;
+    margin-bottom: 1vmax;
+}
+
+.blog-head-2 {
+    font-size: 1.2em;
+}
+
+.blog-head-3 > * {
+    font-size: 1.1em;
+    color: var(--text-color-70);
+}
