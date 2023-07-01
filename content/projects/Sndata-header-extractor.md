@@ -10,7 +10,7 @@ tags: "Reverse Engineering"
 {{< articleheader "Sndata Header section." >}}
 {{< indent >}}
 The SN Systems PRODG PS2 SDK will leave a section header labeled ".sndata" this header section contains debug symbols.
-The section header is, unfortunately, proprietary. However, based on the work of <a href="https://twitter.com/diwidog/status/1188831332635267072" target="_blank" rel="noopener noreferrer">Kiwidoggie</a>, I've written a Python script to go to the section header and find the memory address location of the functions and function names. Then, take those functions and function names and put them into a ".txt" for Ghidra or a Python script for IDA (untested).
+The section header is, unfortunately, proprietary. However, based on the work of [Kiwidoggie](https://twitter.com/diwidog/status/1188831332635267072), I've written a Python script to go to the section header and find the memory address location of the functions and function names. Then, take those functions and function names and put them into a ".txt" for Ghidra or a Python script for IDA (untested).
 {{< /indent >}}
 
 A link to my script is here: [Sndata-converter.py](https://github.com/Longestboi/sndata-converter)
