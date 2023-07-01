@@ -15,7 +15,11 @@ toc: true
 <!-- Loading From JSON -->
 ## Loading From JSON:
 {{< centerimg title="Json Loader class in my loader namespace" src="./JsonLoad.webp" margin="-1.2em" >}}
-{{< indent >}}For whatever reason, I couldn't get regular JSON loading through Unity's resource loader. So, I used bog standard C# functions.<br>To get JSON data from a file, call the <code>jsonLoad.GetJsonFromPaths()</code> function. <br>I've implemented this class like this in my playerSave class:{{< /indent >}}
+{{< indent >}}For whatever reason, I couldn't get regular JSON loading through Unity's resource loader. So, I used bog standard C# functions.
+
+To get JSON data from a file, call the `jsonLoad.GetJsonFromPaths()` function.
+
+I've implemented this class like this in my playerSave class:{{< /indent >}}
 {{< rawhtml >}}<div style="margin-top: -2em; overflow: hidden;"></div>{{< /rawhtml >}}
 {{< centerimg title="Demo code for Json Loader" src="./LoadingFromJson.webp" >}}
 Here is what the code looks like when running in the game:
@@ -27,8 +31,8 @@ Here is what the code looks like when running in the game:
 <!-- Loading From Resources -->
 ## Loading From Resource Folder:
 {{< centerimg title="Resource Loader class in my loader namespace" src="./TextureLoad.webp" margin="-1.2em" >}}
-{{< indent >}}Loading assets from the resource folder is relatively easy. All you have to do is pass the path of the asset to the <code>Resources.Load</code> function.{{< /indent >}}
-{{< indent >}}Just remember that the path of the resources folder is relative to <code>Assets/Resources</code> in your Unity project. Also, don't pass the file extension with the file path.{{< /indent >}}
+{{< indent >}}Loading assets from the resource folder is relatively easy. All you have to do is pass the path of the asset to the `Resources.Load` function.{{< /indent >}}
+{{< indent >}}Just remember that the path of the resources folder is relative to `Assets/Resources` in your Unity project. Also, don't pass the file extension with the file path.{{< /indent >}}
 My implementation uses the function above like so:
 {{< centerimg title="Demo code for Resource folder loading" src="./LoadFromResources.webp" margin="-1.2em">}}
 Here is what the code looks like when running in the game:
@@ -49,7 +53,7 @@ Here is what the code looks like when running in the game:
 <!-- Getters & Setters -->
 ## Getters and Setters:
 {{< centerimg title="Getters and Setters in my playerSave struct" src="./GetterAndSetter.webp" margin="-1.2em" >}}
-{{< indent >}}Getters and Setters are functions that <em>get</em> and <em>set</em> private variables.{{< /indent >}}
+{{< indent >}}Getters and Setters are functions that *get* and *set* private variables.{{< /indent >}}
 {{< indent >}}I've used getters and setters to interact with a private variable when the programmer sets or gets a public variable.{{< /indent >}}
 {{< break >}}
 
@@ -79,13 +83,12 @@ Here is what the code looks like when running in the game:
 
 <!-- OOP Inheritance -->
 ### Inheritence:
-{{< indent >}}Inheritance is when you make a class derive from another class. It <em>inherits</em> <span class="underline-nh" title="variables">properties</span> and <span class="underline-nh" title="functions">methods</span> from the parent class.{{< /indent >}}
-{{< indent >}}My <code>FlashLight</code> class above inherits from my <code>item</code> class. The <code>item</code> class provides variables like <code>itemName</code>, which stores the item name.{{< /indent >}}
-
+{{< html-indent >}}Inheritance is when you make a class derive from another class. It <em>inherits</em> <span class="underline-nh" title="variables">properties</span> and <span class="underline-nh" title="functions">methods</span> from the parent class.{{< /html-indent >}}
+{{< indent >}}My `FlashLight` class above inherits from my `item` class. The `item` class provides variables like `itemName`, which stores the item name.{{< /indent >}}
 
 <!-- OOP Polymorphism -->
 ### Polymorphism
-{{< indent >}}Polymorphism in <span class="underline-nh" title="Object-oriented Programming">OOP</span> is both overloading and overiding functions.{{< /indent >}}
+{{< html-indent >}}Polymorphism in <span class="underline-nh" title="Object-oriented Programming">OOP</span> is both overloading and overiding functions.{{< /html-indent >}}
 {{< indent >}}Overloading a function is when you make a function with the same name but give it different parameters. This is to give a single function multiple uses under the same function.{{< /indent >}}
 {{< indent >}}Overriding is used when a virtual function is defined in a parent class, and you need to change the function to conform to what the current class needs.{{< /indent >}}
 

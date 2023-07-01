@@ -5,6 +5,6 @@ isgame: true
 type: page
 summary: "testing"
 roles: "Creator"
-pannelImage: "brick-breaker.png"
-bannerImage: "brick-breaker.png"
+pannelImage: "brick-breaker.webp"
+bannerImage: "brick-breaker.webp"
 ---

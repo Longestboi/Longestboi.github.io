@@ -3,8 +3,8 @@ title: "Book-Like"
 date: 2023-03-13
 type: page
 summary: "testing"
-pannelImage: "../wardogss.png"
-bannerImage: "../wardogss.png"
+pannelImage: "../wardogss.webp"
+bannerImage: "../wardogss.webp"
 ---
 # Book-Like
 The Book-Like class came about when the codebase had two identically written book interfaces. Writing this class to be stable was a nightmare in the beginning. Stability issues arising from a lack of familiarity with Ren’Py were the bain of this class for a little while.

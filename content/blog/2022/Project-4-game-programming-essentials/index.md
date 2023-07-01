@@ -39,13 +39,16 @@ This is the product of the code:
 
 ## Bitmasking:
 {{< centerimg title="Bitmasking code" src="./bitmask.webp" margin="-1em">}}
-{{< indent >}}This certainly isn't the method of bitmasking you'd be expecting in Unity, but this is bit masking. This function finds the position of duplicate characters in a string. More documentation on the methodologies behind this function can be found <a class="underline" target="_blank" href="https://docs.google.com/document/d/1ZJhWrIwxs3e2ctn2m7Fqu29j7LCXNXrfgtt4Jq5dn6Q/edit?usp=sharing">here</a>, written in Python3.{{< /indent >}}
+{{< indent >}}This certainly isn't the method of bitmasking you'd be expecting in Unity, but this is bit masking. This function finds the position of duplicate characters in a string. More documentation on the methodologies behind this function can be found [here](https://docs.google.com/document/d/1ZJhWrIwxs3e2ctn2m7Fqu29j7LCXNXrfgtt4Jq5dn6Q/edit?usp=sharing), written in Python3.{{< /indent >}}
 
 
 With the code:
-{{< rawhtml >}}
-<div class="excerpt"><span class="codeExt">FindDuplicateChars.PrintList(<br>&emsp;&emsp;FindDuplicateChars.FindDuplicateCharInString("tmpt")<br>);</span></div>
-{{< /rawhtml >}}
+```C#
+FindDuplicateChars.PrintList(
+    FindDuplicateChars.FindDuplicateCharInString("tmpt")
+);
+```
+
 prints out this:
 {{< rawhtml >}}<div style="margin-top: -1em;"></div>{{< /rawhtml >}}
 {{< centerimg title="Duplicates printed to the console" src="./duplicateFound.webp" margin="-3em">}}
@@ -54,7 +57,7 @@ prints out this:
 ## Scriptable Objects:
 
 {{< centerimg title="Scriptable Object code" src="./ScriptableObjectCode.webp" margin="-3em" >}}
-{{< indent >}}To create a scriptable object you need to add a <code>CreateAssetMenu</code> attribute above the <code>ScriptableObject</code> deriving class.{{< /indent >}}
+{{< indent >}}To create a scriptable object you need to add a `CreateAssetMenu` attribute above the `ScriptableObject` deriving class.{{< /indent >}}
 {{< centerimg title="Scriptable Object code" src="./ScriptableObjectProperty.webp" margin="-1.5em">}}
 {{< indent >}}The GameManager above has a references to the scriptable object and prints to the console if the debug setting in the scriptable object is true.{{< /indent >}}
 {{< indent >}}To complete the reference, drag the scriptable object onto the pointer property in the inspector.{{< /indent >}}

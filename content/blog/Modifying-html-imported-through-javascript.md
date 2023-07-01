@@ -6,6 +6,7 @@ type: blog
 tags: []
 summary: ""
 toc: true
+draft: true
 ---
 
 # testingtest

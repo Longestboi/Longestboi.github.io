@@ -110,25 +110,31 @@ li.dropbtn > a, .socmed-btn {
 }
 
 .linkedin-svg {
+    -webkit-mask-image: url(/svg/LinkedIn.svg);
     mask-image: url(/svg/LinkedIn.svg);
 }
 
 .github-svg {
+    -webkit-mask-image: url(/svg/GitHub.svg);
     mask-image: url(/svg/GitHub.svg);
 }
 
 .email-svg {
+    -webkit-mask-image: url(/svg/Gmail.svg);
     mask-image: url(/svg/Gmail.svg);
 }
 
 .twitter-svg {
+    -webkit-mask-image: url(/svg/Twitter.svg);
     mask-image: url(/svg/Twitter.svg);
 }
 
 .youtube-svg {
+    -webkit-mask-image: url(/svg/YouTube.svg);
     mask-image: url(/svg/YouTube.svg);
 }
 
 .discord-svg {
+    -webkit-mask-image: url(/svg/discord-icon.svg);
     mask-image: url(/svg/discord-icon.svg);
 }

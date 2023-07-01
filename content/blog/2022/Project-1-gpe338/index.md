@@ -19,7 +19,9 @@ I won't be providing the source code to my project, but there will be screenshot
 
 ### What's a coroutine?
 
-A coroutine is a way of spreading tasks across multiple frames. It functions similarly to the `Update()` function provided by MonoBehaviour in that they execute code on individual frames.<br>They are different, however. You can run code across as many frames as you need with coroutines.
+A coroutine is a way of spreading tasks across multiple frames. It functions similarly to the `Update()` function provided by MonoBehaviour in that they execute code on individual frames.
+
+They are different, however. You can run code across as many frames as you need with coroutines.
 
 My code above runs like the `Update()`, so it's not very complex.
 

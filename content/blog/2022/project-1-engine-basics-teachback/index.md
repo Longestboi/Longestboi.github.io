@@ -13,7 +13,9 @@ toc: true
 {{< indent >}}Getting Unity up and running on Linux is incredibly easy. To start, we'll install Unity Hub & Unity. Next, we'll import libraries and settings for VR. After that, we'll import an art asset into our scene. Lastly, we'll import & activate VR controls which will allow the player to look around our scene. So let's get started!{{< /indent >}}
 
 ## Installing Unity on Linux:
-{{< indent >}}To start, you'll want to install Unity Hub. It can be installed in a few ways. You can run the Unity Hub from an appimage by going to <a class="underline" href="https://unity3d.com/get-unity/download">Unity3D.com</a>, clicking download Unity Hub, then running: <br><code>./unityhub.appimage</code> in the directory of the appimage.{{< /indent >}}
+{{< indent >}}To start, you'll want to install Unity Hub. It can be installed in a few ways. You can run the Unity Hub from an appimage by going to [Unity3D.com](https://unity3d.com/get-unity/download), clicking download Unity Hub, then running: 
+
+`./unityhub.appimage` in the directory of the appimage.{{< /indent >}}
 
 The other way of installing Unity Hub is through a package manager.
 
@@ -46,7 +48,7 @@ If you are on any other Linux distro besides Debian based ones, refer to the [Un
 ## Importing assets into your project:
 {{< centerimg title="New unity project in the editor" src="./new-unity-project-editor.webp" >}}
 
-{{< indent >}}Importing assets into your project is also incredibly easy. To start make a folder for your textures named <code>Textures</code>. Then, get the texture you want to import and drag it into the newly created folder.{{< /indent >}}
+{{< indent >}}Importing assets into your project is also incredibly easy. To start make a folder for your textures named `Textures`. Then, get the texture you want to import and drag it into the newly created folder.{{< /indent >}}
 {{< indent >}}The texture I'll be importing is one that I made a while ago. The texture is one of the tiles in my old dorm room.{{< /indent >}}
 
 {{< centerimg title="Beige_Tile.jpg" width="50%" src="./Beige_Tile.webp" >}}
@@ -65,4 +67,4 @@ Then you get:
 Our imported texture is now applied to the plane! To get modify how it looks on the plane, select the plane object. Then in the inspector window, click on the material drop down.
 
 ## Conclusion:
-{{< indent >}}After all of that, You should be able to mess around with VR development in Unity. If you have any issues my contact information is in the <a class="underline" href="/about/">about</a> section of this website.{{< /indent >}}
+{{< indent >}}After all of that, You should be able to mess around with VR development in Unity. If you have any issues my contact information is in the [about](/about/) section of this website.{{< /indent >}}

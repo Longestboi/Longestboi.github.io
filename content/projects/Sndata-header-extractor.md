@@ -4,7 +4,7 @@ date:  Sep 18, 2020
 authors: "Andrew Long"
 type: page
 summary: "This script is designed to extract the debug header section of PS2 game built with the SN Systems toolchain."
-tags: ""
+tags: "Reverse Engineering"
 ---
 
 {{< articleheader "Sndata Header section." >}}

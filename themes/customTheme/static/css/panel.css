@@ -17,8 +17,8 @@
     flex-direction: column;
     justify-content: space-between;
     height: calc(var(--content-size) * 1em);
-    -webkit-backdrop-filter: blur(2px) brightness(90%);;
-    backdrop-filter: blur(2px) brightness(90%);;
+    backdrop-filter: blur(2px) brightness(90%);
+    -webkit-backdrop-filter: blur(2px) brightness(90%);
     transition: backdrop-filter 0.2s ease-in-out;
     padding: .5vmax .5vmax .2vmax;
 }
@@ -26,15 +26,15 @@
 .panel {
     margin: .5%;
     width: 100%;
-    background-color: var(--text-color-40);
+    background-color: rgba(96, 96, 90, 1);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 div.panel-content:hover {
-    -webkit-backdrop-filter: blur(15px) brightness(70%);
     backdrop-filter: blur(15px) brightness(70%);
+    -webkit-backdrop-filter: blur(15px) brightness(70%);
     transition: backdrop-filter 0.5s ease-in-out;
 }
 
@@ -91,7 +91,10 @@ div.panel-desc > * {
 }
 
 .panel-roles > span > .tag-wrapper {
-    padding-left: calc(var(--role-text-size) / 4);
+    margin: 0em calc(var(--role-text-size) / 4);
+    padding: .1vmax .25vmax;
+    background-color: rgba(0, 0, 0, .60);
+    border-radius: .3vmax;
 }
 
 .panel-bottom a {

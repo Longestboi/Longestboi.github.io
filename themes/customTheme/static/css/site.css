@@ -74,6 +74,10 @@ main > article {
     margin:auto;
 }
 
+main ul, main ol {
+    margin-left: 1.5em;
+}
+
 article, footer, main {
     margin-top: 1vmax;
 }
