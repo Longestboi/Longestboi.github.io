@@ -31,7 +31,7 @@ The expectations of the assignment were:
 </ul>
 {{< /rawhtml >}}
 
-I believe I accomplished all the expectations for this assignment as I got {{< title "185/185****" "100%" >}} on it.
+I believe I accomplished all the expectations for this assignment as I got {{< title "185/185" "100%" >}} on it.
 
 ## Demonstration Video
 
