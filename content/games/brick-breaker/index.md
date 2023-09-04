@@ -12,6 +12,7 @@ bannerImage: "brick-breaker.webp"
 # A Brick Breaker Made in a Week
 
 This game was made in a week for a thinking strategies class. The course offered students a project-oriented, cross-disciplinary approach to applied thinking strategies, including critical, systems, creative, lateral, and parallel thinking, with assignments and projects guiding us toward an understanding of how these thinking dimensions related to our intended disciplines in emerging technology industries and our personal educational aspirations.
+{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
 
 {{< break >}}
 
@@ -32,10 +33,13 @@ The expectations of the assignment were:
 {{< /rawhtml >}}
 
 I believe I accomplished all the expectations for this assignment as I got {{< title "185/185" "100%" >}} on it.
+{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
 
 ## Demonstration Video
 
 {{< youtube bsU9LKVbtQY >}}
+
+{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
 
 {{< break >}}
 
@@ -44,3 +48,9 @@ I believe I accomplished all the expectations for this assignment as I got {{< t
 Because it was made in a week and I didn't work on it afterward, there are a few bugs.
 
 The most prominent one is the collision issue. Another is the sound effects playing over each other.
+
+{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
+
+# Play It!
+
+I have the game up on my itch.io page [here](https://longestboi.itch.io/brick-breaker). The game can even be played in-browser! It's not exactly representative of the game on the desktop, but it works well.

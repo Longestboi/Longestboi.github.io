@@ -1,0 +1,4 @@
+*label StartChapter10
+
+TESTING DIVINE CHAP10
+*return

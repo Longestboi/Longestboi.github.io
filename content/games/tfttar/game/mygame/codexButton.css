@@ -1,0 +1,48 @@
+﻿.codexButtonWords {
+    align-self: center;
+    color: black;
+}
+
+.codexButton {
+    border: none !important;
+    background: none !important;
+    align-self: center;
+    margin-bottom: 0;
+    color: white !important;
+}
+
+:root {
+    --codex-button-image-width: 100%;
+}
+
+img#codexButtonImg {
+    width: var(--codex-button-image-width);
+}
+
+p#buttons {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    div#header {
+        margin-top: 1em;
+    }
+
+    /* For mobile phones: */
+    div#buttons {
+        align-self: center;
+        margin-top: 0;
+        justify-content: space-around;
+        /*  background-color: aqua;  */
+    }
+
+    /*  p#buttons > button {
+      margin: 0;
+    }  */
+
+    div#small-header {
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+}
