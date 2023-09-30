@@ -7,7 +7,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-size: 1.5vmax;
+    font-size: 1.13rem;
 }
 
 /* horizontal line */
@@ -74,16 +74,20 @@ main > article {
     margin:auto;
 }
 
-main ul, main ol {
+main ul:not([class]),
+main ul[class=""],
+main ol:not([class]),
+main ol[class=""]
+{
     margin-left: 1.5em;
 }
 
 article, footer, main {
-    margin-top: 1vmax;
+    margin-top: .668em;
 }
 
 p {
-    margin-bottom: 1vmax;
+    margin-bottom: .668em;
 }
 
 footer > .foot-selectables {
@@ -121,7 +125,7 @@ a:hover::before, a:hover, a:hover::after{
 
 a {
     transition: color 0.2s ease-in-out;
-    text-decoration: var(--link-color) underline .2vmax;
+    text-decoration: var(--link-color) underline 0.1336em;
 }
 
 /* I have no idea what this code is for */
@@ -133,7 +137,7 @@ a {
 
 summary {
     cursor: pointer;
-    padding-left: 1.5vmax;
+    padding-left: 1em;
 }
 
 summary::marker {
@@ -143,12 +147,12 @@ summary::marker {
 summary:before {
     content: "▲";
     font-size: 70%;
-    transform: translate(-1.5vmax, .2vmax) rotate(90deg);
+    transform: translate(-1.5em, .2em) rotate(90deg);
     transition: transform .1s ease;
     position: absolute;
 }
 
 details[open] > summary:before {
-    transform: translate(-1.5vmax, .2vmax) rotate(180deg);
+    transform: translate(-1.5em, .2em) rotate(180deg);
     transition: transform .1s ease;
 }

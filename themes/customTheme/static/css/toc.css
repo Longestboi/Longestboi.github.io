@@ -21,21 +21,21 @@ div.toc {
     position: sticky;
     overflow: visible;
     z-index: 100;
-    top: calc(1.5vmax + 3.5vmax);
+    top: calc(1em + 2.338em);
     display: flex;
     flex-direction: column;
     width: auto;
     background-color: var(--bg-color-80);
     border: 2px solid var(--bg-color-40);
     border-radius: 10px;
-    padding-left: 1vmax;
-    padding-right: 1vmax;
-    padding-top: .5vmax;
-    padding-bottom: .5vmax;
+    padding-left: .668em;
+    padding-right: .668em;
+    padding-top: .334em;
+    padding-bottom: .334em;
 }
 
 div.toc  div.tocCont > ol {
-    padding-left: 2vmax;
+    padding-left: 1.336em;
     margin-bottom: auto;
 }
 
@@ -47,22 +47,22 @@ div.toc summary {
 div.toc div.tocHead {
     text-align: center;
     font-weight: bold;
-    font-size: 1.5vmax;
+    font-size: 1em;
     width: 100%;
 }
 
 div.toc div.tocHead {
-    margin-bottom: .5vmax;
+    margin-bottom: .334em;
 }
 
 div.toc div.tocCont  ol > li{
     text-align: left;
-    font-size: 1vmax;
+    font-size: 0.668em;
     word-wrap: break-word;
     margin-left: 1em;
 }
 
 div.toc div.tocCont  ol > li> a{
     font-weight: 100;
-    font-size: 1.2vmax;
+    font-size: 1.2em;
 }

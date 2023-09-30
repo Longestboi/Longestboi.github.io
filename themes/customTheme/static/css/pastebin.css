@@ -1,9 +1,9 @@
 .embedPastebin {
     border-color: var(--text-color-20) !important;
     border-width: .2em !important;
-    border-radius: 1vmax !important;
-    margin-top: 1vmax !important;
-    margin-bottom: 1vmax !important;
+    border-radius: 1em !important;
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
     background: var(--text-color-20) !important;
 }
 
@@ -21,14 +21,11 @@ div.embedPastebin > div.embedFooter {
     justify-content: center;
     font-size: 0 !important;
     user-select: none;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding: .5vmax 1vmax !important;
     background: var(--bg-color-90) !important;
 }
 
 div.embedPastebin > div.embedFooter > a {
-    font-size: 1vmax !important;
+    font-size: .668rem !important;
     user-select: all;
     color: var(--link-color-a-90) !important;
 }
@@ -43,13 +40,13 @@ div.embedPastebin > div.embedFooter > a:nth-child(2)::after,
 div.embedPastebin > div.embedFooter > a:nth-child(2):hover::after{
     color: var(--text-color-90) !important;
     content: "-";
-    padding-left: .5vmax;
-    padding-right: .5vmax;
-    font-size: 1vmax !important;
+    padding-left: .5em;
+    padding-right: .5em ;
+    font-size: 1em !important;
 }
 
-li.li1, div.de1 {
-    font-size: 1vmax;
+div.de1 {
+    font-size: 1em;
     word-wrap: break-word;
     color: var(--text-color-90) !important;
 }
@@ -66,7 +63,7 @@ li.li1, div.de1 {
 }
 
 .night .highlighted-code .source > ol > li.li1 {
-    font-size: 1vmax;
+    font-size: .668em;
     word-wrap: break-word;
     color: var(--text-color-90) !important;
 }

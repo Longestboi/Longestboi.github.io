@@ -81,14 +81,14 @@
     --bg-color-a-80: hsla(var(--bg-color-hsl), .8);
     --bg-color-a-90: hsla(var(--bg-color-hsl), .9);
 
-    --nav-padding: .50vmax;
-    --nav-spacing: .3vmax;
+    --nav-padding: 0.334em;
+    --nav-spacing: 0.2004em;
 
     --filter-text-color: invert(100%) sepia(2%) saturate(798%) hue-rotate(347deg) brightness(95%) contrast(92%);
     --filter-bg-color: invert(6%) sepia(9%) saturate(1672%) hue-rotate(201deg) brightness(94%) contrast(93%);
 
-    --site-margin-side: 15vmax;
-    --blog-margin-side: 20vmax;
+    --site-margin-side: 10.02rem;
+    --blog-margin-side: 13.36rem;
 }
 
 @font-face {

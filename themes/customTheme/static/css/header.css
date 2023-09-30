@@ -8,20 +8,17 @@
 
 img.profile-image {
     display: flex;
-    height: 15vw;
-    height: 15dvw;
+    height: 10.02em;
     border-radius: 50%;
-    border: .5vmax solid var(--bg-color);
+    border: .333em solid var(--bg-color);
 }
 
 .index-name {
-    font-size: 2.5vw;
-    font-size: 2.5dvw;
+    font-size: 1.67em
 }
 
 p.index-splash {
-    font-size: 1.2vw;
-    font-size: 1.2dvw;
+    font-size: .802em;
 }
 
 .blog-header-wrapper, .page-header-wrapper, .index-header-wrapper {
@@ -35,7 +32,7 @@ p.index-splash {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 25vmax;
+    height: 16.7em;
     backdrop-filter: blur(5px);
 }
 
@@ -50,21 +47,21 @@ p.index-splash {
 
 .page-title {
     align-self: center;
-    font-size: 5vmax;
+    font-size: 3.34em;
 }
 
 .blog-title {
-    font-size: 4vmax;
+    font-size: 2.672em;
     line-height: 95%;
 }
 
 .blog-attrib {
-    font-size: 1.5vmax;
-    margin-top: .5vmax;
+    font-size: 1em;
+    margin-top: .333em;
 }
 
 .blog-tags {
-    font-size: 1.1vmax;
+    font-size: .7348em;
     /* margin-top: .5vmax; */
     color: var(--text-color-90);
 }

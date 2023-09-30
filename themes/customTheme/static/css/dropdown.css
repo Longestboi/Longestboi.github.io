@@ -7,11 +7,11 @@
     position: absolute;
     text-align: center;
     background: var(--bg-color-50) !important;
-    width: 17vmax !important;
+    width: 11.3em !important;
     /* max-width: 3vmax; */
     box-shadow: -5px 10px 10px 5px var(--text-color-a-30);
     right: 0;
-    top: 2.8vmax;
+    top: 2em;
 }
 
 /* Spacing inbetween buttons in dropdown */
@@ -41,7 +41,7 @@
 }
 
 .dropbtn > * {
-    font-size: 1.5vmax;
+    font-size: 1em;
 }
 
 /* a.dropbtn:hover{
@@ -75,7 +75,7 @@
     background-color: var(--bg-color);
     justify-content: space-between;
     padding: calc(var(--nav-padding) * 2);
-    height: 4vmax;
+    height: 2.8em;
     margin-top: calc(var(--nav-spacing) / 2);
 }
 
@@ -86,8 +86,8 @@ li.dropbtn > a, .socmed-btn {
 }
 
 .socmed-btn:hover, .socmed-btn {
-    -webkit-mask-size: 2vmax;
-    mask-size: 2vmax;
+    -webkit-mask-size: 1.3em;
+    mask-size: 1.3em;
     -webkit-mask-position: center;
     mask-position: center;
     -webkit-mask-repeat: no-repeat;
@@ -106,7 +106,7 @@ li.dropbtn > a, .socmed-btn {
 .linkedin-svg, .github-svg, .email-svg,
 .twitter-svg, .youtube-svg, .discord-svg {
     display: flex;
-    width: 2vmax;
+    width: 1.3em;
 }
 
 .linkedin-svg {

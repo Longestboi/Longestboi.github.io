@@ -32,11 +32,11 @@ Click on the game title to view debug symbols in Ghidra format
     }
 
     .sum-name {
-      padding-right: .5vmax;
+      padding-right: .3em;
     }
 
     .sernum {
-      font-size: 1vmax !important;
+      font-size: .7em !important;
       display: flex;
       align-items: center;
       color: var(--text-color-80);

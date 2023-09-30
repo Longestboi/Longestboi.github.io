@@ -1,13 +1,13 @@
 .blog-list-dl > dd {
-    margin-left: .8vmax;
+    margin-left: .5em;
 }
 
 .blog-list-header {
-    margin-bottom: 1.5vmax;
+    margin-bottom: 1em;
 }
 
 .blog-list-header > span {
-    font-size: 2vmax;
+    font-size: 1.35em;
     line-height: 1em;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .blog-list-item {
-    margin-bottom: 1.5vmax; 
+    margin-bottom: 1em; 
     line-height: 1em;
     width: auto;
 }
@@ -26,7 +26,7 @@
 }
 
 .blog-list-item-title {
-    font-size: 1.6vmax;
+    font-size: 1.1em;
 }
 
 .blog-list-item::before {
@@ -44,13 +44,18 @@
     transition: transform 0.2s ease-in-out
 }
 
-.blog-list-item-tag > *, .blog-list-item-tag > * > a {
-    font-size: 1vmax;
+.blog-list-item-tag > span {
+    font-size: .7em;
+    color: var(--text-color-80);
+}
+
+.blog-list-item-tag > span > a {
+    font-size: 1em;
     color: var(--text-color-80);
 }
 
 .blog-list-item-authors, .blog-list-item-authors > a {
-    font-size: 1.2vmax;
+    font-size: .9em;
     color: var(--text-color-80);
 }
 

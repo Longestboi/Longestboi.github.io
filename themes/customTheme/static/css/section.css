@@ -1,28 +1,17 @@
 .section-container {
-    padding-bottom: 2vmax;
+    padding-bottom: 1.4em;
 }
 
 .item-section {
     display: flex;
-    font-size: 2vmax;
     justify-content: space-between;
     align-content: baseline;
 }
 
 .item-section > .item-section-text {
-    font-size: inherit;
+    font-size: 1.35em;
 }
 
 .item-section > a.item-section-text {
     text-decoration: none;
-}
-
-a.item-section-all {
-    align-self: end;
-}
-
-a.item-section-all::after {
-    content: "All →";
-    display: flex;
-    font-size: 1.5dvw;
 }
