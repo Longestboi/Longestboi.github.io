@@ -3,7 +3,7 @@ title: "Brick Breaker"
 date: 2023-01-22
 isgame: true
 type: page
-summary: "testing"
+summary: "A brick breaker clone made in a week for a Thinking Stratagies class."
 roles: "Creator"
 pannelImage: "brick-breaker.webp"
 bannerImage: "brick-breaker.webp"

@@ -12,15 +12,18 @@
         {{ partial "main-section.html" (dict "context" . "Section" $titled "href" .Section ) }}
         
         {{ $f := true }}
+        <div class="panel-container">
         {{ range first $.numPan .Pages }}
 
-            {{ if eq $f true }}<div class="panel-container">{{ end }}
+            {{/*  {{ if eq $f true }}<div class="panel-container">{{ end }}  */}}
             {{ partial "panel.html" . }}
-            {{ if eq $f false }}</div> {{ end }}
+            {{/*  {{ if eq $f false }}</div> {{ end }}  */}}
 
             {{ $f = not $f }}
         {{ end }}
-        
+        {{/*  </div>  */}}
+        <a class="panel-end-stop-wrapper" href="{{ .Section }}"><div class="panel panel-end-stop"><span>All {{ $titled }}</span></div></a>
         {{ if eq $f false }}</div>{{ end }}
     {{ end }}
+    
 </div>

@@ -1,5 +1,21 @@
-<div class="panel" style="background-image: url({{ if .Params.pannelImage }}{{ .Permalink }}{{.Params.pannelImage}}{{ else }}.Params.bannerImage{{ end }});">
-    <div class="panel-content">
+<div class="panel">
+    <div class="panel-top">
+      <div class="panel-bkg" style="background-image: url({{ if .Params.pannelImage }}{{ .Permalink }}{{.Params.pannelImage}}{{ else }}.Params.bannerImage{{ end }});"></div>
+      <div class="panel-tandd">
+        <div class="panel-title" title="{{ .Title }}">{{ .Title }}</div>
+        <div class="panel-date">{{ if eq .Params.isGame true }}⌜{{ .Date.Format "2006" }}⌟{{ end }}</div>
+      </div>
+      <div class="panel-desc">{{ .Summary }}</div>
+    </div>
+    <div class="panel-bottom">
+      <div class="panel-roles">{{ if .Params.roles }}{{ partial "getgameroles.html" . }}{{ else }}<span></span>{{ end }}</div>
+      <a href="{{ .Permalink }}" class="panel-more" aria-label="More about {{ .Title }}"></a>
+    </div>
+  </div>
+  
+
+
+{{/*  <div class="panel" style="background-image: url({{ if .Params.pannelImage }}{{ .Permalink }}{{.Params.pannelImage}}{{ else }}.Params.bannerImage{{ end }});">
         <div class="panel-top">
             <div class="panel-title-section">
                 <p class="panel-title">{{ .Title }}</p>
@@ -17,5 +33,4 @@
             <a href="{{ .Permalink }}" class="panel-more" aria-label="More about {{ .Title }}"></a>
         </div>
         
-    </div>
-</div>
+</div>  */}}

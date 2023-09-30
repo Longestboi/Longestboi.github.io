@@ -1,100 +1,132 @@
 .panel-container {
     display: flex;
     width: 100%;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: .2em 0em;
+    padding-top: 0;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
-.panel-content {
-    --big-text-size: 1em;
-    --date-text-size: .8em;
-    --desc-text-size: .84em;
-    --role-text-size: .8em;
-    --text-backdrop: drop-shadow(.1em .1em .05em var(--text-color-10));
-    
-    --content-size: 10;
+.panel-container::-webkit-scrollbar {
+    display: none;
+}
 
+div.panel {
     display: flex;
+    overflow: hidden;
+    background: var(--bg-color-50);
+    width: 20em;
+    height: 12em;
+    border-radius: .3em;
+    margin: .2em;
     flex-direction: column;
     justify-content: space-between;
-    height: calc(var(--content-size) * 1em);
-    backdrop-filter: blur(2px) brightness(90%);
-    -webkit-backdrop-filter: blur(2px) brightness(90%);
-    transition: backdrop-filter 0.2s ease-in-out;
-    padding: .5vmax .5vmax .2vmax;
+    flex-shrink: 0;
 }
 
-.panel {
-    margin: .5%;
-    width: 100%;
-    background-color: rgba(96, 96, 90, 1);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+a.panel-end-stop-wrapper {
+    text-decoration: none;
 }
 
-div.panel-content:hover {
-    backdrop-filter: blur(15px) brightness(70%);
-    -webkit-backdrop-filter: blur(15px) brightness(70%);
-    transition: backdrop-filter 0.5s ease-in-out;
+div.panel-end-stop {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    text-decoration: var(--link-color) none;
+    transition: background-color 0.5s ease-in-out;
 }
 
-.panel-title-section {
+div.panel-end-stop > span {
+    color: inherit;
+    transition: color 0.2s ease-in-out;
+}
+
+div.panel-end-stop > span::after {
+    content: "→";
+    padding-left: .5em;
+    transition: color 0.2s ease-in-out;
+}
+
+div.panel-end-stop:hover, div.panel-end-stop:hover > span::after {
+    background-color: var(--link-color-10);
+    color: var(--link-color);
+}
+
+div.panel>div.panel-top {
     display: flex;
+    max-width: 100%;
+    height: 90%;
+    flex-direction: column;
 }
 
-.panel-title-section p {
-    margin-bottom: 0;
+div.panel>div.panel-top>div.panel-bkg {
+    max-height: 50%;
+    background-color: var(--text-color-50);
+    background-size: cover;
+    flex-basis: 100%;
 }
 
-.panel-title {
-    font-size: var(--big-text-size);
-    filter: var(--text-backdrop);
-    /* color: var(--text-color); */
-}
-
-.panel-date {
-    align-self: end;
-    font-size: var(--date-text-size);
-    padding-left: .5vmax;
-    filter: var(--text-backdrop);
-}
-
-div.panel-desc {
-    padding-left: .5vmax;
-    padding-top: .2vmax;
-    filter: var(--text-backdrop);
-}
-
-div.panel-desc > * {
-    font-size: var(--desc-text-size);
-    color: var(--text-color-90);
-}
-
-.panel-bottom {
+div.panel>div.panel-top>div.panel-tandd {
     display: flex;
     justify-content: space-between;
+    margin: 0.3em;
 }
 
-.panel-roles > span {
+div.panel>div.panel-top>div.panel-tandd>div.panel-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+div.panel>div.panel-top>div.panel-desc {
+    margin: 0 .7em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: .8em;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+div.panel>div.panel-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 .2em;
+    align-self: auto;
+    overflow: hidden;
+}
+
+div.panel>div.panel-bottom>div.panel-roles {
+    display: flex;
+    flex-direction: row;
+}
+
+.panel-roles>span {
     display: flex;
     align-items: center;
 }
 
-.panel-roles > span > span {
+.panel-roles>span>span {
     font-size: var(--big-text-size);
     filter: var(--text-backdrop);
 }
 
-.panel-roles > span > .game-role {
+.panel-roles>span>.game-role {
     font-size: var(--role-text-size);
     filter: var(--text-backdrop);
 }
 
-.panel-roles > span > .tag-wrapper {
-    margin: 0em calc(var(--role-text-size) / 4);
-    padding: .1vmax .25vmax;
-    background-color: rgba(0, 0, 0, .60);
-    border-radius: .3vmax;
+.panel-roles>span>.tag-wrapper {
+    /* margin: 0em calc(var(--role-text-size) / 4); */
+    padding: .05em .2em;
+    line-height: 1em;
+    background-color: rgba(40, 40, 40, .60);
+    border-radius: .2em;
 }
 
 .panel-bottom a {
