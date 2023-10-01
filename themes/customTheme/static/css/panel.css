@@ -2,8 +2,8 @@
     display: flex;
     width: 100%;
     /* flex-wrap: wrap; */
-    overflow-y: hidden;
-    overflow-x: scroll;
+    overflow: auto;
+    cursor: grab;
     padding: .2em 0em;
     padding-top: 0;
     scroll-behavior: smooth;
