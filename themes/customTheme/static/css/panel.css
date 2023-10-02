@@ -142,3 +142,15 @@ div.panel>div.panel-bottom>div.panel-roles {
     content: "More →";
     filter: var(--text-backdrop);
 }
+
+.project-panel-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.project-panel-container > .panel {
+    flex-basis: 49.1%;
+    max-width: fit-content !important;
+}
+

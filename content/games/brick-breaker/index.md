@@ -5,6 +5,7 @@ isgame: true
 type: page
 summary: "A brick breaker clone made in a week for a Thinking Stratagies class."
 roles: "Creator"
+genre: ["Brickout Clone"]
 pannelImage: "brick-breaker.webp"
 bannerImage: "brick-breaker.webp"
 ---

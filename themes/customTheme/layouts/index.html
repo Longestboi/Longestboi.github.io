@@ -6,46 +6,8 @@
 <article class="text-section">
     {{ .Content }}
 
-    {{ partial "section-pagination.html" (dict "context" . "sect" "games" "numPan" "4") }}
-    {{ partial "section-pagination.html" (dict "context" . "sect" "projects" "numPan" "2") }}
-    {{ partial "section-pagination.html" (dict "context" . "sect" "blog" "sectName" "Blog Posts" "numPan" "2") }}
-
-
-    <script>
-        document.querySelectorAll(".panel-container").forEach((slider) => {            
-            let isDown = false;
-            let startX;
-            let scrollLeft;
-
-            slider.addEventListener('mousedown', (e) => {
-                e.preventDefault();
-                isDown = true;
-                slider.classList.add("active");
-                startX = e.pageX - slider.offsetLeft;
-                scrollLeft = slider.scrollLeft;
-            });
-
-            slider.addEventListener('mouseleave', () => {
-                isDown = false;
-                slider.classList.remove("active");
-            });
-
-            slider.addEventListener('mouseup', () => {
-                isDown = false;
-                slider.classList.remove("active");
-            });
-
-            slider.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-
-                const x = e.pageX - slider.offsetLeft;
-
-                const walk = (x - startX) * 2;
-
-                slider.scrollLeft = scrollLeft - walk;
-            });
-        });
-    </script>
+    {{ partial "section-pagination.html" (dict "context" . "sect" "games" "numPan" "4" "endStop" "true") }}
+    {{ partial "section-pagination.html" (dict "context" . "sect" "projects" "numPan" "2" "endStop" "true") }}
+    {{ partial "section-pagination.html" (dict "context" . "sect" "blog" "sectName" "Blog Posts" "numPan" "2" "endStop" "true") }}
 </article>
 {{ end }} {{/* main */}}

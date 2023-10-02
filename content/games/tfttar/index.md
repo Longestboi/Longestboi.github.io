@@ -5,6 +5,7 @@ isgame: true
 type: page
 summary: "A visual novel built on ChoiceScript and uses Javascript extensively."
 roles: ["Programmer"]
+genre: "Visual Novel"
 pannelImage: "TFTTAR.webp"
 bannerImage: "TFTTAR.webp"
 ---

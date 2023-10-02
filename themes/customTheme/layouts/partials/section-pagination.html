@@ -13,11 +13,12 @@
         
         <div class="panel-container">
         {{ range first $.numPan .Pages }}
-
             {{ partial "panel.html" . }}
-
         {{ end }}
-        <a class="panel-end-stop-wrapper" href="{{ .Section }}"><div class="panel panel-end-stop"><span>All {{ $titled }}</span></div></a>
+
+        {{ if $.endStop }}
+            <a class="panel-end-stop-wrapper" href="{{ .Section }}"><div class="panel panel-end-stop"><span>All {{ $titled }}</span></div></a>
+        {{ end }}
         </div>
     {{ end }}
     

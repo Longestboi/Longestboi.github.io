@@ -5,6 +5,7 @@ isgame: true
 type: wardog
 summary: "A Ren'py game where you sell to both sides of a war so you can line your pockets with cash."
 roles: "Programmer"
+genre: "Visual Novel"
 pannelImage: "wardogss.webp"
 bannerImage: "wardogss.webp"
 replace: {"%%csv2dlg%%": "CSV2DLG", "%%book-like%%": "Book-Like", "%%simple%%": "Simple-Dialog"}

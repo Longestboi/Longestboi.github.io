@@ -5,6 +5,7 @@ isgame: true
 type: page
 summary: "A Tetris clone made in Pygame for an introductory Python class."
 roles: ["Creator"]
+genre: "Puzzle"
 pannelImage: "not-tetris.webp"
 bannerImage: "not-tetris.webp"
 ---
