@@ -1,6 +1,6 @@
 ---
 title: "Maze³"
-date: 2023-10-01T20:05:06-07:00
+date: 2023-08-07
 type: page
 summary: "A Final Project for Gameplay Programming Essentials"
 roles: ["Creator", "Programmer"]
