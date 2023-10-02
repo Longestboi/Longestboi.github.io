@@ -12,7 +12,10 @@
         
         {{/*  Ranges through content/posts/*.md  */}}
         {{ range .Data.Pages }}
-        {{ $genres = $genres | append .Params.genre }}
+            {{/*  Protect against no genre  */}}
+            {{ if not (eq .Params.genre "") }}
+                {{ $genres = $genres | append .Params.genre }}
+            {{ end }}
         {{ end }}
         
         {{/*  Strip duplicates  */}}
@@ -21,7 +24,7 @@
         <div class="section-container" style="padding-bottom: .5em;">
             {{ partial "text-heading.html" (dict "context" . "Level" 1 "Text" "All Games") }}
             {{/*  {{ partial "main-section.html" (dict "context" . "Section" "All Games") }}  */}}
-            <div class="panel-container">
+            <div class="panel-container grab-scroller">
                 {{ range .Data.Pages }}
                     {{ partial "panel.html" . }}
                 {{ end }}
@@ -34,7 +37,7 @@
         {{ range $g := $genres }}
         <div class="section-container">
             {{ partial "main-section.html" (dict "context" . "Section" (title $g)) }}
-            <div class="panel-container">
+            <div class="panel-container grab-scroller">
                 {{ range $.Data.Pages }}
                     {{ if (in .Params.genre $g )}}
                         {{ partial "panel.html" . }}

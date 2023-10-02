@@ -1,5 +1,5 @@
 window.onload = function () {
-    document.querySelectorAll(".panel-container").forEach((slider) => {
+    document.querySelectorAll(".grab-scroller").forEach((slider) => {
         if (slider == null) return;
 
         let isDown = false;

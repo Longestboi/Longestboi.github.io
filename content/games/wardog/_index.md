@@ -1,7 +1,6 @@
 ---
 title: "Project Wardog"
 date: 2023-03-13
-isgame: true
 type: wardog
 summary: "A Ren'py game where you sell to both sides of a war so you can line your pockets with cash."
 roles: "Programmer"

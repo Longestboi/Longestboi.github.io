@@ -11,7 +11,7 @@
 
         {{ partial "main-section.html" (dict "context" . "Section" $titled "href" .Section ) }}
         
-        <div class="panel-container">
+        <div class="panel-container grab-scroller">
         {{ range first $.numPan .Pages }}
             {{ partial "panel.html" . }}
         {{ end }}

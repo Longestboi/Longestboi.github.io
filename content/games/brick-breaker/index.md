@@ -1,7 +1,6 @@
 ---
 title: "Brick Breaker"
 date: 2023-01-22
-isgame: true
 type: page
 summary: "A brick breaker clone made in a week for a Thinking Stratagies class."
 roles: "Creator"

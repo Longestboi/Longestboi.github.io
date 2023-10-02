@@ -1,7 +1,6 @@
 ---
 title: "Not Tetris"
 date: 2022-12-10
-isgame: true
 type: page
 summary: "A Tetris clone made in Pygame for an introductory Python class."
 roles: ["Creator"]

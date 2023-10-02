@@ -3,16 +3,21 @@
     {{ $is_sli := reflect.IsSlice .Params.roles }}
     <span>
     {{ if not $is_sli }}
-    	<span>Role: </span><div class="tag-wrapper"><a class="game-role" href="/roles/{{ .Params.roles | urlize }}">{{ .Params.roles }}</a></div>
+    	<span>Role: </span><div class="role-list"><div class="tag-wrapper"><a class="game-role" href="/roles/{{ .Params.roles | urlize }}">{{ .Params.roles }}</a></div></div>
     {{ else }}
+        {{ if eq (.Params.roles | len) 1 }}
+        <span>Role: </span>
+        {{ else }}
         <span>Roles: </span>
+        {{ end }}
 
         {{ $len := .Params.roles | len }}
         {{ $f := index .Params.roles (sub $len 1)}}
-
+        <div class="role-list">
         {{ range $tag := .Params.roles }}
             <div class="tag-wrapper"><a class="game-role" href="/roles/{{ $tag | urlize }}">{{ $tag }}</a></div>
         {{ end }} {{/* author range */}}
+        </div>
     {{ end }}
     </span>
 {{ end }}

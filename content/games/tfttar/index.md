@@ -1,10 +1,9 @@
 ---
 title: "Tales From Teren: The Approaching Rot"
 date: 2023-08-20
-isgame: true
 type: page
 summary: "A visual novel built on ChoiceScript and uses Javascript extensively."
-roles: ["Programmer"]
+roles: "Programmer"
 genre: "Visual Novel"
 pannelImage: "TFTTAR.webp"
 bannerImage: "TFTTAR.webp"
