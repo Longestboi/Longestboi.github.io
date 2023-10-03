@@ -53,4 +53,6 @@ The most prominent one is the collision issue. Another is the sound effects play
 
 # Play It!
 
-I have the game up on my itch.io page [here](https://longestboi.itch.io/brick-breaker). The game can even be played in-browser! It's not exactly representative of the game on the desktop, but it works well.
+{{< itch userName="longestboi" gameTitle="brick-breaker">}}
+
+The game and it's source is available on my [itch.io](https://longestboi.itch.io/brick-breaker) page. The game can even be played in-browser! It's not exactly representative of the game on the desktop, but it works well.

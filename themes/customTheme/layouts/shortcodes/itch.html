@@ -1,0 +1,52 @@
+{{/*  https://" + opts.user + "." + domain + "/" + opts.game + "/data.json  */}}
+
+{{/*  Reimplemented itch.io api...  */}}
+{{ if not (.Get "userName") }}
+    {{ errorf "named variable 'userName' was not provided" }}
+{{ end }}
+
+{{ if not (.Get "gameTitle") }}
+    {{ errorf "named variable 'gameTitle' was not provided" }}
+{{ end }}
+
+{{ $user_name := (.Get "userName") }}
+{{ $game_title := (.Get "gameTitle") }}
+
+{{ $user_link := (print "https://" $user_name ".itch.io/") }}
+{{ $link := (print $user_link $game_title) }}
+
+
+{{ $u := (print $link "/data.json")}}
+
+{{ $data := "" }}
+
+{{/*  Get remote resource from itch.io  */}}
+{{ with resources.GetRemote $u }}
+    {{ with .Err }}
+        {{ errorf "$s" . }}
+    {{ else }}
+        {{ $opts := dict "delimiter" "," }}
+        {{ $data = . | transform.Unmarshal $opts }}
+
+        {{/*    */}}
+        {{ if $data.errors }}
+            {{ errorf "Itch.io: %s" (delimit $data.errors ", ") }}
+        {{ end }}
+    {{ end }}
+{{ else }}
+    {{ errorf "Unable to get remote resource %q" $u }}
+{{ end }}
+
+{{/*  Create and populate widget  */}}
+{{ with $data }}
+    <div id="{{ .id }}" class="itch-wrapper">
+        <div class="itch-image-wrapper">
+            <div class="itch-image" style="background-image: url({{ .cover_image }});"></div>
+        </div>
+        <div class="itch-text-wrapper">
+            <div class="itch-title">{{ .title }}</div>
+            <div class="itch-attribution">by:<a class="itch-author" href="{{ $user_link }}">{{ $user_name }}</a></div>
+            <a class="itch-button" href="{{ $link }}" >Visit on Itch.io</a>
+        </div>
+    </div>
+{{ end }}

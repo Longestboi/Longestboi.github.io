@@ -1,0 +1,86 @@
+.itch-wrapper {
+    --itch-wrapper-height: 10em;
+    --itch-wrapper-single: calc(var(--itch-wrapper-height) * .1);
+    
+    --itch-border-size: calc(var(--itch-wrapper-single) * .01);
+    --itch-image-size: calc(var(--itch-wrapper-height) * .9);
+    
+    --itch-border-color: var(--text-color-30);
+    --itch-wrapper-color: var(--bg-color-60);
+    --itch-text-color: var(--text-color);
+    --itch-attrib-color: var(--text-color-70);
+    --itch-button-color: var(--link-color-80);
+    --itch-button-highlight-color: var(--link-color-70);
+    
+    display: flex;
+    /* width: calc(var(--itch-wrapper-height) * 3); */
+    max-width: fit-content;
+    height: var(--itch-image-size);
+    margin: auto;
+    background: var(--itch-wrapper-color);
+    margin-bottom: .8em;
+    flex-direction: row;
+    overflow: hidden;
+    border: var(--itch-border-size) solid var(--itch-border-color);
+    border-radius: .2em;
+}
+
+.itch-image-wrapper {
+    border-right: var(--itch-border-size) solid var(--itch-border-color);
+}
+
+.itch-image {
+    width: var(--itch-image-size);
+    height: var(--itch-image-size);
+    margin: 0 calc((var(--itch-wrapper-height) - var(--itch-image-size)) / 1.2);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-self: center;
+}
+
+.itch-text-wrapper {
+    display: flex;
+    min-width: calc(var(--itch-wrapper-height));
+    flex-direction: column;
+    justify-content: center;
+    padding: calc(var(--itch-wrapper-single));
+}
+
+.itch-title {
+    font-size: calc(var(--itch-wrapper-single) * 1.1);
+}
+
+.itch-attribution {
+    display: flex;
+    font-size: calc(var(--itch-wrapper-single) * 0.7);
+    color: var(--itch-attrib-color);
+    align-items: baseline;
+}
+
+.itch-author {
+    font-size: var(--itch-wrapper-single);
+    margin-left: calc(var(--itch-wrapper-single) * 0.1);
+    align-self: baseline;
+    text-decoration: none;
+}
+
+.itch-button {
+    margin-top: calc(var(--itch-wrapper-single) * 2);
+    border: none;
+    border-radius: .2em;
+    background-color: var(--itch-button-color);
+    transition: background-color 0.1s ease-out;
+    text-align: center;
+    text-decoration: none;
+    color: var(--itch-text-color);
+    font-size: calc(var(--itch-wrapper-single) * .8);
+    padding: calc(var(--itch-wrapper-single) * .25) var(--itch-wrapper-single);
+    max-width: fit-content;
+}
+
+.itch-button:hover {
+    background-color: var(--itch-button-highlight-color);
+    transition: background-color 0.1s ease-in;
+    color: var(--itch-text-color);
+}
