@@ -10,18 +10,18 @@ bannerImage: "not-tetris.webp"
 ---
 
 # A Tetris Clone
-Not Tetris was made in (roughly) 6 weeks, off and on, for an introductory Python class. All the assets, besides the music and 4-line clear, were made by myself. The game is built in Python & Pygame; As well, all the features of this game are made from scratch, only using observations from the Gameboy and NES versions of Tetris.
+_Not Tetris_ was made in (roughly) 6 weeks, off and on, for an introductory Python class. All the assets, besides the music and 4-line clear, were made by myself. The game is built in Python & Pygame; As well, all the features of this game are made from scratch, only using observations from the Gameboy and NES versions of Tetris.
 
 This game has many downfalls, including that it isn't finished, but for what it is, I'm quite proud of my performance in the making of this game.
 {{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
 
 # Demonstrations
-These are some in-development videos of Not Tetris, from the first week of the game to when I submitted it as a final.
+These are some in-development videos of _Not Tetris_, from the first week of the game to when I submitted it as a final.
 
 {{< break >}}
 
 ## GUI Contest Build
-This build of Not Tetris won me a tied first-place prize of extra credit points.
+This build of _Not Tetris_ won me a tied first-place prize of extra credit points.
 {{< youtube Q7MKk2v80XE >}}
 
 ## Functional Prototype
@@ -29,13 +29,13 @@ This was the first build that was "playable." There are quite a few errors in th
 {{< youtube Hfq6zjaLldU >}}
 
 ## Final Build
-The final build I made of Not Tetris.
+The final build I made of _Not Tetris_.
 {{< youtube mo-WuCLe2lM >}}
 {{< break >}}
 {{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
 
 # Critical Points
-This game is unfinished.
+While the game is in a good place, it's ultimately unfinished. There are also a few bugs, namely with the collision detection when rotating.
 
 
 <!-- {{< rawhtml >}}<hr class="dots">{{< /rawhtml >}} */}}

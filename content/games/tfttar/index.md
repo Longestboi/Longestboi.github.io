@@ -63,4 +63,47 @@ With this, I was able to implement skill checks, helper functions, and attribute
 
 # Last Build I worked on
 
-{{< rawhtml >}}<iframe style="border: solid; border-width: .1em; border-color: var(--text-color); margin: 1em auto; margin-top: 0; display: block; height: calc(25em + .01px);" src="game/index.html" width="90%"></iframe>{{< /rawhtml >}}
+{{< rawhtml >}}
+<style>
+.tfttar-play-button {
+    display: block;
+    text-decoration: none;
+    background-color: var(--link-color-80);
+    border-radius: .2em;
+    padding: .5em 1em;
+    max-width: fit-content;
+    margin: .5em auto;
+
+    color: var(--text-color);
+    transition: background-color 0.1s ease-in;
+
+}
+
+.tfttar-play-button:hover {
+    color: var(--text-color);
+    background: var(--link-color-60);
+    transition: background-color 0.1s ease-in;
+}
+</style>
+
+<div>
+<a class="tfttar-play-button">Play Game</a>
+<iframe class="tfttar-frame" style="display: none; border: solid; border-width: .1em; border-color: var(--text-color); margin: 1em auto; margin-top: 0; height: calc(25em + .01px);" width="90%"></iframe>
+</div>
+
+<script>
+    let butt = document.querySelector(".tfttar-play-button");
+
+    let frame = document.querySelector(".tfttar-frame");
+
+    butt.addEventListener("click", () => {
+        butt.style.display = "none";
+        frame.style.display = "block";
+        frame.src = "game/index.html";
+
+        frame.scrollIntoView();
+    });
+</script>
+{{< /rawhtml >}}
+
+ChoiceScript, for whatever reason, scrolls to itself when it loads. To combat this, I've locked it behind a button.

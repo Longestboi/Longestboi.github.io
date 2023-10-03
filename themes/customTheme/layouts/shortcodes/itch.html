@@ -28,7 +28,6 @@
         {{ $opts := dict "delimiter" "," }}
         {{ $data = . | transform.Unmarshal $opts }}
 
-        {{/*    */}}
         {{ if $data.errors }}
             {{ errorf "Itch.io: %s" (delimit $data.errors ", ") }}
         {{ end }}
