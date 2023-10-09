@@ -14,7 +14,7 @@ replace: {"%%csv2dlg%%": "CSV2DLG", "%%book-like%%": "Book-Like", "%%simple%%": 
 Project Wardog is a game where you sell to both sides of a war between two factions. You had to carefully balance the number of weapons you sell to each war so the ongoing war doesn’t stop and you can keep lining your wallet. Before the game was sunset, Wardog would release on Steam, and the profits would have gone to Ukraine to help with the war. Unfortunately, we did not complete the game on time; This was attributed to multiple factors, but the one I heard the most was the lack of artists and their output.
 
 I came on to this project in its 7th milestone. However, the class this game was made in tracked only the milestones I partook in, so I’ll give the class milestone first, then the actual milestones after.
-{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
+{{< dots >}}
 {{< break >}}
 
 # Test Footage
@@ -31,7 +31,7 @@ In milestone 2, most of the game states have been implemented; however, the cred
 # My Programming Work
 This page is only for a simple overview of the game. If you want to learn more about the systems I’ve made for this game, click the headers.
 {{< break >}}
-{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
+{{< dots >}}
 {{< break >}}
 
 {{< rawhtml >}}

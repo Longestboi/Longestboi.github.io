@@ -9,7 +9,7 @@
 
 .short-intro-line {
     width: 100%;
-    margin-bottom: .668em;
+    margin-bottom: var(--gen-bottom-padding);
 }
 
 .blog-head-2 {

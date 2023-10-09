@@ -89,6 +89,8 @@
 
     --site-margin-side: 10.02rem;
     --blog-margin-side: 13.36rem;
+
+    --gen-bottom-padding: .668em;
 }
 
 @font-face {

@@ -9,7 +9,7 @@ bannerImage: "../wardogss.webp"
 # CSV2DLG
 CSV2DLG is a Python script that takes a formatted CSV file and parses it into a Ren'Py script file.
 I wrote this script to make the lives of the designers slightly easier, or at least make it to where they didn't have to touch the code.
-{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
+{{< dots >}}
 # Formatting the Dialog File
 Before using the CSV2DLG script, we need to make the dialog file. The dialog file is a `.XLSX` file for ease of modification, this dialog `.XLSX` file needs to be formatted in a special way for it to be understood by the parser.
 
@@ -39,7 +39,7 @@ Space:
 │                 │ Empty lines are parsed as Spaces │◄ Space
 └─────────────────┴──────────────────────────────────┘
 ```
-{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
+{{< dots >}}
 # Using the CSV2DLG
 Using CSV2DLG without any arguments results in an error, so to learn how to use it, pass `--help` or `-h` to the script.
 ```plaintext
@@ -57,6 +57,6 @@ options:
 ```
 The script requires a CSV file to run, however an output file doesn't need to be. If an output file is not specified, the script will print the resulting dialog file to the terminal.
 
-{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
+{{< dots >}}
 
 # How the Script Works

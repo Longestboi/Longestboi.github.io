@@ -3,7 +3,15 @@ pre.code-block {
     padding: .5em;
     border-radius: .2em;
     margin-bottom: .5em;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
+
+pre.code-block::-webkit-scrollbar{
+    display: none;
+}
+
 pre.code-block > *,
 pre.code-block > * > * {
     font-size: .92em;

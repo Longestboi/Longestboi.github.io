@@ -8,7 +8,7 @@ bannerImage: "../wardogss.webp"
 ---
 # Book-Like
 The Book-Like class came about when the codebase had two identically written book interfaces. Writing this class to be stable was a nightmare in the beginning. Stability issues arising from a lack of familiarity with Ren’Py were the bain of this class for a little while.
-{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
+{{< dots >}}
 
 # Using the Book-Like Class
 A book needs to be constructed with an interactor screen and non-interactable pages. The interactor screen contains the interactable elements necessary for closing and changing pages.
@@ -63,7 +63,7 @@ screen purchase_binder_interact():
             activate_sound "audio/sfx/sfx_button_press_low.ogg"
 ```
 The pages can be made of any screen, they can even have interactable widgets too.
-{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
+{{< dots >}}
 
 # Demonstration
 ## Purchase binder
@@ -73,9 +73,9 @@ The purchase binder has a custom button at the top of the screen.
 ## Stock binder
 {{< centerimg title="Stock binder demo" width="100%" src="../Stock_Binder.png" >}}
 
-{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
+{{< dots >}}
 
 # Difficulties Implementing the Class
 
 Ren'Py screen language is a difficult thing to master. The documentation for the screen language is also not that great, so instead of trying to decipher the documentation, I decided to read the source code in an attempt to hide the buttons that change the page.
-{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
+{{< dots >}}

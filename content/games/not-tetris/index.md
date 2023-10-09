@@ -13,7 +13,7 @@ bannerImage: "not-tetris.webp"
 _Not Tetris_ was made in (roughly) 6 weeks, off and on, for an introductory Python class. All the assets, besides the music and 4-line clear, were made by myself. The game is built in Python & Pygame; As well, all the features of this game are made from scratch, only using observations from the Gameboy and NES versions of Tetris.
 
 This game has many downfalls, including that it isn't finished, but for what it is, I'm quite proud of my performance in the making of this game.
-{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
+{{< dots >}}
 
 # Demonstrations
 These are some in-development videos of _Not Tetris_, from the first week of the game to when I submitted it as a final.
@@ -32,13 +32,7 @@ This was the first build that was "playable." There are quite a few errors in th
 The final build I made of _Not Tetris_.
 {{< youtube mo-WuCLe2lM >}}
 {{< break >}}
-{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
+{{< dots >}}
 
 # Critical Points
 While the game is in a good place, it's ultimately unfinished. There are also a few bugs, namely with the collision detection when rotating.
-
-
-<!-- {{< rawhtml >}}<hr class="dots">{{< /rawhtml >}} */}}
-
-# Reflection
-In the end, -->

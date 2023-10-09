@@ -12,6 +12,8 @@ bannerImage: "maze-cubed.webp"
 # A Final Project for Gameplay Programming Essentials
 _Maze Cubed_ is built in Unreal Engine 4.27 and was the final project for a Gameplay Programming class.
 
+{{< dots >}}
+
 # Video of the Final Game
 
 {{< rawhtml >}}
@@ -24,7 +26,8 @@ _Maze Cubed_ is built in Unreal Engine 4.27 and was the final project for a Game
 
 The video flashes a lot because my laptop is old, so if you have photosensitivities, please don't watch the video.
 
-{{< youtube UVAyGJZMvDI >}}
+{{< rawhtml >}}<div style="margin-bottom: var(--gen-bottom-padding);">{{< youtube UVAyGJZMvDI >}}</div>{{< /rawhtml >}}
+{{< dots >}}
 {{< break >}}
 
 # Link to the Game

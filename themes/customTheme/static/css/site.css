@@ -83,11 +83,11 @@ main ol[class=""]
 }
 
 article, footer, main {
-    margin-top: .668em;
+    margin-top: var(--gen-bottom-padding);
 }
 
 p {
-    margin-bottom: .668em;
+    margin-bottom: var(--gen-bottom-padding);
 }
 
 footer > .foot-selectables {

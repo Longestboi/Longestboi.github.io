@@ -12,13 +12,13 @@ bannerImage: "TFTTAR.webp"
 # Visual Novel
 
 _The Approaching Rot_ is a visual novel set in the universe of Teren. As you play you play, you meet new characters, unlock passages in the codex, and gain stats. The game also has a fighting mechanic, although it's not fully implemented in this build.
-{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
+{{< dots >}}
 
 # My Work
 
 I was the lead programmer for TFTTAR, and as such, I implemented many of the systems used in the game.
 As well, I had to find solutions to many of the things that we wanted to implement.
-{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
+{{< dots >}}
 
 ## Function Hooking
 
@@ -43,7 +43,7 @@ function hookFunctions() {
 
 The first string in the `hookedFuncs` array is the name of the function, the second is the name of the function that adds on to the original function, and the last string is the name of the function that the original function gets moved to.
 
-{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
+{{< dots >}}
 
 ## ChoiceScript Scripting
 
@@ -59,7 +59,7 @@ Coding in ChoiceScript is a slog due in part to ChoiceScript's need to be intuit
 
 With this, I was able to implement skill checks, helper functions, and attribute updater functions.
 
-{{< rawhtml >}}<hr class="dots">{{< /rawhtml >}}
+{{< dots >}}
 
 # Last Build I worked on
 
