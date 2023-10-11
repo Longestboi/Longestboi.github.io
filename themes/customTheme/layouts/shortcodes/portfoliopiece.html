@@ -1,0 +1,10 @@
+
+{{ with .Site.GetPage (index .Params 0)}}
+<div>
+    <div style="display: flex; justify-content: space-between; align-items: end;">
+        <span class="header-1">{{ .Title }}</span>
+        <span class="blog-head-2">⌜{{ .Date.Format "2006" }}⌟</span>
+    </div>
+    <hr>
+</div>
+{{ end }}

@@ -7,6 +7,10 @@
     font-size: 180%;
 }
 
+.header-1 {
+    font-size: 1.5em;
+}
+
 .short-intro-line {
     width: 100%;
     margin-bottom: var(--gen-bottom-padding);
