@@ -14,7 +14,11 @@ bannerImage: "brick-breaker.webp"
 This game was made in a week for a thinking strategies class. The course offered students a project-oriented, cross-disciplinary approach to applied thinking strategies, including critical, systems, creative, lateral, and parallel thinking, with assignments and projects guiding us toward an understanding of how these thinking dimensions related to our intended disciplines in emerging technology industries and our personal educational aspirations.
 {{< dots >}}
 
-{{< break >}}
+# Demo!
+{{< rawhtml >}}
+<iframe style="display: block; margin: auto auto;" frameborder="0" src="https://itch.io/embed-upload/8625127?color=3f3f3f" allowfullscreen="" width="480" height="660"><a href="https://longestboi.itch.io/brick-breaker">Play Brick Breaker on itch.io</a></iframe>
+{{< /rawhtml >}}
+{{< dots >}}
 
 ## Expectations of the assignment
 
