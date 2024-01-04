@@ -7,20 +7,20 @@ summary: "This script is designed to extract the debug header section of PS2 gam
 tags: "Reverse Engineering"
 ---
 
-{{< articleheader "Sndata Header section." >}}
-{{< indent >}}
+# Sndata Header section.
+
 The SN Systems PRODG PS2 SDK will leave a section header labeled ".sndata" this header section contains debug symbols.
 The section header is, unfortunately, proprietary. However, based on the work of [Kiwidoggie](https://twitter.com/diwidog/status/1188831332635267072), I've written a Python script to go to the section header and find the memory address location of the functions and function names. Then, take those functions and function names and put them into a ".txt" for Ghidra or a Python script for IDA (untested).
-{{< /indent >}}
 
 A link to my script is here: [Sndata-converter.py](https://github.com/Longestboi/sndata-converter)
 
-{{< articleheader "List games with .sndata header sections" >}}
+# List games with .sndata header sections
+
 Click on the game title to view debug symbols in Ghidra format
 
 <!-- SNDATA to Ghidra Script -->
 <!-- Start of retail games list -->
-{{< articlesubheader "rtgame" "Retail games" >}}
+## Retail games
 
 {{< rawhtml >}}
 <div>
@@ -100,8 +100,9 @@ Click on the game title to view debug symbols in Ghidra format
 
   <!-- Start of demo games list -->
   {{< break >}}
-  {{< articlesubheader "demos" "Demos" >}}
-
+{{</ rawhtml >}}
+## Demos
+{{< rawhtml >}}
   <!-- AFL Premiership 2006 -->
   <details>
     <summary>
