@@ -17,6 +17,7 @@ pre.code-block > * > * {
     font-size: .92em;
     font-family: Iosevka Web,Consolas,Courier,monospace;
     font-weight: 500;
+    color: #eae1af;
 }
 
 pre.code-block > span {
@@ -33,20 +34,24 @@ pre.code-block > span {
 span.renpy-code-block > span.token.comment,
 span.rpy-code-block > span.token.comment,
 span.python-code-block > span.token.comment,
-span.javascript-code-block > span.token.comment {
+span.javascript-code-block > span.token.comment,
+span.c-code-block > span.token.comment,
+span.hlsl-code-block > span.token.comment {
     color: var(--grey);
     font-style: italic;
 }
 
 span.python-code-block > span.token.operator,
-span.javascript-code-block > span.token.operator {
+span.javascript-code-block > span.token.operator,
+span.c-code-block > span.token.keyword {
     color: var(--cyan);
 }
   
 span.renpy-code-block > span.token.tag,
 span.rpy-code-block > span.token.tag,
 span.javascript-code-block > span.token.tag,
-span.javascript-code-block > span.token.keyword {
+span.javascript-code-block > span.token.keyword,
+span.hlsl-code-block > span.token.keyword {
     color: var(--red);
 }
   
@@ -55,7 +60,9 @@ span.renpy-code-block > span.token.function,
 span.rpy-code-block > span.token.property,
 span.rpy-code-block > span.token.function,
 span.python-code-block > span.token.function,
-span.javascript-code-block > span.token.function {
+span.javascript-code-block > span.token.function,
+span.c-code-block > span.token.function,
+span.hlsl-code-block > span.token.function {
     color: var(--yellow);
 }
   
@@ -67,6 +74,7 @@ span.javascript-code-block > span.token.string {
 }
   
 span.renpy-code-block > span.token.number,
-span.rpy-code-block > span.token.number {
+span.rpy-code-block > span.token.number,
+span.hlsl-code-block > span.token.number {
     color: var(--purple);
 }

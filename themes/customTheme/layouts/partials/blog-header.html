@@ -1,4 +1,4 @@
-<div class="blog-header-wrapper" style="background-image: url({{ if .Params.bannerImage }}{{ .Permalink }}{{.Params.bannerImage}}{{ else }}/{{ end }});">
+<div class="blog-header-wrapper" style="background-image: url({{ if .Params.bannerImage }}{{ .Permalink }}{{.Params.bannerImage}}{{ else }}/{{ end }}); {{ if .Params.bannerColor }}background-color:{{ .Params.bannerColor }};{{ end }}">
     <div class="blog-header">
         <p class="blog-title">{{ .Params.title }}</p>
         <p class="blog-attrib">by {{ partial "getpageauthors.html" . }} on ⌜{{ .Params.date | time.Format ":date_medium" }}⌟

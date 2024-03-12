@@ -3,11 +3,13 @@
   import {toHtml as toHtml} from "https://esm.sh/hast-util-to-html@8?bundle"
   import {refractor as refractor} from 'https://esm.sh/refractor@4?bundle'
   import renpy from '/js/refractor/lang/renpy.js'
+  import hlsl from '/js/refractor/lang/hlsl.js'
   
   window.toHtml = toHtml;
   window.refractor = refractor;
   
   refractor.register(renpy)
+  refractor.register(hlsl)
   export { toHtml, refractor }
 </script>
 {{ end }}

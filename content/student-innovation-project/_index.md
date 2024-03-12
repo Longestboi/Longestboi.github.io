@@ -1,29 +1,56 @@
 ---
-title: "Engine Agnostic CVD Shader"
+title: "Shader Template Exporter"
+titleImageOverride: "./Stex-rs_light.svg"
+titleImageStyle: "width: 70%; height: 70%; margin: auto;"
 type: page
 bannerImage: ""
+bannerColor: "#0c0112"
 ---
 
-# Project Description
+## Project Description
+The Shader Template Exporter is a collection of shader script snippets to be inserted into templates dynamically and exported to any given output directory. The exporter offers a Color Vision Deficiency Accessibility Shader as an example generic core and template.  
 
-The Engine-agnostic Color Vision Deficiency Accessibility Shader is a collection of shader scripts that interface between game engine shader APIs and the core color vision deficiency accessibility algorithms and associated functions or data. The shader collection uses the High-Level Shader Language – HLSL – to leverage its ability to call in code from other shader files,  allowing for the definition of a standard interface. The agnostic shader is valuable to the developers who did not have colorblindness in mind when designing their games and want accessibility features quickly.
-
-{{< dots >}}
-
-# Innovation Claim
-
-My shader is innovative because it allows developers to quickly implement accessibility for those with color vision deficiency regardless of the game engine/software.
+The shader template exporter is designed to make it easier to use basic shaders in most game engines.
 
 {{< dots >}}
 
-# Visualization
+## Implementation of the Shader Exporting
+Shader exporting is similar to how static website generators work, take a template and operate on it depending on the context. By having a tag in the template file – something like `// <% core_here %>` – the exporter can place the core into the template where the user specifies.
 
-The chart below is how the shader will work. By writing engine specific scripts that interface with a common algorithm, you can make the implementation of CVD accesibility shaders easier as you don't have to write your own shader code. Since the core part of the script is the same, the color shifting is consistent across all engines.
+The shader exporter will have a singular 
 
-{{< centerimg src="CVD-Shader-Diagram.svg" >}}
+Interface example:
+```hlsl
+/* template/Unity.hlsl */
 
-{{< dots >}}
+// <% core_here %>
 
-# Pre-SIP Demo
-{{< youtube 1_xaPLQxerc >}}
+void main() {
+	/* Shader code here! */
+}
+```
+
+Core example:
+```hlsl
+/* cvd/core.hlsl */
+
+float3 RGB_to_LMS(float3 rgb) ...
+float3 LMS_to_RGB(float3 lms) ...
+
+float3 Daltonize(float3 lms, int type) ...
+```
+
+Result from the generation :
+```hlsl
+/* gen/Unity_gen.hlsl */
+
+float3 RGB_to_LMS(float3 rgb) ...
+float3 LMS_to_RGB(float3 lms) ...
+
+float3 Daltonize(float3 lms, int type) ...
+
+void main() {
+	/* Shader code here! */
+}
+```
 

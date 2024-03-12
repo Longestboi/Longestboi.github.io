@@ -1,5 +1,9 @@
-<div class="page-header-wrapper" style="background-image: url({{ if .Params.bannerImage }}{{ .Permalink }}{{.Params.bannerImage}}{{ else }}/{{ end }});">
+<div class="page-header-wrapper" style="background-image: url({{ if .Params.bannerImage }}{{ .Permalink }}{{.Params.bannerImage}}{{ else }}/{{ end }}); {{ if .Params.bannerColor }}background-color:{{ .Params.bannerColor }};{{ end }} ">
     <div class="page-header">
+    	{{ if .Params.titleImageOverride }} 
+    	<img src="{{ .Params.titleImageOverride }}" style="{{ .Params.titleImageStyle | safeCSS }}">
+    	{{ else }}
         <p class="page-title">{{ .Params.Title }}</p>
+        {{ end }}
     </div>
 </div>
