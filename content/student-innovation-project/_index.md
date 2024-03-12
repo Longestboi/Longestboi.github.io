@@ -1,7 +1,7 @@
 ---
 title: "Shader Template Exporter"
 titleImageOverride: "./Stex-rs_light.svg"
-titleImageStyle: "width: 70%; height: 70%; margin: auto;"
+titleImageStyle: "width: 55%; height: auto; margin: auto;"
 type: page
 bannerImage: ""
 bannerColor: "#0c0112"

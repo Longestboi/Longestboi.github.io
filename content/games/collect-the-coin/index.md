@@ -1,6 +1,8 @@
 ---
 title: "Collect The Coin"
 date: 2023-12-17
+titleImageOverride: "Collect-The-Coin.webp"
+titleImageStyle: "width: 30%; height: auto; margin: auto; image-rendering: crisp-edges;"
 type: page
 summary: "A simple side-scroller built in pygame for "
 roles: "Programmer"
