@@ -7,8 +7,8 @@ type: page
 summary: "A simple side-scroller built in pygame for "
 roles: "Programmer"
 genre: "Side-Scroller"
-pannelImage: "CTC.webp"
 bannerImage: "CTC.webp"
+pannelImage: "CTC-comb.webp"
 ---
 
 # Side-Scroller
