@@ -5,11 +5,11 @@ type: page
 
 {{< rawhtml >}}
 <style>
-  li {
+  #content li {
     padding-bottom: .5em;
   }
   
-  li:last-child {
+  #content li:last-child {
     padding-bottom: 0;
   }
 </style>
