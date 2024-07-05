@@ -22,7 +22,7 @@ p.index-splash {
 }
 
 .blog-header-wrapper, .page-header-wrapper, .index-header-wrapper {
-    background-color: var(--text-color-50);
+    background-color: #0c0112;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

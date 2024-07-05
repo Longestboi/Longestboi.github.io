@@ -66,7 +66,7 @@ div.panel > div.panel-top {
 
 div.panel > div.panel-top > div.panel-bkg {
     max-height: 50%;
-    background-color: var(--text-color-50);
+    background-color: #08000c;
     background-size: cover;
     flex-basis: 100%;
 }
