@@ -112,7 +112,7 @@ In the `ThreadFunction()`, I put a lock on the code to ensure the function canno
 
 Here is what `counter` looks like in the Unity editor:
 
-{{< centerimg title="Choppy, low-quality gif of count incrementing to 1000 in one second" width="40%" src="./MultiThreadTest.gif" >}}
+{{< centerimg title="Choppy, low-quality gif of count incrementing to 1000 in one second" width="50%" src="./MultiThreadTest.webp" >}}
 
 ## Conclusion:
 It's my first time writing something of this style, and I think I did, at best, ok.
