@@ -2,7 +2,7 @@
 title: "Maze³"
 date: 2023-08-07
 type: page
-summary: "A Final Project for Gameplay Programming Essentials"
+summary: "My Final Project for Gameplay Programming Essentials."
 roles: ["Creator", "Programmer"]
 genre: ["Maze", "Puzzle"]
 pannelImage: "maze-cubed.webp"

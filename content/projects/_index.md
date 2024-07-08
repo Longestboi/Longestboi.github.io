@@ -1,4 +1,4 @@
 ---
-title: "All My Projects"
+title: "Projects"
 type: page
 ---

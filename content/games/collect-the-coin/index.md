@@ -4,7 +4,7 @@ date: 2023-12-17
 titleImageOverride: "Collect-The-Coin.webp"
 titleImageStyle: "width: 30%; height: auto; margin: auto; image-rendering: crisp-edges;"
 type: page
-summary: "A simple side-scroller built in pygame for "
+summary: "A simple side-scroller built in pygame for a level 2 python class (CSC285)"
 roles: "Programmer"
 genre: "Side-Scroller"
 bannerImage: "CTC.webp"

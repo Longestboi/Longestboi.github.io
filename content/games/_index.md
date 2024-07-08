@@ -1,4 +1,4 @@
 ---
-title: "Games I've Worked On"
+title: "Games"
 type: list
 ---

@@ -1,5 +1,5 @@
 ---
-title: "All Blog Posts"
+title: "Blog Posts"
 layout: page
 type: list
 ---
