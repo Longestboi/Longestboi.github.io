@@ -1,0 +1,10 @@
+<div id="{{ index .Params 0 }}" class="board-section">
+    <div class="image" style="{{ if index .Params 3 }}background-image: url({{ index .Params 3 }}) {{ end }};"></div>
+    <div class="text">
+        <div class="title">{{ index .Params 1 | safeHTML }}</div>
+        <div class="subsection">
+            <div class="description">{{ index .Params 4  | markdownify }}</div>
+            <div class="buttons"><a class="read-more-button" href="{{ safe.HTML (index .Params 2) }}">Read more →</a></div>
+        </div>
+    </div>
+</div>
