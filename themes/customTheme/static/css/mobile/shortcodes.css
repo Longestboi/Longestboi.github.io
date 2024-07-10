@@ -1,0 +1,65 @@
+
+.board-section {
+	--border-width: .15em;
+	--border-style: solid;
+	--border-radius: .5em;
+	--height: 100%;
+	--title-size: 1.2em;
+	--description-size: 1.2em;
+
+	display: flex;
+	overflow: hidden;
+	flex-direction: column;
+	background: var(--bg-color-50);
+	height: var(--height);
+	border-radius: var(--border-radius);
+	margin-bottom: var(--gen-bottom-padding);
+	border-color: var(--text-color-20);
+	border-style: var(--border-style);
+	border-width: var(--border-width);
+}
+
+.board-section > .image {
+	background: black;
+	/* background-image: url(/games/collect-the-coin/Collect-The-Coin.webp); */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	image-rendering: crisp-edges;
+	aspect-ratio: 1/1;
+	min-width: var(--height);
+	border-bottom: var(--border-width) var(--border-style) var(--text-color-20);
+}
+
+.board-section > .text {
+	padding-left: .5em;
+	padding-top: .5em;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.board-section > .text > .title {
+	color: var(--text-color);
+	font-size: 1.2em;
+	margin-bottom:.25em;
+}
+
+.board-section > .text > .subsection {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	justify-content: space-between;
+	word-break: break-word;
+}
+
+.board-section > .text > .subsection > .description{
+	color: var(--text-color);
+	padding-left: 1em;
+	padding-right: .5em;
+}
+
+.board-section > .text > .subsection > .buttons {
+	align-self: end;
+}
