@@ -97,7 +97,7 @@ footer > .foot-selectables {
     /* background-color: aqua; */
 }
 
-footer > .foot-selectables > * {
+footer > .foot-selectables > *:not([id="copywrite"]) {
     text-decoration: none;
     padding: var(--nav-padding);
     background-color: var(--bg-color);
@@ -108,7 +108,7 @@ footer > .foot-selectables > *:not(.footer-name) {
     transition: filter 0.2s ease-in-out;
 }
 
-footer > .foot-selectables > *:hover {
+footer > .foot-selectables > *:hover:not([id="copywrite"]) {
     filter: invert(1);
     transition: filter 0.2s ease-in-out;
     color: var(--text-color);
