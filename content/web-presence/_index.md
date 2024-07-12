@@ -25,6 +25,8 @@ type: page
       flex-wrap: wrap;
       flex-flow: row wrap;
       row-gap: .2em;
+      margin-top: var(--gen-bottom-padding);
+      margin-bottom: var(--gen-bottom-padding);
     }
     
     .social-media-widget {
@@ -75,7 +77,7 @@ type: page
     </div>
 {{< /rawhtml >}}
 
-{{< break >}}
+{{< dots >}}
 
 # Social Media
 
@@ -88,7 +90,7 @@ type: page
   </div>
 {{< /rawhtml >}}
 
-{{< break >}}
+{{< dots >}}
 
 # Direct Contact
 

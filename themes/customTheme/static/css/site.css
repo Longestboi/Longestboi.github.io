@@ -114,6 +114,10 @@ footer > .foot-selectables > *:hover:not([id="copywrite"]) {
     color: var(--text-color);
 }
 
+footer > .foot-selectables > #copywrite {
+    font-weight: 100;
+}
+
 footer > .foot-line {
     color: var(--text-color-60);
 }
