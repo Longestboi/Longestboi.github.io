@@ -5,7 +5,7 @@ type: page
 
 # Howdy!
 {{< indent >}}
-My name is Andrew Long, and I am a game programmer interested in lower-level game engine programming. I haven't worked in the games industry yet, but I have programmed a few games from scratch in Python and Pygame.
+I'm Andrew Long, a Game Programmer interested in lower-level game engine programming. I haven't worked in the games industry yet, but I have programmed a few games from scratch in Python and Pygame. I've done most of my work in Python because it was the one I had the most knowledge of and the first programming language, but Rust quickly replaced it. Unfortunately, I haven't published any of my Rust projects, but I've implemented a parser for Jazz Jackrabbit game files and have experimented with reimplementing the Half-Life client/server DLLs in Rust.
 {{< /indent >}}
 
 {{< dots >}}
