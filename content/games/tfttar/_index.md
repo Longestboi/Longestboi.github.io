@@ -99,7 +99,7 @@ With this, I was able to implement skill checks, helper functions, and attribute
     butt.addEventListener("click", () => {
         butt.style.display = "none";
         frame.style.display = "block";
-        frame.src = "game/index.html";
+        frame.src = "./game/index.html";
 
         frame.scrollIntoView();
     });

@@ -66,7 +66,7 @@
 	/* background-image: url(/games/collect-the-coin/Collect-The-Coin.webp); */
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: cover;
 	image-rendering: crisp-edges;
 	aspect-ratio: 1/1;
 	min-width: var(--height);
