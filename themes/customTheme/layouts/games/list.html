@@ -3,8 +3,6 @@
 {{ end }} {{/* header */}}
 
 {{ define "main" }}
-
-{{ if (eq .Params.type "list") }}
 <main>
     <article>
         <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
@@ -52,10 +50,5 @@
     </article>
 
 </main>
-{{ else }}
-    <main>
-        {{ .Content }}
-    </main>
-{{ end }}
 {{ end }}
 
