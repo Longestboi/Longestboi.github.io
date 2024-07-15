@@ -67,11 +67,11 @@ The pages can be made of any screen, they can even have interactable widgets too
 
 # Demonstration
 ## Purchase binder
-{{< centerimg title="Purchase binder demo" width="100%" src="../Purchase_Binder.png" >}}
+{{< centerimg title="Purchase binder demo" width="100%" src="../Purchase_Binder.webp" >}}
 The purchase binder has a custom button at the top of the screen. 
 
 ## Stock binder
-{{< centerimg title="Stock binder demo" width="100%" src="../Stock_Binder.png" >}}
+{{< centerimg title="Stock binder demo" width="100%" src="../Stock_Binder.webp" >}}
 
 {{< dots >}}
 
