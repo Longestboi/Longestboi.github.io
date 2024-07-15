@@ -5,7 +5,7 @@ titleImageOverride: "Collect-The-Coin.webp"
 titleImageStyle: "width: 30%; height: auto; margin: auto; image-rendering: crisp-edges;"
 type: page
 summary: "A simple side-scroller built in pygame for a level 2 python class (CSC285)"
-roles: "Programmer"
+roles: ["Creator", "Programmer"]
 genre: "Side-Scroller"
 bannerImage: "CTC.webp"
 pannelImage: "CTC-comb.webp"
