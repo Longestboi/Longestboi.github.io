@@ -87,5 +87,5 @@ head3 {
 
 {{< boards-section "tfttar" "Tales From Teren: The Approaching Rot" "/games/tfttar" "./TFTTAR.webp" "I was the main developer for _Tales From Teren_ for its first semester and implemented many features that the designers, writers, and artists needed, some of which never made it into the project." >}}
 
-{{< boards-section "biomines" "Biomines" "" "./biomines.webp" "I worked as a programming advisor for the first semester of the project. I advised how the repos should be set up, including file structure, how the project settings should be, and more." >}}
+{{< boards-section "biomines" "Biomines" "https://alemeji1gamedev.itch.io/biomines-demo-milestone-1" "./biomines.webp" "I worked as a programming advisor for the first semester of the project. I advised how the repos should be set up, including file structure, how the project settings should be, and more." >}}
 
