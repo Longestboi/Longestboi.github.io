@@ -84,8 +84,9 @@
 
 .board-section > .text > .title {
 	color: var(--text-color);
-	font-size: 1.2em;
-	margin-bottom:.25em;
+	font-size: 1.3em;
+	margin-bottom: .3em;
+	font-weight: bolder;
 }
 
 .board-section > .text > .subsection {
@@ -97,8 +98,10 @@
 }
 
 .board-section > .text > .subsection > .description{
-	color: var(--text-color);
-	padding-left: 1em;
+	color: var(--text-color-90);
+	font-size: .9em;
+	font-weight: lighter;
+/*	padding-left: 1em;*/
 	padding-right: .5em;
 }
 
