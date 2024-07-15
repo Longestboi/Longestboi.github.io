@@ -1,7 +1,7 @@
 <footer>
     <hr class="foot-line">
     <div class="foot-selectables">
-    <span id="copywrite" style="font-size: .75em; align-self: center; flex-grow: 1;">© 2024 Andrew Long</span>
+    <span id="copywrite" style="font-size: .75em; align-self: center; flex-grow: 1;">© {{ now.Year }} {{ .Site.Data._author.name }}</span>
         <a href="/about">about</a>
         <a class="footer-name" href="/">{{ .Site.Data._author.name | lower }}</a>
     </div>
