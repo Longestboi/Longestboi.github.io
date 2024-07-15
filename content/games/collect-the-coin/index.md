@@ -17,11 +17,8 @@ _Collect The Coin_ is a side-scroller where you **Collect a Coin**. _Collect The
 {{< dots >}}
 
 # Video Demo
-
-### TEMP VIDEO
-{{< rawhtml >}}<div style="margin-bottom: var(--gen-bottom-padding);">{{< youtube Uj-Q4aqEaak >}}</div>{{< /rawhtml >}}
+{{< rawhtml >}}<div style="margin-bottom: var(--gen-bottom-padding);">{{< youtube WLLQswQx6ss >}}</div>{{< /rawhtml >}}
 {{< dots >}}
-
 
 # Download
 {{< itch userName="longestboi" gameTitle="collect-the-coin-python" >}}
