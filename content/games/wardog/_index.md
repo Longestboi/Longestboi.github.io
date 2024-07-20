@@ -30,9 +30,6 @@ In milestone 2, most of the game states have been implemented; however, the cred
 
 # My Programming Work
 This page is only for a simple overview of the game. If you want to learn more about the systems I’ve made for this game, click the headers.
-{{< break >}}
-{{< dots >}}
-{{< break >}}
 
 {{< rawhtml >}}
 <div style="display: flex; flex-direction: column; align-items: start;">
