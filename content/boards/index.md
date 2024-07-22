@@ -23,13 +23,13 @@ type: page
 </style>
 {{< /rawhtml >}}
 
-# GAME PROGRAMMING DEGREE OBJECTIVES (WIP)
+# GAME PROGRAMMING DEGREE OBJECTIVES
 
 ### 1. Implement multiple completed games, including 3D games, using common tools, languages, and software for web, console, PC, or mobile platforms.
 
 {{< boards-section "brick-breaker" "Brick Breaker" "/games/brick-breaker" "./brick-breaker.webp" "Written in Python in a week. (Runs anywhere Python can, like web browsers, Windows, Linux, and macOS)" >}}
 
-{{< boards-section "maze-cubed" "MAZE<sup>CUBED</sup>" "/games/maze-cubed" "./maze_cubed.webp" "3D Maze game made in Unreal Engine 4.21. (Runs Windows, and Linux, Could run on macOS, but no builds)." >}}
+{{< boards-section "maze-cubed" "MAZE<sup>CUBED</sup>" "/games/maze-cubed" "./maze_cubed.webp" "3D Maze game made in Unreal Engine 4.27. (Runs Windows, and Linux, Could run on macOS, but no builds)." >}}
 
 {{< boards-section "collect-coin" "Collect The Coin" "/games/collect-the-coin" "" "Written in Python. (Runs anywhere Python can, Windows, Linux, and macOS, except for web browsers due to performance issues)" >}}
 
@@ -42,6 +42,8 @@ type: page
 {{< boards-section "collect-coin" "Collect The Coin" "/games/collect-the-coin" "" "Built with the Pygame framework, it’s a side-scrolling platformer made from scratch." >}}
 
 {{< boards-section "pytris" "Pytris" "/games/pytris" "./Pytris.webp" "Built with the Pygame framework, from scratch, to be as modular as possible." >}}
+
+{{< boards-section "peggle" "Peggle Clone" "/games/peggle-clone" "./Peggle.webp" "I’ve built this Peggle clone with independence in mind. No object has a direct dependence on another object. I’ve made everything in this project independent by leveraging a few of Godot’s features. All pegs in any scene add themself to a group when they get instantiated. When the main game script gets instantiated, it grabs the group the pegs added themself to and operates on the pegs accordingly." >}}
 
 {{< dots >}}
 
@@ -63,11 +65,11 @@ type: page
 
 ### 5. Demonstrate development skills using multiple programming languages, development environments, and platforms, including advanced and/or experimental topics in game programming.
 
-{{< boards-section "tfttar" "Tales From Teren: The Approaching Rot" "/games/tfttar" "./TFTTAR.webp" "Web-based visual novel that needed to run on desktop and mobile browsers." >}}
+{{< boards-section "tfttar" "Tales From Teren: The Approaching Rot" "/games/tfttar" "./TFTTAR.webp" "TFTTAR is a web-based visual novel that needs to run on desktop and mobile browsers and uses the ChoiceScript framework. ChoiceScript uses its own interpreted language that is very restrictive because non-programmers are the intended target. Due to these restrictions, I had to use JavaScript to implement some features the designers required; this included making custom BBCode tags and hacking the framework to allow for a button that takes you to a codex at any point in the game." >}}
 
-{{< boards-section "pytris" "Pytris" "/games/pytris" "./Pytris.webp" "One of the more complex engines I’ve written in Python due to a lack of time constraints. Contains things like Godot-like signals, GUI objects, global data, and high framerates for an interpreted language." >}}
+{{< boards-section "pytris" "Pytris" "/games/pytris" "./Pytris.webp" "Pytris contains one of the more complex engines I’ve written in Python. It has Godot-like signals, GUI objects, global data, and high framerates for an interpreted language." >}}
 
-{{< boards-section "peggle" "Peggle Clone" "/games/peggle-clone" "./Peggle.webp" "I've built this Peggle clone with independence in mind. No object has a direct dependence on another object. I've made everything in this project independent by leveraging a few of Godot's features. All pegs in any scene add themself to a group when they get instantiated. When the main game script gets instantiated, it grabs the group the pegs added themself to and operates on the pegs accordingly." >}}
+{{< boards-section "peggle" "Peggle Clone" "/games/peggle-clone" "./Peggle.webp" "I've built my Peggle clone project in Godot 4.2, which is slowly gaining more support in the games industry. The game uses Godot's features like groups, signals, Autoloads, etc, to make every scene portable. Godot allows you to use multiple languages, but for simplicity, I used GDscript, an interpreted language endemic to Godot. Wherever possible, I've specified the type of any variable; this allows the game to run slightly faster, as Godot doesn't have to interpret what the type may be." >}}
 
 {{< dots >}}
 
