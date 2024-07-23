@@ -1,10 +1,10 @@
 ---
 title: "Shader Template Exporter"
-titleImageOverride: "./Stex-rs_light.svg"
-titleImageStyle: "width: 55%; height: auto; margin: auto;"
+titleImageOverride: "./logo.webp"
+titleImageStyle: "width: 60%; height: auto; margin: auto;"
 type: page
-bannerImage: ""
-bannerColor: "#0c0112"
+bannerImage: "BKG.webp"
+#pannelImage: ""
 ---
 
 ## Project Description
@@ -14,12 +14,18 @@ The shader template exporter is designed to make it easier to use basic shaders 
 
 {{< dots >}}
 
+## Video
+{{< youtube 1KGUNfnUdCg >}}
+
+{{< padding >}}
+{{< dots >}}
+
 ## Implementation of the Shader Exporting
 Shader exporting is similar to how static website generators work, take a template and operate on it depending on the context. By having a tag in the template file – something like `// <% core_here %>` – the exporter can place the core into the template where the user specifies.
 
 The shader exporter will have a singular 
 
-Interface example:
+### Interface example:
 ```hlsl
 /* template/Unity.hlsl */
 
@@ -30,7 +36,7 @@ void main() {
 }
 ```
 
-Core example:
+### Core example:
 ```hlsl
 /* cvd/core.hlsl */
 
@@ -40,7 +46,7 @@ float3 LMS_to_RGB(float3 lms) ...
 float3 Daltonize(float3 lms, int type) ...
 ```
 
-Result from the generation :
+### Result from the generation:
 ```hlsl
 /* gen/Unity_gen.hlsl */
 

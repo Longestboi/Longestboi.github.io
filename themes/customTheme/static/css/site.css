@@ -90,6 +90,10 @@ p {
     margin-bottom: var(--gen-bottom-padding);
 }
 
+.gen-padding {
+    margin-bottom: var(--gen-bottom-padding) !important;
+}
+
 footer > .foot-selectables {
     display: flex;
     justify-content: end;
