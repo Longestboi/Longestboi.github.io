@@ -1,25 +1,25 @@
 ---
 title: "Peggle Clone"
 date: 2024-07-22
-#titleImageOverride: "Collect-The-Coin.webp"
-#titleImageStyle: "width: 30%; height: auto; margin: auto; image-rendering: crisp-edges;"
 type: page
-summary: "A recreation of of the classic pachinko game Peggle in the Godot game engine"
+summary: "A recreation of of the classic pachinko-puzzle game Peggle in the Godot game engine"
 roles: ["Creator", "Programmer"]
 genre: "Puzzle"
-bannerImage: ""
-pannelImage: ""
+bannerImage: "Peggle-banner.webp"
+pannelImage: "Peggle-banner.webp"
 ---
 
 # A Peggle clone
-_\*TODO\*_
+My clone of Peggle is written in the Godot game engine, and utilizes many of Godot's features, like type hints, which speeds up GDScript as it doesn't need to find a given type, signals, an implementation of the _[observer pattern](https://en.wikipedia.org/wiki/Observer_pattern)_, and more.
+
+This clone was made during the downtime of a game programming internship, as the client was unable to complete the GDD during the internship period.
 
 {{< dots >}}
 
 # Video Demo
-_\*TODO\*_
+{{< rawhtml >}}<div class="gen-padding">{{< youtube 3KPSR-Rbs9I >}}</div>{{< /rawhtml >}}
 
 {{< dots >}}
 
-# Download
-_\*TODO\*_
+# Structure
+This prototype project is structured in a way to make 

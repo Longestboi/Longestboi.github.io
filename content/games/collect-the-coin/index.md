@@ -17,7 +17,11 @@ _Collect The Coin_ is a side-scroller where you **Collect a Coin**. _Collect The
 {{< dots >}}
 
 # Video Demo
-{{< rawhtml >}}<div style="margin-bottom: var(--gen-bottom-padding);">{{< youtube WLLQswQx6ss >}}</div>{{< /rawhtml >}}
+{{< rawhtml >}}<div class="gen-padding">{{< youtube WLLQswQx6ss >}}</div>{{< /rawhtml >}}
+{{< dots >}}
+
+# Code Walk + Demo
+{{< rawhtml >}}<div class="gen-padding">{{< youtube Uj-Q4aqEaak >}}</div>{{< /rawhtml >}}
 {{< dots >}}
 
 # Download

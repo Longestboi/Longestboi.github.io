@@ -33,7 +33,7 @@ type: page
 
 {{< boards-section "collect-coin" "Collect The Coin" "/games/collect-the-coin" "" "Written in Python. (Runs anywhere Python can, Windows, Linux, and macOS, except for web browsers due to performance issues)" >}}
 
-{{< boards-section "long-ninja" "Long Titled Ninja Game" "https://longestboi.itch.io/long-title-ninja" "./lone-ninja.webp" "A top-down 3d shooter in Unity. (Runs on Windows, and Linux. Could run on macOS, but no builds)" >}}
+{{< boards-section "long-ninja" "Long Titled Ninja Game" "/games/lone-ninja" "./lone-ninja.webp" "A top-down 3d shooter in Unity. (Runs on Windows, and Linux. Could run on macOS, but no builds)" >}}
 
 {{< dots >}}
 
@@ -67,7 +67,7 @@ type: page
 
 {{< boards-section "tfttar" "Tales From Teren: The Approaching Rot" "/games/tfttar" "./TFTTAR.webp" "TFTTAR is a web-based visual novel that needs to run on desktop and mobile browsers and uses the ChoiceScript framework. ChoiceScript uses its own interpreted language that is very restrictive because non-programmers are the intended target. Due to these restrictions, I had to use JavaScript to implement some features the designers required; this included making custom BBCode tags and hacking the framework to allow for a button that takes you to a codex at any point in the game." >}}
 
-{{< boards-section "pytris" "Pytris" "/games/pytris" "./Pytris.webp" "Pytris contains one of the more complex engines I’ve written in Python. It has Godot-like signals, GUI objects, global data, and high framerates for an interpreted language." >}}
+{{< boards-section "pytris" "Pytris" "/games/pytris" "./Pytris.webp" "Pytris contains one of the more complex engines I’ve written in Python. It has Godot-like signals, immediate mode GUI objects, global data, and high framerates for an interpreted language." >}}
 
 {{< boards-section "peggle" "Peggle Clone" "/games/peggle-clone" "./Peggle.webp" "I've built my Peggle clone project in Godot 4.2, which is slowly gaining more support in the games industry. The game uses Godot's features like groups, signals, Autoloads, etc, to make every scene portable. Godot allows you to use multiple languages, but for simplicity, I used GDscript, an interpreted language endemic to Godot. Wherever possible, I've specified the type of any variable; this allows the game to run slightly faster, as Godot doesn't have to interpret what the type may be." >}}
 
@@ -77,5 +77,6 @@ type: page
 
 {{< boards-section "tfttar" "Tales From Teren: The Approaching Rot" "/games/tfttar" "./TFTTAR.webp" "I was the main developer for _Tales From Teren_ for its first semester and implemented many features that the designers, writers, and artists needed, some of which never made it into the project." >}}
 
-{{< boards-section "biomines" "Biomines" "https://alemeji1gamedev.itch.io/biomines-demo-milestone-1" "./biomines.webp" "I worked as a programming advisor for the first semester of the project. I advised how the repos should be set up, including file structure, how the project settings should be, and more." >}}
+{{< boards-section "biomines" "Biomines" "https://github.com/Biomines-Prod-Studio/Biomines/commits/develop/?author=Longestboi" "./biomines.webp" "I worked as a programming advisor for the first semester of [Biomines](https://alemeji1gamedev.itch.io/biomines-demo-milestone-1). I advised how the repos should be set up, including file structure, how the project settings should be, and more." >}}
+
 

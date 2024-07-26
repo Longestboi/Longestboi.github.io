@@ -1,6 +1,6 @@
 {{ if eq .Level 1}}
 <div class="short-intro-head">
-	<head{{ .Level }} class="short-article-main-header">{{ .Text }}</head{{ .Level }}>
+	<head{{ .Level }} class="short-article-main-header">{{ htmlUnescape .Text }}</head{{ .Level }}>
 	<hr class="short-intro-line">
 </div>
 {{ else if eq .Level 2}}
@@ -15,6 +15,6 @@
 	<hr class="line" style="width: 100%;">
 </div>
 {{ else }}
-<h{{ .Level }}>{{ .Text }}</h{{ .Level }}>
+<h{{ .Level }}>{{ htmlUnescape .Text }}</h{{ .Level }}>
 {{ end }}
 

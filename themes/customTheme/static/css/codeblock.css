@@ -17,7 +17,7 @@ pre.code-block > * > * {
     font-size: .92em;
     font-family: Iosevka Web,Consolas,Courier,monospace;
     font-weight: 500;
-    color: #eae1af;
+    color: #eae1afx;
 }
 
 pre.code-block > span {
@@ -26,9 +26,68 @@ pre.code-block > span {
     --cyan: #8ec07c;
     --green: #b8bb26;
     --yellow: #fabd2f;
+    --orange: #fe8019;
     --red: #fb4934;
     --purple: #d3869b;
     --grey: #7c6f64;
+}
+
+pre.code-block:has(.gdscript-code-block) {
+    background: #202531;
+}
+
+pre.code-block > .gdscript-code-block {
+    --blue: #66e5ff;
+    --cyan: #8effda;
+    --yellow: #ffeca1;
+    --red: #ff7085;
+    --orange: #ffb373;
+    --green: #63c259;
+    --light-blue: #abc9ff;
+    --magenta: #ff8ccc;
+}
+
+span.gdscript-code-block > span.token.controlflow {
+    color: var(--magenta);
+}
+
+span.gdscript-code-block > span.token.nodepath {
+    color: var(--green);
+}
+
+span.gdscript-code-block > span.token.operator {
+    color: var(--light-blue);
+}
+
+span.gdscript-code-block > span.token.keyword,
+span.gdscript-code-block > span.token.boolean {
+    color: var(--red);
+}
+
+span.gdscript-code-block > span.token.string {
+    color: var(--yellow);
+}
+
+span.gdscript-code-block > span.token.function {
+    color: var(--blue);
+}
+
+span.gdscript-code-block > span.token.class-name {
+    color: var(--cyan);
+}
+
+span.gdscript-code-block > span.token.annotation {
+    color: var(--orange);
+}
+
+span.gdscript-code-block > span.token.comment {
+    font-style: italic;
+    color: rgba(204, 206, 211, 0.5);
+}
+
+
+span.python-code-block > span.token.class-name {
+    color: var(--orange);
 }
 
 span.renpy-code-block > span.token.comment,
@@ -49,6 +108,7 @@ span.c-code-block > span.token.keyword {
   
 span.renpy-code-block > span.token.tag,
 span.rpy-code-block > span.token.tag,
+span.python-code-block > span.token.keyword,
 span.javascript-code-block > span.token.tag,
 span.javascript-code-block > span.token.keyword,
 span.hlsl-code-block > span.token.keyword {

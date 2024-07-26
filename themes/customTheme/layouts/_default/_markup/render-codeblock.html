@@ -4,18 +4,23 @@
   import {refractor as refractor} from 'https://esm.sh/refractor@4?bundle'
   import renpy from '/js/refractor/lang/renpy.js'
   import hlsl from '/js/refractor/lang/hlsl.js'
+  import gdscript from '/js/refractor/lang/gdscript.js'
   
   window.toHtml = toHtml;
   window.refractor = refractor;
   
+  refractor.register(gdscript)
   refractor.register(renpy)
   refractor.register(hlsl)
+  
+  console.log(refractor)
+
   export { toHtml, refractor }
 </script>
 {{ end }}
 
 <script type="module">
-  const tree = window.refractor.highlight('{{ .Inner }}', '{{ .Type }}');
+  const tree = window.refractor.highlight('{{ replace .Inner "\t" "    " }}', '{{ .Type }}');
   document.getElementById("{{ .Type }}-{{ .Ordinal }}").innerHTML = window.toHtml(tree);
 </script>
 

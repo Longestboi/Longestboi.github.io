@@ -136,6 +136,16 @@ a {
     text-decoration: var(--link-color) underline 0.1336em;
 }
 
+em, strong, a {
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+}
+
+strong {
+    font-weight: bold;
+}
+
 /* I have no idea what this code is for */
 /*ul, dd {
     padding-left: 1em;

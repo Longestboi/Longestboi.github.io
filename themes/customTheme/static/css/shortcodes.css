@@ -97,13 +97,19 @@
 	word-break: break-word;
 }
 
-.board-section > .text > .subsection > .description{
+.board-section > .text > .subsection > .description {
 	color: var(--text-color-90);
 	font-size: .9em;
 	font-weight: lighter;
 /*	padding-left: 1em;*/
 	padding-right: .5em;
 }
+
+/*.board-section > .text > .subsection > .description > * {
+	color: var(--text-color-90);
+	font-size: .9em;
+	font-weight: lighter;
+}*/
 
 .board-section > .text > .subsection > .buttons {
 	align-self: end;
