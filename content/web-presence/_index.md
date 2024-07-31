@@ -86,7 +86,6 @@ type: page
     <a class="social-media-widget" href="https://www.linkedin.com/in/andrewrlong02/"><img class="social-media-logo" src="./img/LinkedIn.svg"><span>Linkedin</span></a>
     <a class="social-media-widget" href="https://twitter.com/Long_boii"><img class="social-media-logo" src="./img/Twitter.svg"><span>Twitter</span></a>
     <a class="social-media-widget" href="https://www.discordapp.com/users/788796881219616810"><img class="social-media-logo" src="./img/Discord.svg"><span>Discord</span></a>
-    <a class="social-media-widget" href="https://bsky.app/profile/longestboi.bsky.social"><img class="social-media-logo" src="./img/Bluesky.svg"><span>Bluesky</span></a>
   </div>
 {{< /rawhtml >}}
 
