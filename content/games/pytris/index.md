@@ -16,6 +16,15 @@ _Pytris_ is a clone of the classic tetromino puzzle game Tetris. I built this ga
 
 I've achieved this by utilizing Pygame's built-in sprite type, `DirtySprite`, and the `LayeredDirty` sprite group. The "Dirty" part of these types denotes when or if the sprite should get redrawn, stopping the renderer from wasting time constantly redrawing some sprites, like backgrounds and other static objects.
 
+# Video Demo (Unfinished)
+
+{{< rawhtml >}}
+<video class="gen-padding" style="display:block; margin:0 auto;" src=Pytris.webm type=”video/webm” controls >
+</video >
+{{< /rawhtml >}}
+
+{{< dots >}}
+
 # Code Showcase
 
 ## Signal.py (Obeserver Pattern Object)
@@ -26,7 +35,6 @@ import inspect
 
 class Signal():
     def __init__(self, function_definition: Callable):
-        self.function_definition = function_definition
         self.funcs = []
 
     def emit(self, *args):

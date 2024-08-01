@@ -19,7 +19,3 @@ This clone was made during the downtime of a game programming internship, as the
 # Video Demo
 {{< rawhtml >}}<div class="gen-padding">{{< youtube 3KPSR-Rbs9I >}}</div>{{< /rawhtml >}}
 
-{{< dots >}}
-
-# Structure
-This prototype project is structured in a way to make 
