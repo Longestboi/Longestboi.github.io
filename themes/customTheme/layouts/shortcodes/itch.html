@@ -21,12 +21,12 @@
 {{ $data := "" }}
 
 {{/*  Get remote resource from itch.io  */}}
-{{ with resources.GetRemote $u }}
+{{ with try (resources.GetRemote $u) }}
     {{ with .Err }}
         {{ errorf "$s" . }}
     {{ else }}
         {{ $opts := dict "delimiter" "," }}
-        {{ $data = . | transform.Unmarshal $opts }}
+        {{ $data = .Value | transform.Unmarshal $opts }}
 
         {{ if $data.errors }}
             {{ errorf "Itch.io: %s" (delimit $data.errors ", ") }}

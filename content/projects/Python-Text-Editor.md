@@ -1,6 +1,6 @@
 ---
 title: "Simple Python Text Editor"
-date:  Sep 18, 2023
+date:  2023-09-18
 authors: "Andrew Long"
 type: page
 summary: "A simple Python-based text editor built for a Python programming 2 class."

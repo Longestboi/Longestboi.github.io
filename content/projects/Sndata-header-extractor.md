@@ -1,6 +1,6 @@
 ---
 title: "Sndata Converter"
-date:  Sep 18, 2020
+date:  2020-09-18
 authors: "Andrew Long"
 type: page
 summary: "This script is designed to extract the debug header section of PS2 game built with the SN Systems toolchain."
