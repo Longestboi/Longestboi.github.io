@@ -12,17 +12,13 @@ pre.code-block::-webkit-scrollbar{
     display: none;
 }
 
-pre.code-block > *,
-pre.code-block > * > * {
-    font-size: .92em;
+pre.code-block * {
+    font-size: .92rem !important;
     font-family: Iosevka Web,Consolas,Courier,monospace;
     font-weight: 500;
     color: #eae1afx;
-}
 
-pre.code-block > span {
     display: inline-block;
-    line-height: 1.3em;
     --cyan: #8ec07c;
     --green: #b8bb26;
     --yellow: #fabd2f;
@@ -59,20 +55,20 @@ span.gdscript-code-block > span.token.operator {
     color: var(--light-blue);
 }
 
-span.gdscript-code-block > span.token.keyword,
+span.gdscript-code-block > span.hljs-keyword,
 span.gdscript-code-block > span.token.boolean {
     color: var(--red);
 }
 
-span.gdscript-code-block > span.token.string {
+span.gdscript-code-block > span.hljs-string {
     color: var(--yellow);
 }
 
-span.gdscript-code-block > span.token.function {
+span.gdscript-code-block > span.hljs-title.function_ {
     color: var(--blue);
 }
 
-span.gdscript-code-block > span.token.class-name {
+span.gdscript-code-block > span.hljs-title.class_ {
     color: var(--cyan);
 }
 
@@ -80,59 +76,65 @@ span.gdscript-code-block > span.token.annotation {
     color: var(--orange);
 }
 
-span.gdscript-code-block > span.token.comment {
+span.gdscript-code-block > span.hljs-comment {
     font-style: italic;
     color: rgba(204, 206, 211, 0.5);
 }
 
 
-span.python-code-block > span.token.class-name {
+span.python-code-block span.hljs-title.class_,
+span.python-code-block span.hljs-type{
     color: var(--orange);
 }
 
-span.renpy-code-block > span.token.comment,
-span.rpy-code-block > span.token.comment,
-span.python-code-block > span.token.comment,
-span.javascript-code-block > span.token.comment,
-span.c-code-block > span.token.comment,
-span.hlsl-code-block > span.token.comment {
+span.renpy-code-block > span.hljs-comment,
+span.rpy-code-block > span.hljs-comment,
+span.python-code-block span.hljs-comment,
+span.javascript-code-block > span.hljs-comment,
+span.c-code-block > span.hljs-comment,
+span.hlsl-code-block > span.hljs-comment {
     color: var(--grey);
     font-style: italic;
 }
 
-span.python-code-block > span.token.operator,
+span.python-code-block span.token.operator,
 span.javascript-code-block > span.token.operator,
-span.c-code-block > span.token.keyword {
+span.c-code-block > span.hljs-keyword {
     color: var(--cyan);
 }
   
 span.renpy-code-block > span.token.tag,
 span.rpy-code-block > span.token.tag,
-span.python-code-block > span.token.keyword,
+span.python-code-block span.hljs-keyword,
 span.javascript-code-block > span.token.tag,
-span.javascript-code-block > span.token.keyword,
-span.hlsl-code-block > span.token.keyword {
+span.javascript-code-block > span.hljs-keyword,
+span.hlsl-code-block > span.hljs-keyword,
+span.hlsl-code-block > span.hljs-type{
     color: var(--red);
 }
   
 span.renpy-code-block > span.token.property,
-span.renpy-code-block > span.token.function,
+span.renpy-code-block > span.hljs-title.function_,
 span.rpy-code-block > span.token.property,
-span.rpy-code-block > span.token.function,
-span.python-code-block > span.token.function,
-span.javascript-code-block > span.token.function,
-span.c-code-block > span.token.function,
-span.hlsl-code-block > span.token.function {
+span.rpy-code-block > span.hljs-title.function_,
+span.python-code-block span.hljs-built_in,
+span.python-code-block span.hljs-meta,
+span.python-code-block span.hljs-title.function_,
+span.javascript-code-block > span.hljs-title.function_,
+span.javascript-code-block > span.hljs-built_in,
+span.c-code-block > span.hljs-title.function_,
+span.hlsl-code-block > span.hljs-title.function_ {
     color: var(--yellow);
 }
   
-span.renpy-code-block > span.token.string,
-span.rpy-code-block > span.token.string,
-span.python-code-block > span.token.string,
-span.javascript-code-block > span.token.string {
+span.renpy-code-block > span.hljs-string,
+span.rpy-code-block > span.hljs-string,
+span.python-code-block span.hljs-string,
+span.javascript-code-block > span.hljs-string {
     color: var(--green);
 }
-  
+
+span.python-code-block span.hljs-variable.language_,
 span.renpy-code-block > span.token.number,
 span.rpy-code-block > span.token.number,
 span.hlsl-code-block > span.token.number {
