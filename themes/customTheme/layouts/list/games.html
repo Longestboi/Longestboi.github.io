@@ -7,9 +7,9 @@
     <article>
         <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
         {{.Content}}
-        
+
         {{ $genres := slice }}
-        
+
         {{/*  Ranges through content/posts/*.md  */}}
         {{ range .Data.Pages }}
             {{/*  Protect against no genre  */}}
@@ -17,10 +17,10 @@
                 {{ $genres = $genres | append .Params.genre }}
             {{ end }}
         {{ end }}
-        
+
         {{/*  Strip duplicates  */}}
         {{ $genres = union (sort $genres) (slice) }}
-        
+
         <div class="section-container" style="padding-bottom: .5em;">
             {{ partial "text-heading.html" (dict "context" . "Level" 1 "Text" "All Games") }}
             {{/*  {{ partial "main-section.html" (dict "context" . "Section" "All Games") }}  */}}

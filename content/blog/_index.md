@@ -1,6 +1,6 @@
 ---
 title: "Blog Posts"
-layout: page
+layout: blog
 type: list
 ---
 

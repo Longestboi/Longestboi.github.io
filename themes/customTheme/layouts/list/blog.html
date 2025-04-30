@@ -14,8 +14,12 @@
     </article>
     <dl class="blog-list-dl">
         <dt>
-            <div class="blog-list-header" style="display: inline-block;">
-                <span>All Blog Posts:</span>
+            <div class="blog-list-header" style="display: inline-block; {{ if not .Params.blogListOverride }} padding-top: .25em {{ end }}">
+                {{ if .Params.blogListOverride }}
+                    <span>{{ .Params.blogListOverride }}</span>
+                {{ else }}
+                    <span>All Blog Posts:</span>
+                {{ end }}
                 <hr>
             </div>
         </dt>
