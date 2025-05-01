@@ -66,6 +66,7 @@ div#content.site-blog > main {
 div#content-left-bar,
 div#content-right-bar {
     width: 25em;
+    max-width: 25em;
     display: flex;
     justify-content: center;
 }

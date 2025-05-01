@@ -2,20 +2,20 @@
 
 <link rel="stylesheet" href="/css/toc.css">
 <div class="toc-wrapper" >
-    <style>
-        {{ if .Params.tocEndlevel }}
+    {{ if .Params.tocEndlevel }}
+        <style>
             #TableOfContents {{ range (seq .Params.tocEndlevel) }}{{ printf "ol " }}{{ end }} {
-    	        display: none;
-    	    }
-    	{{ end }}
-    </style>
+                display: none;
+            }
+        </style>
+    {{ end }}
     <div class="toc" >
         <div class="tocHead">
             Contents:
             <hr class="line">
         </div>
         <div class="tocCont">
-            	{{.TableOfContents}}
+            {{.TableOfContents}}
         </div>
         <div class="tocFoot"></div>
     </div>

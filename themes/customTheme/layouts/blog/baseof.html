@@ -2,6 +2,7 @@
 <html lang="en">
     {{- partial "head.html" . -}}
     <body>
+        {{ if site.Params.debug }}{{ printf "Blog baseof: %s %s" .Layout .Type }}{{ end }}
         {{- partialCached "nav.html" . -}}
         {{- block "header" . -}}{{- end -}}
         <div id="content" class="site-blog">

@@ -9,9 +9,17 @@
 {{ define "main" }}
 <main>
     <article>
+        {{ $heading_text :=  printf "Post with the tag `%s`" .Title }}
         <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
-        {{.Content}}
-        <dl>
+        {{ .Content }}
+
+        <dl class="blog-list-dl">
+            <dt>
+                <div class="blog-list-header" style="display: inline-block;">
+                    <span>{{ $heading_text }}</span>
+                    <hr>
+                </div>
+            </dt>
         {{- partial "render-list.html" . -}}
         </dl>
     </article>

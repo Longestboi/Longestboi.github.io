@@ -3,15 +3,12 @@
 {{ end }} {{/* header */}}
 
 {{ define "main" }}
-	<div id="content-left-bar">
-	    {{- partial "toc.html" . -}}
-	</div>
+	<div id="content-left-bar"> {{- partial "toc.html" . -}} </div>
 	<main>
-        {{ .Content }}
-        {{- partialCached "footer.html" . -}}
+		{{ .Content }}
+		{{- partial "footer.html" . -}}
 	</main>
 	<div id="content-right-bar">
-	    {{ .Params.right }}
+		{{ .Params.right }}
 	</div>
 {{ end }} {{/* main */}}
-

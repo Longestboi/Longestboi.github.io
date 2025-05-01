@@ -1,0 +1,16 @@
+<!-- Ranges through content/posts/*.md -->
+{{ range .Data.Pages }}
+    <dd class="list-item">
+        <div>
+            <div style="display: inline;">
+                <a class="list-item-title" href="{{ .Permalink }}"> {{ .Title }}</a>
+                <span class="list-item-authors" >by: {{ partial "getpageauthors.html" . }}</span>
+            </div>
+            <br>
+            <div class="list-item-tag" style="display: inline;">
+                <span>⌜{{ .Date.Format "2006-01-02"}}⌟</span>
+                {{ partial "getpagetags.html" . }}
+            </div>
+        </div>
+    </dd>
+{{ end }}

@@ -15,21 +15,21 @@
     width: 120%;
 }
 
-.blog-list-item {
+.list-item {
     margin-bottom: 1em; 
     line-height: 1em;
     width: auto;
 }
 
-.blog-list-item a {
+.list-item a {
     text-decoration: none;
 }
 
-.blog-list-item-title {
+.list-item-title {
     font-size: 1.1em;
 }
 
-.blog-list-item::before {
+.list-item::before {
     content: "⎹";
     color: var(--text-color-30);
     font-size: 230%;
@@ -38,29 +38,29 @@
     transition: transform 0.2s ease-in-out;
 }
 
-.blog-list-item:hover::before {
+.list-item:hover::before {
     color: var(--link-color);
     transform: translate(-135%, 55%);
     transition: transform 0.2s ease-in-out
 }
 
-.blog-list-item-tag > span {
+.list-item-tag > span {
     font-size: .7em;
     color: var(--text-color-80);
 }
 
-.blog-list-item-tag > span > a {
+.list-item-tag > span > a {
     font-size: 1em;
     color: var(--text-color-80);
 }
 
-.blog-list-item-authors, .blog-list-item-authors > a {
+.list-item-authors, .list-item-authors > a {
     font-size: .9em;
     color: var(--text-color-80);
 }
 
-.blog-list-item-authors > a:hover,
-.blog-list-item-tag > * > a:hover {
+.list-item-authors > a:hover,
+.list-item-tag > * > a:hover {
     color: var(--link-color);
     text-decoration: none;
 }

@@ -1,50 +1,47 @@
-<head>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ .Params.description }}">
-    {{ range $key, $value := $.Params.meta }}
-    <meta name="{{ $key }}" {{ range $k, $v := $value }}{{ printf "%s=\"%s\"" $k $v | safeHTMLAttr }}{{ end }}>
-    {{ end }}
-    <title>{{ .Page.Title }} - {{ .Site.Data._author.name }}</title>
-    <link rel="icon" type="image/x-icon" href="/img/favicon.png">
-    
-    <link href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ .Params.description }}">
+{{ range $key, $value := $.Params.meta }}
+<meta name="{{ $key }}" {{ range $k, $v := $value }}{{ printf "%s=\"%s\"" $k $v | safeHTMLAttr }}{{ end }}>
+{{ end }}
+<title>{{ .Page.Title }} - {{ .Site.Data._author.name }}</title>
+<link rel="icon" type="image/x-icon" href="/img/favicon.png">
 
-    <link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/var.css">
+<link href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/partials.css">
-    <link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/gist.css">
-    
-    {{/* site */}}
-    <link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/site.css">
-    <link rel="stylesheet" media="only screen and (max-width: 640px)" href="{{ .Site.Home.RelPermalink }}css/mobile/site.css">
-    
-    {{/* header */}}
-    <link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/header.css">
-    <link rel="stylesheet" media="only screen and (max-width: 640px)" href="{{ .Site.Home.RelPermalink }}css/mobile/header.css">
-    
-    {{/*  Navbar  */}}
-    <link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/navbar.css">
-    <link rel="stylesheet" media="only screen and (max-width: 640px)" href="{{ .Site.Home.RelPermalink }}css/mobile/navbar.css">
+<link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/var.css">
 
-    {{/*  Dropdown  */}}
-    <link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/dropdown.css">
-    <link rel="stylesheet" media="only screen and (max-width: 640px)" href="{{ .Site.Home.RelPermalink }}css/mobile/dropdown.css">
+<link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/partials.css">
+<link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/gist.css">
 
-    {{/*  panel  */}}
-    <link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/panel.css">
-    <link rel="stylesheet" media="only screen and (max-width: 640px)" href="{{ .Site.Home.RelPermalink }}css/mobile/panel.css">
-    
-    {{/* section */}}
-    <link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/section.css">
-    <link rel="stylesheet" media="only screen and (max-width: 640px)" href="{{ .Site.Home.RelPermalink }}css/mobile/section.css">
+{{/* site */}}
+<link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/site.css">
+<link rel="stylesheet" media="only screen and (max-width: 640px)" href="{{ .Site.Home.RelPermalink }}css/mobile/site.css">
 
-    {{/* shortcodes */}}
-    <link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/shortcodes.css">
-    <link rel="stylesheet" media="only screen and (max-width: 640px)" href="{{ .Site.Home.RelPermalink }}css/mobile/shortcodes.css">
+{{/* header */}}
+<link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/header.css">
+<link rel="stylesheet" media="only screen and (max-width: 640px)" href="{{ .Site.Home.RelPermalink }}css/mobile/header.css">
 
-    <link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/codeblock.css">
-    <link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/itch.css">
+{{/*  Navbar  */}}
+<link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/navbar.css">
+<link rel="stylesheet" media="only screen and (max-width: 640px)" href="{{ .Site.Home.RelPermalink }}css/mobile/navbar.css">
 
-    <script src="/js/panel-container-grab-scroller.js"></script>
-</head>
+{{/*  Dropdown  */}}
+<link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/dropdown.css">
+<link rel="stylesheet" media="only screen and (max-width: 640px)" href="{{ .Site.Home.RelPermalink }}css/mobile/dropdown.css">
+
+{{/*  panel  */}}
+<link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/panel.css">
+<link rel="stylesheet" media="only screen and (max-width: 640px)" href="{{ .Site.Home.RelPermalink }}css/mobile/panel.css">
+
+{{/* section */}}
+<link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/section.css">
+<link rel="stylesheet" media="only screen and (max-width: 640px)" href="{{ .Site.Home.RelPermalink }}css/mobile/section.css">
+
+{{/* shortcodes */}}
+<link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/shortcodes.css">
+<link rel="stylesheet" media="only screen and (max-width: 640px)" href="{{ .Site.Home.RelPermalink }}css/mobile/shortcodes.css">
+
+<link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/codeblock.css">
+<link rel="stylesheet" href="{{ .Site.Home.RelPermalink }}css/itch.css">
+
+<script src="/js/panel-container-grab-scroller.js"></script>

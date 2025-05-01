@@ -6,6 +6,8 @@ summaryLength = "2"
 
 enableInlineShortcodes = true
 
+[params]
+debug = false
 
 [taxonomies]
   category = 'categories'

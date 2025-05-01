@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    {{- partial "head.html" . -}}
+    <head>
+        {{- partial "head.html" . -}}
+        {{- block "head" . -}}{{- end -}}
+    </head>
     <body>
+        {{ if site.Params.debug }}
+            {{ printf "Default baseof: %s %s" .Layout .Type }}
+        {{ end }}
         {{- partialCached "nav.html" . -}}
-        {{- block "header" . }}{{- end }}
+        {{- block "header" . -}}{{- end -}}
         <div id="content" class="site-gen">
             {{- block "main" . }}{{- end }}
             {{- partialCached "footer.html" . -}}
