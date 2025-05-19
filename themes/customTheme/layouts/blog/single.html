@@ -3,12 +3,18 @@
 {{ end }} {{/* header */}}
 
 {{ define "main" }}
-	<div id="content-left-bar"> {{- partial "toc.html" . -}} </div>
-	<main>
+	<div id="content-left-bar" {{ if (not .Params.toc) }} style="--cb-width: calc(100vw * 0.1); min-width: var(--cb-width); width: var(--cb-width)" {{ end }}> {{- partial "toc.html" . -}} </div>
+	<main {{ if (not .Params.toc) }} style="--main-width: calc(100vw * 0.8); min-width: var(--main-width); width: var(--main-width)" {{ end }} >
+		<style>
+			p {
+				line-height: 1.5em;
+				margin-bottom: 1em;
+			}
+		</style>
 		{{ .Content }}
 		{{- partial "footer.html" . -}}
 	</main>
-	<div id="content-right-bar">
+	<div id="content-right-bar" {{ if (not .Params.toc) }} style="--cb-width: calc(100vw * 0.1); min-width: var(--cb-width); width: var(--cb-width)" {{ end }}>
 		{{ .Params.right }}
 	</div>
 {{ end }} {{/* main */}}

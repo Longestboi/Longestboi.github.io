@@ -36,5 +36,9 @@ debug = false
     noHl = false
     style = 'monokai'
     tabWidth = 4
+  [markup.goldmark]
+    [markup.goldmark.renderHooks]
+      [markup.goldmark.renderHooks.link]
+        enableDefault = true
 
 

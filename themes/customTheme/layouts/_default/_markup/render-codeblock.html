@@ -1,3 +1,4 @@
+{{ $hash := truncate 6 "" (md5 .Inner)  }}
 {{ if (eq .Ordinal 0) }}
 {{/*  This system sucks because it runs client side despite it being the same everytime it is ran.
       Because hugo has no way of customizing what is generated at compiletime just yet, I have to deal with this.
@@ -47,12 +48,13 @@
 {{ end }}
 
 <script type="module">
-  document.getElementById("{{ .Type }}-{{ .Ordinal }}").innerHTML = window.hljs.highlight('{{ .Inner }}', {language: '{{ .Type }}'}).value;
+  console.log("{{ $hash }}")
+  document.getElementById("{{ .Type }}-{{ $hash }}").innerHTML = window.hljs.highlight('{{ .Inner }}', {language: '{{ .Type }}'}).value;
   // const tree = window.refractor.highlight('{{ replace .Inner "\t" "    " }}', '{{ .Type }}');
   // document.getElementById("{{ .Type }}-{{ .Ordinal }}").innerHTML = window.toHtml(tree);
 </script>
 
-<pre class="code-block gen-padding">
-<span id="{{ .Type }}-{{ .Ordinal }}" class="{{ .Type }}-code-block" >{{ .Inner }}</span>
+<pre class="code-block" style="max-width: 100%; width: 100%">
+  <span id="{{ .Type }}-{{ $hash }}" class="{{ .Type }}-code-block">{{ .Inner }}</span>
 </pre>
 

@@ -60,7 +60,7 @@ div#content.site-blog {
 }
 
 div#content.site-blog > main {
-    width: 75em;
+    width: 100%;
 }
 
 div#content-left-bar,
@@ -87,7 +87,7 @@ article, footer, main {
     margin-top: var(--gen-bottom-padding);
 }
 
-p {
+p, ul {
     margin-bottom: var(--gen-bottom-padding);
 }
 
@@ -174,4 +174,15 @@ summary:before {
 details[open] > summary:before {
     transform: translate(-1.5em, .2em) rotate(180deg);
     transition: transform .1s ease;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25em;
+}
+
+figure > figcaption > * {
+    font-size: .95em;
 }

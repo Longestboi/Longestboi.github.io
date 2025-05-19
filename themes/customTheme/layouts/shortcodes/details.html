@@ -1,0 +1,10 @@
+{{ $summary := (.Get "summary") }}
+{{ $inner := printf "%s" .Inner }}
+
+
+<details style="margin-bottom: var(--gen-bottom-padding) ;">
+  <summary>
+    <div> {{ $summary | .Page.RenderString }}</div>
+  </summary>
+  {{ $inner | .Page.RenderString  }}
+</details>

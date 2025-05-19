@@ -22,17 +22,27 @@
 
 .blog-head-3 > * {
     font-size: 1.1em;
-    color: var(--text-color-70);
+    color: var(--text-color-80);
+}
+
+.blog-head-4 > * {
+    font-size: 1em;
+    color: var(--text-color-60);
+}
+
+.blog-head-5 > * {
+    font-size: 0.9em;
+    color: var(--text-color-50);
 }
 
 .read-more-button {
     display: block;
     text-decoration: none;
     background-color: var(--link-color-80);
-    border-radius: .2em;
-    padding: .25em .5em;
+    border-radius: 0.2em;
+    padding: 0.25em 0.5em;
     max-width: fit-content;
-    margin: .5em .5em;
+    margin: 0.5em 0.5em;
 
     color: var(--text-color);
     transition: background-color 0.1s ease-in;
@@ -45,64 +55,64 @@
 }
 
 .board-section {
-	--border-width: .15em;
-	--border-style: solid;
-	--border-radius: .5em;
-	--height: 16em;
+    --border-width: 0.15em;
+    --border-style: solid;
+    --border-radius: 0.5em;
+    --height: 16em;
 
-	display: flex;
-	overflow: hidden;
-	background: var(--bg-color-50);
-	height: var(--height);
-	border-radius: var(--border-radius);
-	margin-bottom: var(--gen-bottom-padding);
-	border-color: var(--text-color-20);
-	border-style: var(--border-style);
-	border-width: var(--border-width);
+    display: flex;
+    overflow: hidden;
+    background: var(--bg-color-50);
+    height: var(--height);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--gen-bottom-padding);
+    border-color: var(--text-color-20);
+    border-style: var(--border-style);
+    border-width: var(--border-width);
 }
 
 .board-section > .image {
-	background: black;
-	/* background-image: url(/games/collect-the-coin/Collect-The-Coin.webp); */
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	image-rendering: crisp-edges;
-	aspect-ratio: 1/1;
-	min-width: var(--height);
-	border-right: var(--border-width) var(--border-style) var(--text-color-20);
+    background: black;
+    /* background-image: url(/games/collect-the-coin/Collect-The-Coin.webp); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    image-rendering: crisp-edges;
+    aspect-ratio: 1/1;
+    min-width: var(--height);
+    border-right: var(--border-width) var(--border-style) var(--text-color-20);
 }
 
 .board-section > .text {
-	padding-left: .5em;
-	padding-top: .5em;
-	color: black;
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
+    padding-left: 0.5em;
+    padding-top: 0.5em;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .board-section > .text > .title {
-	color: var(--text-color);
-	font-size: 1.3em;
-	margin-bottom: .3em;
-	font-weight: bolder;
+    color: var(--text-color);
+    font-size: 1.3em;
+    margin-bottom: 0.3em;
+    font-weight: bolder;
 }
 
 .board-section > .text > .subsection {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
-	justify-content: space-between;
-	word-break: break-word;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    word-break: break-word;
 }
 
 .board-section > .text > .subsection > .description {
-	color: var(--text-color-90);
-	font-size: .9em;
-	font-weight: lighter;
-/*	padding-left: 1em;*/
-	padding-right: .5em;
+    color: var(--text-color-90);
+    font-size: 0.9em;
+    font-weight: lighter;
+    /*	padding-left: 1em;*/
+    padding-right: 0.5em;
 }
 
 /*.board-section > .text > .subsection > .description > * {
@@ -112,5 +122,5 @@
 }*/
 
 .board-section > .text > .subsection > .buttons {
-	align-self: end;
+    align-self: end;
 }
