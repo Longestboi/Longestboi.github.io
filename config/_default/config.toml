@@ -1,7 +1,7 @@
 baseURL = 'http://longestboi.github.io'
 languageCode = 'en-us'
 title = 'Personal website'
-theme = 'customTheme'
+theme = ['hugo-video', 'customTheme']
 summaryLength = "2"
 
 enableInlineShortcodes = true
@@ -15,7 +15,7 @@ debug = false
   tag = 'tags'
   authors = 'authors'
   role = "roles"
-  
+
 [markup.tableOfContents]
   endLevel = 3
   ordered = true
@@ -40,5 +40,3 @@ debug = false
     [markup.goldmark.renderHooks]
       [markup.goldmark.renderHooks.link]
         enableDefault = true
-
-

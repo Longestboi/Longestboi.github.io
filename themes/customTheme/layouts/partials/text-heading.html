@@ -1,5 +1,5 @@
 {{ if eq .Level 1}}
-<div class="short-intro-head">
+<div class="short-intro-head" id="{{ .Anchor }}">
 	<head{{ .Level }} class="short-article-main-header">{{ htmlUnescape .Text }}</head{{ .Level }}>
 	<hr class="short-intro-line">
 </div>

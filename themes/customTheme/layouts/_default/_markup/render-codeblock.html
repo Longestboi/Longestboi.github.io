@@ -1,60 +1,59 @@
-{{ $hash := truncate 6 "" (md5 .Inner)  }}
-{{ if (eq .Ordinal 0) }}
-{{/*  This system sucks because it runs client side despite it being the same everytime it is ran.
-      Because hugo has no way of customizing what is generated at compiletime just yet, I have to deal with this.
-      When Hugo get support for custom compiletime modules, I will replace this with a custom tree sitter module.
-*/}}
+{{ $hash := truncate 6 "" (md5 .Inner) }} {{ if (eq .Ordinal 0) }} {{/* This
+system sucks because it runs client side despite it being the same everytime it
+is ran. Because hugo has no way of customizing what is generated at compiletime
+just yet, I have to deal with this. When Hugo get support for custom compiletime
+modules, I will replace this with a custom tree sitter module. */}}
 <script type="importmap">
-  {
-    "imports": {
-      "highlightjs_core": "https://esm.sh/highlight.js@11/lib/core",
-      "highlightjs_python": "https://esm.sh/highlight.js@11/lib/languages/python",
-      "highlightjs_js": "https://esm.sh/highlight.js@11/lib/languages/javascript",
-      "highlightjs_hlsl": "/js/hlsl.js"
+    {
+        "imports": {
+            "highlightjs_core": "https://esm.sh/highlight.js@11/lib/core",
+            "highlightjs_python": "https://esm.sh/highlight.js@11/lib/languages/python",
+            "highlightjs_js": "https://esm.sh/highlight.js@11/lib/languages/javascript",
+            "highlightjs_hlsl": "/js/hlsl.js"
+        }
     }
-  }
 </script>
 
 <script type="module">
-  import hljs from "highlightjs_core";
-  import hljs_python from "highlightjs_python";
-  import hljs_hlsl from "highlightjs_hlsl";
-  import hljs_js from "highlightjs_js";
+    import hljs from "highlightjs_core";
+    import hljs_python from "highlightjs_python";
+    import hljs_hlsl from "highlightjs_hlsl";
+    import hljs_js from "highlightjs_js";
 
-  hljs.registerLanguage("python", hljs_python);
-  hljs.registerLanguage("hlsl", hljs_hlsl);
-  hljs.registerLanguage("javascript", hljs_js);
+    hljs.registerLanguage("python", hljs_python);
+    hljs.registerLanguage("hlsl", hljs_hlsl);
+    hljs.registerLanguage("javascript", hljs_js);
 
-  window.hljs = hljs;
-  export { hljs }
+    window.hljs = hljs;
+    export { hljs };
 </script>
 
-{{/* <script type="module">
-  import {toHtml as toHtml} from "https://esm.sh/hast-util-to-html@8?bundle"
-  import {refractor as refractor} from 'https://esm.sh/refractor@4?bundle'
-  import renpy from '/js/refractor/lang/renpy.js'
-  import hlsl from '/js/refractor/lang/hlsl.js'
-  import gdscript from '/js/refractor/lang/gdscript.js'
+{{/*
+<script type="module">
+    import { toHtml as toHtml } from "https://esm.sh/hast-util-to-html@8?bundle";
+    import { refractor as refractor } from "https://esm.sh/refractor@4?bundle";
+    import renpy from "/js/refractor/lang/renpy.js";
+    import hlsl from "/js/refractor/lang/hlsl.js";
+    import gdscript from "/js/refractor/lang/gdscript.js";
 
-  window.toHtml = toHtml;
-  window.refractor = refractor;
+    window.toHtml = toHtml;
+    window.refractor = refractor;
 
-  refractor.register(gdscript)
-  refractor.register(renpy)
-  refractor.register(hlsl)
+    refractor.register(gdscript);
+    refractor.register(renpy);
+    refractor.register(hlsl);
 
-  export { toHtml, refractor }
-</script> */}}
-{{ end }}
+    export { toHtml, refractor };
+</script>
+*/}} {{ end }}
 
 <script type="module">
-  console.log("{{ $hash }}")
-  document.getElementById("{{ .Type }}-{{ $hash }}").innerHTML = window.hljs.highlight('{{ .Inner }}', {language: '{{ .Type }}'}).value;
-  // const tree = window.refractor.highlight('{{ replace .Inner "\t" "    " }}', '{{ .Type }}');
-  // document.getElementById("{{ .Type }}-{{ .Ordinal }}").innerHTML = window.toHtml(tree);
+    document.getElementById("{{ .Type }}-{{ $hash }}").innerHTML =
+        window.hljs.highlight("{{ .Inner }}", {
+            language: "{{ .Type }}",
+        }).value;
 </script>
 
 <pre class="code-block" style="max-width: 100%; width: 100%">
   <span id="{{ .Type }}-{{ $hash }}" class="{{ .Type }}-code-block">{{ .Inner }}</span>
 </pre>
-

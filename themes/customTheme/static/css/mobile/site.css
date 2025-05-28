@@ -1,13 +1,12 @@
-
 *,
 *::before,
 *::after {
-    font-family: 'LINESeedKR-Bd';
+    font-family: "LINESeedKR-Bd";
     color: var(--text-color);
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-size: 3vmax;
+    font-size: 2vmax;
 }
 
 body {
@@ -15,7 +14,8 @@ body {
 }
 
 div#content.site-gen,
-.blog-header > p, .page-header > p {
+.blog-header > p,
+.page-header > p {
     margin-left: 1vmax;
     margin-right: 1vmax;
 }
@@ -26,11 +26,17 @@ div#content.site-blog {
 }
 
 main > article {
-    margin:auto;
+    margin: auto;
 }
 
-article, footer, main {
+article,
+footer,
+main {
     margin-top: 1vmax;
+}
+
+main {
+    overflow: hidden;
 }
 
 p {
@@ -65,7 +71,9 @@ footer > .foot-line {
     color: var(--text-color-60);
 }
 
-a:hover::before, a:hover, a:hover::after{
+a:hover::before,
+a:hover,
+a:hover::after {
     color: var(--link-color);
     transition: color 0.2s ease-in-out;
 }
@@ -74,7 +82,6 @@ a {
     transition: color 0.2s ease-in-out;
     text-decoration: none;
 }
-
 
 /* Summary */
 
@@ -90,12 +97,12 @@ summary::marker {
 summary:before {
     content: "▲";
     font-size: 70%;
-    transform: translate(-1.5vmax, .2vmax) rotate(90deg);
-    transition: transform .1s ease;
+    transform: translate(-1.5vmax, 0.2vmax) rotate(90deg);
+    transition: transform 0.1s ease;
     position: absolute;
 }
 
 details[open] > summary:before {
-    transform: translate(-1.5vmax, .2vmax) rotate(180deg);
-    transition: transform .1s ease;
+    transform: translate(-1.5vmax, 0.2vmax) rotate(180deg);
+    transition: transform 0.1s ease;
 }

@@ -1,6 +1,6 @@
 ---
 title: "Deobfuscating JavaScript To Fix a Neopets Game"
-date: 2025-04-30
+date: 2025-05-30
 authors: Andrew Long
 type: blog
 tags: ["Neopets", "Reverse Engineering"]
@@ -20,18 +20,17 @@ I went and played some of them and I was _severely_ dissapointed.
 
 They were all full of bugs, mostly incomplete, and featured "upgrades" for mobile that couldn't be turned off while playing on desktop. And worse, my beloved childhood game has been reduced to a _10 FPS_, bug addled game that was clearly ported by someone who barely had understood what they were doing and just threw it on the site so they could say it was there. It was one of the worst experiences I've had in a while.
 
-I went through this journey in 2023 and told myself that it would absouletly get better in the future. It's 2025 now and nothing has changed. The games are in the same state they were in back then and it feels like Neopets as a whole is a ship on fire that the owners are attempting to put out by spitting on it. And I thought to myself: "Surely it can't be to hard to fix this mess of a game?" And I was right, _sorta_.
+I went through this journey in 2021 and told myself that it would absouletly get better in the future. It's 2025 now and nothing has changed. The games are in the same state they were in back then and it feels like Neopets as a whole is a ship on fire that is attempting to put out by spitting on it. And I thought to myself: "Surely it can't be to hard to fix this mess of a game?" And I was right, _sorta_.
 
 In order to get to the bug fixing, I would have to get through multiple layers of... _JavaScript Deobfuscation_.
 
 For those unfamilliar, JavaScript is an interpreted language, meaning throughout the pipeline of writing the code to running it, it doesn't get translated to binary that is directly ran by the CPU; Rather, the source code is read in and gets converted to [bytecode](https://en.wikipedia.org/wiki/Bytecode) and is then executed by an interpreter. This is a massive oversimplification (as [JIT](https://en.wikipedia.org/wiki/Just-in-time_compilation) does exist), but it demonstrates why you're able to get the full JavaScript source code of a website, except if they use obfuscation.
 
-Obfuscation is the act of taking JavaScript source code and modifying it in order to hide how it executes and to protect it from outside modification. There are multiple ways to obfuscate code, and I'll be covering a few used in this post.
+Obfuscation is the act of taking JavaScript source code and modifying it in order to hide (obfuscate) how it executes and to protect it from outside modification.
 
 Now, I know some JavaScript --- I wrote this whole website practically from scratch (thank you [hugo](https://gohugo.io/)) --- but I'm more comfortable in the land of the compiled, so I wasn't so sure I could get enough of the original JavaScript code from the obfuscated code to do any bug fixing.
 
 But, I'm rather hard headed, so I got to work.
-
 
 ## Deobfuscation
 To begin with, I searched for enterprise level JavaScript obfuscators, this was mostly to get an undertanding what I'd have to do. The second solution I came across was [JScrambler](https://jscrambler.com/) and it looks like this:
@@ -48,7 +47,6 @@ This isn't super useful information, but it does give a small heads up about wha
 
 ### Start
 {{< nobottommargin >}}So, IceCream Machine is made up of 5 files:{{< /nobottommargin >}}
-
  - cone_class.js
  - game_class.js
  - gamecontrol.js
@@ -314,7 +312,7 @@ r1O = O1O.v4DD( function () { return 0.5 - R4DD.y4DD(); } ).q4DD('');
 
 ![`THE ACTUAL FUNCTION BEHIND [].v4DD`](./function_obf.webp "The actual function behind [].v4DD")
 
-Ah, I'm assuming this is an other form of obfuscation employed by the obfuscation tooling, I'll do this for the rest of them when they come up.
+Ah, I'm assuming this is an other form of obfuscation employed by the obfuscation tooling, I'll do this for the rest of them as they come up.
 
 {{< nobottommargin >}}The fully cleaned up function looks like this:{{< /nobottommargin >}}
 ```js
@@ -620,9 +618,9 @@ Now that the function is easier to read, let's figure out what it does.
 
 First it calls a function that returns some URI encoded cipher text. It then takes that cipher text and decodes it with the key `PMLUEC` using a repeating-key XOR decryption scheme. Next it takes the plain text string, and splits it along a delimiter to get all of the properties into a list.
 
-The end of this function is fairly interesting, if you were to start replacing all the `Y833.S0l()` function calls with the element in the argument, all the replacements will be wrong. The function initially defined in `retrieve_property` shifts and removes some entries based on the index passed into `W1O` and a value incremented every function call. If the function is not called with the indexes 31, 9, 32, 16, 38, 17, 27, 19 sequentially, the function will fail to position all properties correctly.
+The end of this function is fairly interesting, if you were to start replacing all the `Y833.S0l()` function calls with the element in the argument, all the replacements will be wrong. The function initially defined in `retrieve_property` shifts and removes some entries based on the index passed into `W1O` and a value gets incremented every function call. If the function is not called with the indexes 31, 9, 32, 16, 38, 17, 27, 19 sequentially, the function will fail to reposition all properties correctly.
 
-When I first saw this, I thought I would have to track down where the function was called the first time and get the value that it returns so I could replace the function call with the actual property. But thankfully, a little further down the file, an obfuscated function calls `Y833.S0l()` in sequence properly.
+When I first saw this, I thought I would have to track down where the function was called the first x amount of times and get the value that it returns so I could replace the function call with the actual property. But thankfully, a little further down the file, another obfuscated function calls `Y833.S0l()` with the proper sequence.
 
 #### Streamlining
 To streamline the process of decoding the properties, I wrote a function that allows me to automatically decode, find the delimiter, split it along the delimiter into an array, and finally unshift the array to retrieve the full properties list:
@@ -754,27 +752,25 @@ The function being called is almost entirely unobfuscated, and it looks to be a 
 When deobfuscating a whole file, I came across some a function that was sprinkled in a few places was checking the domain where the JavaScript file was being executed. I decided that instead of figuring out what it was doing, I would remove every reference to the function as it was a fair bit easier than trying to 'defuse' it. Then again, with FireFox's 'Script Override' feature, I didn't really need to stop the script from doing any domain checking.
 
 #### Fully Obfuscated Files
-Fully obfuscated files like `game_class.js` and `graphics.js` have all of their code encoded. Even further, using all of my previous dynamic analysis techniques do not work as I think the function self verifying, meaning I can't modify it at all without stripping out the verification method.
+Fully obfuscated files like `game_class.js` and `graphics.js` have all of their code encoded. Even further, none of my previous dynamic analysis techniques work as I believe the function self verifying, meaning I can't modify it at all without stripping out the verification method.
 
-This would seem to be a dead end, but the obfuscation tooling didn't do enough to obfuscate it's own execution. Using FireFox's JavaScript debugger you can stop execution at any time.
+This would seem to be a dead end, but the obfuscation tooling didn't do enough to obfuscate it's own execution.
 
-Since this function does some decoding of our encoded code, we should look for some `eval` function then stop execution just before it to retrive the plain text code.
+To encode the javascript code, it needs to be in text form, and the only way text can be executed in javascript is with the `eval` function. So we should look for some `eval` function in the file, and using FireFox's JavaScript debugger, stop execution just before it to retrives the plaintext code.
 
 ![`DECODED CLASS FROM EVAL`](./decoded_code.webp "Decoded class from eval statement")
 
-There's the actual code for the `game_class` function. Copy it down and replace the entire `var game_class` assignment with it and continue with deobfuscation as we did above.
+There's the actual code for the `game_class` function. Copy it down and replace the entire `var game_class` assignment with it and continue with deobfuscation as we did above reveals the entirety of the code.
 
 ## Bug Fixing
 Now that all of the code is deobfuscated --- sorta, some of the original ActionScript code was originally obfuscated when they initially ported it to JavaScript, and I won't be deobfuscating this as it's not super important --- we can start bug fixing!
 
 ### Missing Level Names
-For some reason, after level 10 the names of the scoop flavors don't show up.
-This is a pretty easy fix because the level names were just never included.
+For some reason, after level 10, the names of the scoop flavors don't show up. This is a pretty easy fix because the level names were just never included.
 
 #### Before
 {{< nobottommargin >}}This bug displays itself like this:{{< /nobottommargin >}}
 ![`*BEFORE FIXING MISSING FLAVOR NAMES IMAGE HERE*`](./missing-names_before.webp "Before fixing missing flavor names")
-
 
 {{< nobottommargin >}}And this is the code responsible for the bug:{{< /nobottommargin >}}
 ```js
@@ -802,8 +798,9 @@ createjs.IDS_congrats = "CONGRATULATIONS!";
 Success!!!
 
 ### Sendscore Button Not Changing Graphics When Interacted With
-{{< nobottommargin >}}On the ending screens, the "Send Score" button does not highlight and return to normal on hover and unhover.{{< /nobottommargin >}}
-~*SHOW HOVER NOT WORKING*~
+On the ending screens, the "Send Score" button does not highlight and return to normal on hover and unhover.
+#### Before
+![`*BEFORE FIXING SEND SCORE BUTTON HOVER STATE*`](./send_score_hover_broken.webp "Send button before fixing it")
 
 {{< nobottommargin >}}For this issue, I went to the `taskoneButtonsHandler` in `gamecontrol.js` and looked at the 'mouseover' and 'mouseout' button events. I didn't see anything that looked like the name of the send score button:{{< /nobottommargin >}}
 ```js
@@ -823,18 +820,22 @@ this.frame_0 = function() {
 
 Here we can see the reset and send score buttons add themself to the button event handler function.
 
+#### After
 {{< nobottommargin >}}Since we found the name for the send score button, let's add it to the 'mouseover' and 'mouseout' button events.{{< /nobottommargin >}}
 ```js
 if (this.name == "buthelp" || this.name == "butplay" || this.name == "butsound" || this.name == "butback" || this.name == "restart" || this.name == "sendscore")
 ```
 
 {{< nobottommargin >}}After adding it, both hover and unhovering works as expected!{{< /nobottommargin >}}
-~*SHOW HOVER WORKING*~
+![`*AFTER FIXING SEND SCORE BUTTON HOVER STATE*`](./send_score_hover_fixed.webp "Send button after fixing it")
 
 ### Next Level Screen Background Not Being Set Properly
-This issue is a bit more complex than the previous two issues. It goes like this, the code below attempts to change the the state of the `splash`, however it does this before it gets added as a child of the main object. This game uses a framework called [createjs](https://createjs.com/) to translate between the ActionScript API to HTML5. `splash` is an object made from that class `MovieClip`, which has a property called `autoReset` which resets the `MovieClip` to its first frame when it gets added.
+Sometimes, when going to the next level, the screen's splash will not be set to the proper flavor:
+![`*NEXT LEVEL SCREEN BEING IMPROPERLY SET*`](./next_level_incorrect.webp "Next level screen being improperly set")
 
-{{< nobottommargin >}}There was an attempt at fixing this issue by executing a function after it's added to the main object, but it doesn't always get added before the 10ms is up, and `splash` reverts back to its first frame.{{< /nobottommargin >}}
+The splash should be Vanilla, but it's actually Strawberry.
+
+{{< nobottommargin >}}This happens because the splash graphic automatically resets after being added to a parent object and a Neopets developer attempted to fix this by writing this code:{{< /nobottommargin >}}
 ```js
 setTimeout(function() {
     Z56[2].splash.gotoAndStop(Z56[3] - 1);
@@ -847,9 +848,13 @@ setTimeout(function() {
 }, 10);
 ```
 
-However, all you have to do is set `Z56[2].splash.autoReset = false;`
+For a reason I don't entirely understand, the graphics resetting itself is a feature of the framework this game uses to translate ActionScript/Flash API to HTML5, [createjs](https://createjs.com/).
 
-{{< nobottommargin >}}Effectively, replace the entire code section above with:{{< /nobottommargin >}}
+A more complete solution to this issue would be to stop the object from resetting itself, and that's exactly what I did.
+
+Createjs has a built in property --- `autoReset` --- that will stop an object's graphics from being reset apon being made a child of a parent object.
+
+{{< nobottommargin >}}Effectively, I can replace the entire code section above with:{{< /nobottommargin >}}
 ```js
 Z56[2].splash.autoReset = false;
 Z56[2].splash.gotoAndStop(Z56[3] - 1);
@@ -865,8 +870,11 @@ Z56[2].tfield3.text = "PRESS SPACE TO CONTINUE...";
 ![`*AFTER FIXING WRONG BACKGROUND IMAGE IMAGE HERE*`](./wrong-bkg_after.webp "After fixing wrong background image")
 
 ### Win Screen Not Appearing
-This is also a fairly trivial issue to solve. A simple mistake was made when attempting to set the main game state to `st_gamebeat`. Instead of setting the game class instance's state, it set `this.game_state`.
+{{< nobottommargin >}}When you do actually finish the game, the win screen doesn't show up:{{< /nobottommargin >}}
+![`*AFTER BEATING GAME BEFORE FIX*`](./after_beating_game.webp "After beating the game, before fixing")
 
+
+{{< nobottommargin >}}A simple mistake was made when attempting to set the main game state to `st_gamebeat`. Instead of setting the game class instance's state, it set `this.game_state`.{{< /nobottommargin >}}
 ```js
 case game_class.instance.st_countdown1:
   if (!game_class.instance.zz()) {
@@ -883,12 +891,12 @@ case game_class.instance.st_countdown1:
 ```
 
 {{< nobottommargin >}}Now the win screen shows up, but there's another issue:{{< /nobottommargin >}}
-~*ADD IMAGE OF GAMEOVER SCREEN BEING SHOWN INSTEAD OF WIN SCREEN*~
+![`*AFTER BEATING GAME AFTER FIX*`](./after_beating_game_fixed.webp "After beating the game, after fixing")
 
 This is just the game over screen, why is it not congratulating me on my win? Well, after tapping it out, the game over and win screen use the same function to throw a screen up on the ending state. But, the function only has code for the game over screen, so lets rewrite it to add the congratulations text.
 
 {{< nobottommargin >}}This is pretty simple, so I won't show the code.{{< /nobottommargin >}}
-~*ADD IMAGE OF WIN SCREEN*~
+![`*CONGRATS TEXT FIX*`](./after_beating_game_congrats_fix.webp "Fixed congrats text")
 
 ### Win Screen Background Not Being Set Properly
 Ah, now the background refuses to be set to the "Garlicky Bratwurst" splash screen. Initially, I thought it was the same issue that the next level screen had, but when I tried to turn off the `autoReset`, it did nothing.
@@ -908,12 +916,13 @@ this.splash.cache(-2, -2, 734, 594);
 {{< nobottommargin >}}This stood out to me instantly. Reading through the createjs documentation for the method [cache](https://createjs.com/docs/easeljs/classes/MovieClip.html#method_cache) it says:{{< /nobottommargin >}}
 "Draws the display object into a new element, which is then used for subsequent draws"
 
-That's exactly why it's not changing! Removing this one line fixes it completely.
+That's exactly why it's not changing! Removing this one line fixes it completely:
+![`*CONGRATS SCREEN FIXED*`](./after_beating_game_congrats_bkg_fix.webp "Fixed congrats screen")
 ## Improvements
 Now that I fixed all the bugs I could find, lets improve somethings.
 
 ### Reverting '_Vanilla Topping_' back to '_Caramel Topping_'
-This is a very small change, but I feel it's good to have accuracy in the areas that are not super changed for user experience purposes.
+This is a very small and pedantic change, but I'd like for the name for this to be more accurate.
 
 {{< rawhtml >}}
 <style>
@@ -924,6 +933,17 @@ This is a very small change, but I feel it's good to have accuracy in the areas 
 {{< /rawhtml >}}
 {{< nobottommargin >}}Does this really look like _Vanilla Topping_?{{< /nobottommargin >}}
 ![`*CARAMEL TOPPING*`](./caramel.svg "Caramel Topping")
+
+##### From:
+```js
+createjs.IDS_topping_3 = "Vanilla Topping";
+```
+
+##### To:
+```js
+createjs.IDS_topping_3 = "Caramel Topping";
+```
+
 ### 30 Frames Per Second!
 {{< nobottommargin >}}The game runs at an ungodly low framerate. Looking around for the main loop runner, I found this line of code:{{< /nobottommargin >}}
 ```js
@@ -941,9 +961,9 @@ The easy fix for this is to replace `100` with `1000 / 30` to get 30 FPS.
 I would like to replace the `setInterval` function with something like [`requestAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame), that way the framerate of the game matches the refresh rate of the browser, but I feel like that's a pretty large refactor to do right now, so I'll leave it alone for now.
 
 ### Full Settings Menu & Storing Settings Locally
-This is one of the most complex sections of this post. Thankfully, I didn't have to code a bunch of things together, but it was still an ordeal to get working.
+This is one of the most complex sections of all of the improvements. Thankfully, I didn't have to code a bunch of things together, but it was still an ordeal to get working.
 
-The basic premise of adding a settings menu was to make sure the user experience was customizable. If a person wanted to have the character float above the mouse or directly underneath it, the should have that choice.
+The biggest reason I added a settings menu was to make sure the user experience was customizable. If a person wanted to have the character float above the mouse --- something they may have grown accoustom --- or directly underneath it, the should have that choice.
 
 #### Mockup
 {{< nobottommargin >}}I started by making a mockup of the settings menu in InkScape:{{< /nobottommargin >}}
@@ -1072,7 +1092,7 @@ class ToggleButton extends MovieBase {
 }
 ```
 
-This `ToggleButton` needs to have a bounding box, as if it didn't, the button would only work if you hover of the defined shapes.
+This `ToggleButton` needs to have a bounding box, as if it didn't, the button would only work if you hover of the defined shapes. There is a small problem, the bounding box is a rectangle that would cover up everything, to stop that I set it's transparency to `0.01`. If you set it to zero, the
 
 There's also supporting logic that allows a dev to toggle the button and set its state.
 
@@ -1083,7 +1103,7 @@ Now that the one reuseable thing has been implemented, I can get on to the rest 
 
 The settings box background is easy to translate over, but the transparent background gave me some trouble in the svg path tool; Breaking it down into 4 individual paths made it work, though.
 
-To make things easier on myself, I collected related objects down into containers so all elements can be positioned easier.
+To make things easier on myself, I collected related objects into containers so all elements can be positioned easier.
 
 I'm not going to go into much more detail, as the code can speak for itself:
 {{< details summary="___Click to Reveal Full Settings Menu Code___" >}}
@@ -1227,6 +1247,143 @@ mobile_toggle.set_state(false);
 desktop_toggle.set_state(false);
 ```
 
-Now we have this:
-![`*SETTINGS MOCKUP*`](./settings_menu.webm)
+{{< nobottommargin >}}Now we have this:{{< /nobottommargin >}}
+{{< video src="settings_menu.webm" width="500px" muted="true" autoplay="true" loop="true" controls="false" >}}
+
 ##### Settings Logic & data
+{{< nobottommargin >}}Now that the settings screen is working, I'll start by collecting each setting into an object:{{< /nobottommargin >}}
+```js
+{ sound: true, fps: 1, hover_dist: 0 };
+```
+
+`sound` is fairly obvious, as it can only be on or off, so it's a boolean.
+
+The `fps` and `hover_dist` settings are slightly weird, though; You would think it would be the actual framerate (10 or 30) or hovering distance, but I didn't want to have someone modify the settings in a way that could make the game misbehave. I did, however, want to write the supporting code to be able to support more than two settings for both in the future, so I went with storing indexes instead of outright storing the framerate.
+
+{{< nobottommargin >}}Now that I'm storing the settings data in a global variable, I'll use it while starting the main game loop to change the framerate:{{< /nobottommargin >}}
+```js
+const framerates = [10, 30];
+/// Framerate as an index into `framerates`
+var framerate = 1;
+
+// `framerate` is set in both the framerate clauses in the button handler function and in the initial settings decoder
+
+mainLoopInterval = setInterval(game_class.instance.mainLoop, 1000 / framerates[framerate]);
+```
+
+{{< nobottommargin >}}To modify adee's hover distance, I add `hover_distance` to the y-axis offset inside the player movement code:{{< /nobottommargin >}}
+```js
+const hover_distances = [is_mobile() ? -58 : 0, -58, 0];
+// Hover distance as an index into 'hover_distances'
+var hover_distance = 0;
+
+// `hover_distance` is set in both the hover distance clauses in the button handler function and in the initial settings decoder
+
+game_class.instance.chief.m.y += hover_distance;
+```
+
+And as for the sound setting, I just set `gvolume`, the global volume variable, to 1 or 0 if sound is on or off respectively.
+
+##### Saving Settings Locally
+It's great that the settings work now, but when I reload the page, the settings are reset to the defaults that I initially set them to. To solve this, I need to store data locally.
+
+I didn't want use cookies as the reading and writing interfaces seem like they kinda suck to deal with.
+
+So, instead, I decided to go with [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
+
+{{< nobottommargin >}}LocalStorage allows you to get and set items using a string identifier:{{< /nobottommargin >}}
+```js
+// get
+const cat = localStorage.getItem("myCat");
+
+// set
+localStorage.setItem("myCat", "Tom");
+```
+
+Using this, I could dump a JSON stringified object into it when I need to save the settings, then parse it back into an object when I initially load the settings.
+
+{{< nobottommargin >}}Here, I'm getting the `localStorage` item with the id `np_icecream_machine_settings`, checking if it exists, using it if it does, and if not, using the default.{{< /nobottommargin >}}
+```js
+var user_settings;
+var test_local_storage = localStorage.getItem("np_icecream_machine_settings");
+if (test_local_storage) {
+    user_settings = JSON.parse(test_local_storage);
+} else {
+    user_settings = { sound: true, fps: 1, hover_dist: 0 };
+}
+```
+
+# Results
+After all that bug fixing and all those improvements, we get:
+
+{{< rawhtml >}}
+<style>
+    video, img {
+        max-width: var(--main-width);
+    }
+
+    #before-and-after {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+        #before-and-after {
+            flex-direction: column;
+            gap: .25em;
+        }
+    }
+
+    before > hr, after > hr {
+        margin-bottom: .25em;
+    }
+</style>
+
+<div id="before-and-after" style="margin-bottom: var(--gen-bottom-padding);">
+    <before>
+        <span>Before:</span>
+        <hr>
+        <video preload="auto" width="500px" muted="" controls="" class="html-video">
+            <source src="./before.webm" type="video/webm">
+        <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="./before.webm">download it</a> and watch it with your favorite video player!</span>
+        </video>
+    </before>
+    <after>
+        <span>After:</span>
+        <hr>
+        <video preload="auto" width="500px" muted="" controls="" class="html-video">
+            <source src="./after.webm" type="video/webm">
+        <span>Your browser doesn't support embedded videos, but don't worry, you can <a href="./after.webm">download it</a> and watch it with your favorite video player!</span>
+        </video>
+    </after>
+</div>
+{{< /rawhtml >}}
+
+I'm relatively happy with the results of my bug fixes and improvements, but there are definitely more improvements to be made.
+
+The game still isn't super responsive though, but I did come up with a decent solution to this in the [addendum](#addendum) section.
+
+But this all leaves one question...
+
+## _How Can I Play?_
+You can't.
+
+I'm not releasing the source code for a number of reasons.
+
+While I have removed the function that sends your score to the Neopets servers, it's not particularly difficult to "rearm" it by adding that function back in and I don't feel like giving players a potential advantage over other players.
+
+Also, I would be redistributing source code that is not mine, which is almost certainly against the Neopets EULA and could probably get me into some legal troubles.
+
+# Finally
+I hope that this information is useful for anyone, mostly Neopets developers though, because it would drastically improve the user experience. I understand that _World of Neopia, Inc._ is currently working on their sim game _World of Neopets_, but I would love to see more love being put into the main site.
+
+If a member of The Neopets Team sees this, please do get in contact with me, I would love to work on fixing these html ports. I get that the Ruffle flash player exists, but if the HTML5 versions of the games are pushed more than the originals, they should ideally function better than the originals running on a compatability layer.
+
+
+##### Addendum
+I found out that it was way easier to use `requestAnimationFrame` in my deobfuscated codebase with [`createjs.Ticker`](https://createjs.com/docs/easeljs/classes/Ticker.html). By setting `Ticker.timingMode` to `RAF_SYNCED` and then hooking `game_class.instance.mainLoop` into `createjs.Ticker`'s `tick` event, the game is now in sync with your browser's refresh rate, meaning the game is being updated just before the browser draws everything to your screen, which greatly improves the responsiveness of the game. This also fits fairly well with the FPS selection in the settings menu, but I would need to update it to add a "sync" option.
+
+This has the issue of the framerate changing depending on the capabilities of your device, but I'm gonna trust that the developers of createjs were aware of this and handled it properly. As well, adee's animation runs faster when changing the Ticker framerate from 24 to the default refresh rate of your browser, this is an easy fix though, just set the `framerate` property of the adee `MovieClip` child class to 24.
+
+Also While playing my improved version, I noticed that, on higher levels, the icecream scoops spawn at a faster rate when on higher framerates, making it practically impossible to beat without pure luck. This could be solved by further deobfuscation and restructuring of the game code by bodging in some [delta timing](https://en.wikipedia.org/wiki/Delta_timing), but I'll leave that for another day.

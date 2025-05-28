@@ -20,7 +20,7 @@ pre.code-block * {
         Courier,
         monospace;
     font-weight: 500;
-    color: #eae1afx;
+    color: #eae1af;
 
     display: inline-block;
     overflow-x: clip;
@@ -31,6 +31,10 @@ pre.code-block * {
     --red: #fb4934;
     --purple: #d3869b;
     --grey: #7c6f64;
+}
+
+pre.code-block > span {
+    overflow: hidden;
 }
 
 pre.code-block:has(.gdscript-code-block) {
