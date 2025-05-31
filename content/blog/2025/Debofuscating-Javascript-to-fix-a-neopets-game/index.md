@@ -1248,7 +1248,7 @@ desktop_toggle.set_state(false);
 ```
 
 {{< nobottommargin >}}Now we have this:{{< /nobottommargin >}}
-{{< video src="settings_menu.webm" width="500px" muted="true" autoplay="true" loop="true" controls="false" >}}
+![`SETTINGS MENU`](settings_menu.webp "Settings Menu")
 
 ##### Settings Logic & data
 {{< nobottommargin >}}Now that the settings screen is working, I'll start by collecting each setting into an object:{{< /nobottommargin >}}
@@ -1385,5 +1385,10 @@ If a member of The Neopets Team sees this, please do get in contact with me, I w
 I found out that it was way easier to use `requestAnimationFrame` in my deobfuscated codebase with [`createjs.Ticker`](https://createjs.com/docs/easeljs/classes/Ticker.html). By setting `Ticker.timingMode` to `RAF_SYNCED` and then hooking `game_class.instance.mainLoop` into `createjs.Ticker`'s `tick` event, the game is now in sync with your browser's refresh rate, meaning the game is being updated just before the browser draws everything to your screen, which greatly improves the responsiveness of the game. This also fits fairly well with the FPS selection in the settings menu, but I would need to update it to add a "sync" option.
 
 This has the issue of the framerate changing depending on the capabilities of your device, but I'm gonna trust that the developers of createjs were aware of this and handled it properly. As well, adee's animation runs faster when changing the Ticker framerate from 24 to the default refresh rate of your browser, this is an easy fix though, just set the `framerate` property of the adee `MovieClip` child class to 24.
+
+{{< nobottommargin >}}The result of this is:{{< /nobottommargin >}}
+{{< video src="after-raf.webm" width="500px" controls="true" >}}
+
+It's super smooth, but there is definitely a little bit of delay left to remove.
 
 Also While playing my improved version, I noticed that, on higher levels, the icecream scoops spawn at a faster rate when on higher framerates, making it practically impossible to beat without pure luck. This could be solved by further deobfuscation and restructuring of the game code by bodging in some [delta timing](https://en.wikipedia.org/wiki/Delta_timing), but I'll leave that for another day.
