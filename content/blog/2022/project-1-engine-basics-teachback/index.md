@@ -6,6 +6,7 @@ type: blog
 tags: [VRT310, Unity, Game Programming]
 summary: "This article is about installing Unity on Linux..."
 toc: true
+hidden: true
 ---
 
 # The Basic Setup of Unity VR on Linux
@@ -13,7 +14,7 @@ toc: true
 {{< indent >}}Getting Unity up and running on Linux is incredibly easy. To start, we'll install Unity Hub & Unity. Next, we'll import libraries and settings for VR. After that, we'll import an art asset into our scene. Lastly, we'll import & activate VR controls which will allow the player to look around our scene. So let's get started!{{< /indent >}}
 
 ## Installing Unity on Linux:
-{{< indent >}}To start, you'll want to install Unity Hub. It can be installed in a few ways. You can run the Unity Hub from an appimage by going to [Unity3D.com](https://unity3d.com/get-unity/download), clicking download Unity Hub, then running: 
+{{< indent >}}To start, you'll want to install Unity Hub. It can be installed in a few ways. You can run the Unity Hub from an appimage by going to [Unity3D.com](https://unity3d.com/get-unity/download), clicking download Unity Hub, then running:
 
 `./unityhub.appimage` in the directory of the appimage.{{< /indent >}}
 
@@ -21,7 +22,7 @@ The other way of installing Unity Hub is through a package manager.
 
 On Ubuntu run this line to add the Unity Hub repository:
 ```bash
-$ sudo sh -c 'echo "deb https://hub.unity3d.com/linux/repos/deb stable main" \ 
+$ sudo sh -c 'echo "deb https://hub.unity3d.com/linux/repos/deb stable main" \
     > /etc/apt/sources.list.d/unityhub.list'
 ```
 

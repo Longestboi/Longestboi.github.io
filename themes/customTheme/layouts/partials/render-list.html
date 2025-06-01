@@ -1,16 +1,34 @@
 <!-- Ranges through content/posts/*.md -->
-{{ range .Data.Pages }}
-    <dd class="list-item">
-        <div>
-            <div style="display: inline;">
-                <a class="list-item-title" href="{{ .Permalink }}"> {{ .Title }}</a>
-                <span class="list-item-authors" >by: {{ partial "getpageauthors.html" . }}</span>
-            </div>
-            <br>
-            <div class="list-item-tag" style="display: inline;">
-                <span>⌜{{ .Date.Format "2006-01-02"}}⌟</span>
-                {{ partial "getpagetags.html" . }}
-            </div>
+
+{{ $listColl := union nil nil }}
+
+{{ if hugo.IsServer }}
+    {{ $listColl = .Data.Pages }}
+{{ else }}
+    {{ $listColl = (where .Data.Pages ".Params.hidden" "ne" true) }}
+{{ end }}
+
+{{ range $listColl }}
+<dd class="list-item">
+    <div>
+        <div style="display: inline">
+            <a class="list-item-title" href="{{ .Permalink }}"> {{ .Title }}</a>
+            {{ if hugo.IsServer }}
+                {{ $stats := slice }}
+                {{ if .Params.hidden }} {{ $stats = $stats | append "Hidden" }} {{ end }}
+                
+                {{ $draft := index dict "" }}
+                {{ if .Params.draft }} {{ $stats = $stats | append "Draft" }} {{ end }}
+                
+                {{ if (gt ($stats | len) 0) }}<span style="color: var(--link-color);">{{ printf "(%s)" (delimit $stats ", ") }} </span> {{ end }}
+            {{ end }}
+            <span class="list-item-authors">by: {{ partial "getpageauthors.html" . }}</span>
         </div>
-    </dd>
+        <br />
+        <div class="list-item-tag" style="display: inline">
+            <span>⌜{{ .Date.Format "2006-01-02"}}⌟</span>
+            {{ partial "getpagetags.html" . }}
+        </div>
+    </div>
+</dd>
 {{ end }}

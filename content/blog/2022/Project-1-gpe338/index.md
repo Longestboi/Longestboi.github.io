@@ -7,6 +7,7 @@ tags: [GPE338, Unity, Game Programming]
 summary: "Project 1 goes over looping concepts in Unity like Coroutines, Delegates, and Multithreading..."
 tocEndlevel: 5
 toc: true
+hidden: true
 ---
 
 # Project 1 Teachback

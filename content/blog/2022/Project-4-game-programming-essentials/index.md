@@ -1,4 +1,4 @@
---- 
+---
 title: "Project 4: Game Programming Essentials"
 date: 2022-12-07
 authors: "Andrew Long"
@@ -6,6 +6,7 @@ type: blog
 tags: [GPE338, Unity, Game Programming]
 summary: "Project 4 goes over Unity concepts like Editor Scripting, Attributes and more..."
 toc: true
+hidden: true
 ---
 
 # Project 4

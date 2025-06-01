@@ -6,6 +6,7 @@ type: blog
 tags: [GPE338, Unity, Game Programming]
 summary: "Project 2 goes over some generic class and file loading concepts..."
 toc: true
+hidden: true
 ---
 
 <!-- Header -->
@@ -91,4 +92,3 @@ Here is what the code looks like when running in the game:
 {{< html-indent >}}Polymorphism in <span class="underline-nh" title="Object-oriented Programming">OOP</span> is both overloading and overiding functions.{{< /html-indent >}}
 {{< indent >}}Overloading a function is when you make a function with the same name but give it different parameters. This is to give a single function multiple uses under the same function.{{< /indent >}}
 {{< indent >}}Overriding is used when a virtual function is defined in a parent class, and you need to change the function to conform to what the current class needs.{{< /indent >}}
-

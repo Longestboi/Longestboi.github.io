@@ -6,6 +6,7 @@ type: list
 layout: blog
 tags: [ENG301, Technical Writing]
 blogListOverride: "The 3 Blog Posts:"
+hidden: true
 ---
 
 {{< articleheader "3 Blog Posts Landing Page" >}}
