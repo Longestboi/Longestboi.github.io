@@ -19,7 +19,7 @@ I went and played some of them, and I was _severely_ disappointed.
 
 They were all full of bugs, mostly incomplete, and featured “upgrades” for mobile that couldn’t be turned off while playing on a desktop. And worse, my beloved childhood game has been reduced to a _10 FPS_, bug-addled game that was clearly ported by someone who barely understood what they were doing and just threw it on the site so they could say it was there. It was one of the worst experiences I’ve had in a while.
 
-I went through this journey in 2021 and told myself that it would absolutely get better in the future. It’s 2025 now, and nothing has changed. The games are in the same state they were in back then, and it feels like Neopets as a whole is a ship on fire that is attempting to put out by spitting on it. And I thought to myself: Surely it can’t be too hard to fix this mess of a game? And I was right, _sorta_.
+I went through this journey in 2021 and told myself that it would absolutely get better in the future. It’s 2025 now, and nothing has changed. The games are in the same state they were back then, and it feels like Neopets won't be putting any time into fixing these games soon. And I thought to myself: Surely it can’t be too hard to fix this mess of a game? And I was right, _sorta_.
 
 To get to the bug fixing, I would have to get through multiple layers of… _JavaScript Deobfuscation_.
 
@@ -1383,7 +1383,7 @@ I hope this information is useful for anyone, especially Neopets developers, as 
 If a member of The Neopets Team sees this, please do get in contact with me. I would love to work on fixing these html ports. I understand that the Ruffle Flash player exists. However, since the HTML5 versions of the games are pushed more than the originals, they should ideally function better than the originals running on a compatibility layer.
 
 ##### Addendum
-I found out that it was way easier to use `requestAnimationFrame` in my deobfuscated codebase with [`createjs.Ticker`](https://createjs.com/docs/easeljs/classes/Ticker.html). BBy setting `Ticker.timingMode` to `RAF_SYNCED` and then hooking `game_class.instance.mainLoop` into `createjs.Ticker`'s `tick` event, the game is now in sync with your browser's refresh rate, meaning the game is being updated just before the browser draws everything to your screen, which considerably improves the responsiveness of the game. This also fits well with the FPS selection in the settings menu, but I would need to update it to add a sync option.
+I found out that it was way easier to use `requestAnimationFrame` in my deobfuscated codebase with [`createjs.Ticker`](https://createjs.com/docs/easeljs/classes/Ticker.html). By setting `Ticker.timingMode` to `RAF_SYNCED` and then hooking `game_class.instance.mainLoop` into `createjs.Ticker`'s `tick` event, the game is now in sync with your browser's refresh rate, meaning the game is being updated just before the browser draws everything to your screen, which considerably improves the responsiveness of the game. This also fits well with the FPS selection in the settings menu, but I would need to update it to add a sync option.
 
 This has the issue of the framerate changing depending on the capabilities of your device, but I'm gonna trust that the developers of createjs were aware of this and handled it properly. As well, adee's animation runs faster when changing the Ticker framerate from 24 to the default refresh rate of your browser, this is an easy fix though, just set the `framerate` property of the adee `MovieClip` child class to 24.
 
