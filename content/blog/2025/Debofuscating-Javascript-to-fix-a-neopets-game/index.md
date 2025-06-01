@@ -988,7 +988,7 @@ class settings_menu extends MovieBase {
 
 Next, I replaced the music toggle button on the main menu screen. First, though, I need to make the settings button.
 
-{{< nobottommargin >}}TTo create the settings button, I copied the definition for the music toggle button class, changed the text, and then replaced the music button in the main menu. Resulting in this:{{< /nobottommargin >}}
+{{< nobottommargin >}}To create the settings button, I copied the definition for the music toggle button class, changed the text, and then replaced the music button in the main menu. Resulting in this:{{< /nobottommargin >}}
 ![`*SETTINGS BUTTON*`](./settings-button.webp "Settings Button")
 
 {{< nobottommargin >}}Then, in the `taskoneButtonsHandler`, I added a section in the `pressup` for the settings button that makes the settings menu visible:{{< /nobottommargin >}}
