@@ -1,39 +1,38 @@
 ---
 title: "Deobfuscating JavaScript To Fix a Neopets Game"
-date: 2025-05-30
+date: 2025-06-01
 authors: Andrew Long
 type: blog
 tags: ["Neopets", "Reverse Engineering"]
 summary: "A Neopets game doesn't work too good, so I learned how to deobfuscate JavaScript to fix it."
-draft: true
 toc: false
 ---
 
 # IceCream Machine
-When I was a kid, I used to play this one flash game on Neopets, IceCream Machine. It's a relatively simple game where you snake your way between columns of floating ice cream scoops that get progressively faster, but I always sucked at it because of my stupid kid motor skills (a lack thereof, rather).
+When I was a kid, I used to play a Flash game on Neopets called: “IceCream Machine.” It’s a relatively simple game where you snake your way between columns of floating ice cream scoops that get progressively faster, but I always sucked at it because of my stupid kid motor skills (a lack thereof, rather).
 
-A few years ago, I heard about flash being depreciated and purged from all major browsers and thought back to all the games I used to play on AddicingGames, CoolMathGames, NewGrounds, and a number of other sites that definitely (re-)hosted them with permision.
+A few years ago, I heard about Flash being deprecated and purged from all browsers, and I thought back to all the games I used to play on AddictingGames, CoolMathGames, Newgrounds, and several other sites that definitely (re-)hosted them with permission.
 
-Then I thought about Neopets, and I couldn't stop thinking about Neopets, so much so that I decided to make a new account and check out how it was going. Now, [ruffle](https://ruffle.rs/) was available at the time, so the flash games were still available to play, but I saw that they ported some of these older flash games to the more modern HTML5!
+Then I thought about Neopets, and I couldn’t stop thinking about Neopets, so much so that I decided to make a new account and check out how it was going. Now, [Ruffle](https://ruffle.rs/) was available at the time, so the Flash games were still playable (mostly, Ruffle is an emulator, after all). But, I noticed that they ported some of these older Flash games to the more modern HTML5.
 
-I went and played some of them and I was _severely_ dissapointed.
+I went and played some of them, and I was _severely_ disappointed.
 
-They were all full of bugs, mostly incomplete, and featured "upgrades" for mobile that couldn't be turned off while playing on desktop. And worse, my beloved childhood game has been reduced to a _10 FPS_, bug addled game that was clearly ported by someone who barely had understood what they were doing and just threw it on the site so they could say it was there. It was one of the worst experiences I've had in a while.
+They were all full of bugs, mostly incomplete, and featured “upgrades” for mobile that couldn’t be turned off while playing on a desktop. And worse, my beloved childhood game has been reduced to a _10 FPS_, bug-addled game that was clearly ported by someone who barely understood what they were doing and just threw it on the site so they could say it was there. It was one of the worst experiences I’ve had in a while.
 
-I went through this journey in 2021 and told myself that it would absouletly get better in the future. It's 2025 now and nothing has changed. The games are in the same state they were in back then and it feels like Neopets as a whole is a ship on fire that is attempting to put out by spitting on it. And I thought to myself: "Surely it can't be to hard to fix this mess of a game?" And I was right, _sorta_.
+I went through this journey in 2021 and told myself that it would absolutely get better in the future. It’s 2025 now, and nothing has changed. The games are in the same state they were in back then, and it feels like Neopets as a whole is a ship on fire that is attempting to put out by spitting on it. And I thought to myself: Surely it can’t be too hard to fix this mess of a game? And I was right, _sorta_.
 
-In order to get to the bug fixing, I would have to get through multiple layers of... _JavaScript Deobfuscation_.
+To get to the bug fixing, I would have to get through multiple layers of… _JavaScript Deobfuscation_.
 
-For those unfamilliar, JavaScript is an interpreted language, meaning throughout the pipeline of writing the code to running it, it doesn't get translated to binary that is directly ran by the CPU; Rather, the source code is read in and gets converted to [bytecode](https://en.wikipedia.org/wiki/Bytecode) and is then executed by an interpreter. This is a massive oversimplification (as [JIT](https://en.wikipedia.org/wiki/Just-in-time_compilation) does exist), but it demonstrates why you're able to get the full JavaScript source code of a website, except if they use obfuscation.
+For those unfamiliar, JavaScript is an interpreted language, meaning throughout the pipeline of writing the code and then running it, it doesn’t get translated to code that is directly run by the CPU. Instead, the source code is read in and converted to [bytecode](https://en.wikipedia.org/wiki/Bytecode) and is then executed by an interpreter. This is a massive oversimplification (as [JIT](https://en.wikipedia.org/wiki/Just-in-time_compilation) does exist). However, it demonstrates how you can get the entirety of the JavaScript source code of a website, except if they use obfuscation.
 
-Obfuscation is the act of taking JavaScript source code and modifying it in order to hide (obfuscate) how it executes and to protect it from outside modification.
+Obfuscation is the act of taking JavaScript source code and modifying it to hide (obfuscate) how it executes and to protect it from outside modification.
 
-Now, I know some JavaScript --- I wrote this whole website practically from scratch (thank you [hugo](https://gohugo.io/)) --- but I'm more comfortable in the land of the compiled, so I wasn't so sure I could get enough of the original JavaScript code from the obfuscated code to do any bug fixing.
+Now, I know some JavaScript — I wrote this whole website practically from scratch (thanks, [Hugo](https://gohugo.io/)) — but I’m more comfortable in the land of the compiled, so I wasn’t so sure I could get enough of the original JavaScript code from the obfuscated code to do any bug fixing.
 
 But, I'm rather hard headed, so I got to work.
 
 ## Deobfuscation
-To begin with, I searched for enterprise level JavaScript obfuscators, this was mostly to get an undertanding what I'd have to do. The second solution I came across was [JScrambler](https://jscrambler.com/) and it looks like this:
+To begin with, I searched for enterprise-level JavaScript obfuscators. This was to get an understanding of what I’d have to do. The second solution I came across was [JScrambler](https://jscrambler.com/), which looks like this:
 
 {{< figure src="https://jscrambler.com/images/jscrambler-profiling-protected-code.png" width="75%" attr="From: [Jscrambler 101 Profiling](https://jscrambler.com/blog/jscrambler-101-profiling)" >}}
 
@@ -41,9 +40,9 @@ To begin with, I searched for enterprise level JavaScript obfuscators, this was 
 ```js
 Y833.M3r=window;Y833.M90=o1MM(Y833.M3r);Y833.e5e=A9ii(Y833.M3r);Y833.R3kk=R3kk;Y833.U2O=u4DD(Y833.M3r);Y833.N0l=...;
 ```
-It's not exactly the same, but it sorta matches and I can catch a glimps of a state machine in the exact same format that appears everywhere in our obfuscated JavaScript files.
+It’s not exactly the same, but it almost matches, and I can catch a glimpse of a state machine in the exact same format that appears everywhere in our obfuscated JavaScript files.
 
-This isn't super useful information, but it does give a small heads up about what I'm gonna be dealing with, like domain locking and anti-debugging.
+This information isn’t super helpful, but it does give a small heads up about what I’m gonna be dealing with, like domain locking and anti-debugging.
 
 ### Start
 {{< nobottommargin >}}So, IceCream Machine is made up of 5 files:{{< /nobottommargin >}}
@@ -53,27 +52,27 @@ This isn't super useful information, but it does give a small heads up about wha
  - graphics.js
  - index.js
 
-When looking through these files, some of them have some semblance semi-unobfuscated code, and others look like they are entirely obfuscated. I'm gonna start with the easiest and smallest file, `gamecontrol.js`.
+When looking through these files, some of them have some semblance of semi-unobfuscated code, and others look like they are entirely obfuscated. I’m gonna start with the easiest and smallest file, `gamecontrol.js`.
 
 {{< nobottommargin >}}After formatting the code to be more readable, I found some code that looks like this:{{< /nobottommargin >}}
 ```js
 game_class[y2U.U0l(20)][y2U.S0l(9)]();
 ```
-So `game_class` is a object --- technically it's a function, but all functions are objects so... --- and the code is trying to index into `game_class` with the result of `y2U.S0l(20)`. `y2U` is a variable set further up the scope, `var y2U = Y833;`.
+So `game_class` is an object — technically, it's a function, but all functions are objects, so — and the code is trying to index into `game_class` with the result of `y2U.S0l(20)`. `y2U` is a variable set further up the scope, `var y2U = Y833;`.
 
-lets run this function and see what it gives!
+Let's run this function and see what it gives!
 
 ![`THE RESULT OF RUNNING y2U.S0l(20) HERE`](./Obf_result.webp "The result of running y2U.S0l(20)")
 
-{{< nobottommargin >}}Ah, so these functions return the name of a property, then using [bracket notation](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#bracket_notation), returns the property with that name! So the above line is equivalent to:{{< /nobottommargin >}}
+{{< nobottommargin >}}Ah, so the functions return the name of a property. Then, using [bracket notation](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#bracket_notation), we get the property with that name! So the above line is equivalent to:{{< /nobottommargin >}}
 ```js
 game_class.instance.endGame()
 ```
 
 ### Property Decoder
-You could execute `y2U.U0l` in a loop _x_ amount of time, but that may end with us missing a property or two, so I will continue to deobfuscate.
+You could execute `y2U.U0l` in a loop _x_ amount of time, but that could cause me to miss a property or two, so I will continue to deobfuscate.
 
-As it turns out, both `Y833.S0l()` and `Y833.U0l()` execute the same function, which traces back to a function in an object: `Y833.N0l.W1O`. This function is _heavily_ obfuscated using multiple nested state machines to obscure control flow.
+As it turns out, both `Y833.S0l()` and `Y833.U0l()` execute the same function, which traces back to a function in an object: `Y833.N0l.W1O`. This function is _heavily_ obfuscated by using multiple nested state machines to obscure control flow.
 
 {{< details summary="_Click to reveal obfuscated source code_" >}}
 ```js
@@ -282,10 +281,10 @@ function () {
   }
 ```
 {{< /details >}}
-Yeah, that looks like a mess, let's try and flatten it down to get some easily understood control flow.
+Yeah, that looks like a mess. Let's try to flatten the nested state machines to get a function with an easily understood control flow.
 
 #### Simple State Machine Flattening
-{{< nobottommargin >}}Here's the first and seemingly easiest state machine to replace:{{< /nobottommargin >}}
+{{< nobottommargin >}}Here’s the first and seemingly the most uncomplicated state machine to replace:{{< /nobottommargin >}}
 ```js
 r1O = O1O.v4DD(
   function () {
@@ -308,20 +307,20 @@ The state machine in this example is entirely useless as it returns immediately;
 r1O = O1O.v4DD( function () { return 0.5 - R4DD.y4DD(); } ).q4DD('');
 ```
 
-`O1O` is an array defined in a previous state, so lets find out what these functions are.
+`O1O` is an array defined in a previous state, so let's find out what these functions are.
 
 ![`THE ACTUAL FUNCTION BEHIND [].v4DD`](./function_obf.webp "The actual function behind [].v4DD")
 
-Ah, I'm assuming this is an other form of obfuscation employed by the obfuscation tooling, I'll do this for the rest of them as they come up.
+Ah, I'm assuming this is another form of obfuscation employed by the obfuscation tooling; I'll do this for the rest of them as they come up.
 
-{{< nobottommargin >}}The fully cleaned up function looks like this:{{< /nobottommargin >}}
+{{< nobottommargin >}}The cleaned-up function looks like this:{{< /nobottommargin >}}
 ```js
 r1O = O1O.sort( function () { return 0.5 - Math.random(); } ).join('');
 ```
 Not all state machines are this easy to flatten, so let's get into a more difficult one!
 
 #### More State Machine Flattening
-Coincidentally, the last state machine I flattened was nested inside a more complex state machine, so lets go with that one.
+Coincidentally, the last state machine I flattened was nested inside a more complex state machine, so let's go with that one.
 {{< details summary="_Click to reveal obfuscated state machine_" >}}
 ```js
 var J1O = function (e1O) {
@@ -371,9 +370,9 @@ var J1O = function (e1O) {
 ```
 {{< /details >}}
 
-Reading state 1 through 3 of this state machine, it looks like it inits' `F1O`, goes to state 5 and checks if `F1O` is less than the length of the function argument `e1O`, branches to 4 if it is, and branches to 9 if not. In state 4, it pushes a decoded char into the `O1O` array, branches to 3, where it increments `F1O` by one, then heads back to state 5.
+Reading states 1 through 3 of this state machine, it looks like it initializes `F1O`, goes to state 5, and checks if `F1O` is less than the length of the function argument `e1O`, branches to 4 if it is, and branches to 9 if not. In state 4, it pushes a decoded char into the `O1O` array, branches to 3, where it increments `F1O` by one, and then heads back to state 5.
 
-{{< nobottommargin >}}You know that sounds like? A for loop! Let's annotate our theorized for loop's states.{{< /nobottommargin >}}
+{{< nobottommargin >}}That sounds like a for loop to me, so let's annotate the states of our theorized for loop.{{< /nobottommargin >}}
 ```js
 case 1:
   // <i-loop> init
@@ -395,9 +394,9 @@ case 3:
   Q0l = 5;
   break;
 ```
-Cool, now lets do the rest of the state machine!
+Nice, now let's do the rest of the state machine.
 
-{{< nobottommargin >}}It looks like state 9 to state 14 is some kind of do-while loop, let's annotate it too:{{< /nobottommargin >}}
+{{< nobottommargin >}}It seems like states 9 to 14 create a do-while loop. Let's annotate that too::{{< /nobottommargin >}}
 ```js
 case 9:
   // <w-loop> declaration
@@ -423,7 +422,7 @@ case 14:
   break;
 ```
 
-{{< nobottommargin >}}Alright, let's flatten this state machine and keep the annotations:{{< /nobottommargin >}}
+{{< nobottommargin >}}Alright, now let's flatten this state machine and keep the annotations:{{< /nobottommargin >}}
 ```js
 // state 2
 var O1O = [];
@@ -449,16 +448,16 @@ do {
 return u1O;
 ```
 
-I'm sure this could be refactored to be even smaller, but this is fairly understandable.
+I'm sure this could be refactored to be even smaller, but this is relatively understandable.
 
-It looks like it's decoding 4 'encoded' chars in an array, then pushing them into a new array. It then randomizes this array, joins them together, and uses bracket notation to find a property with that name and returns the property! This code seems really inefficent as you could get lost in a near infinite loop, but it only runs once so I guess it's not too bad.
+The function decodes 4 encoded characters in an array and then pushes them into a new array. It then randomizes this array, joins them together, and uses bracket notation to find a property with that name and returns the property! This code seems really inefficient because you could get lost in a near-infinite loop, but it only runs once, so I guess it's not too bad.
 
-The property it returns, `R3kk`, is actually a function which returns a string that looks to be encoded. Once I flatten this whole state machine, we'll see how it decodes this string.
+The property it returns, `R3kk`, is actually a function that returns a string that looks to be encoded. Once I flatten this whole state machine, we'll see how it decodes this string.
 
 #### Final State Machine Flattened
-There is another state machine nested within this overarching state machine, but it's a rather simple _else if_ chain, so I'll skip over that and get to the flattening of this main state machine.
+There is another state machine nested within this overarching state machine, but it's a pretty simple _else-if_ chain, so I'll skip over that and get to the flattening of this main state machine.
 
-Now we have a relatively flat state machine, using the previous techniques, let's flatten it one more time.
+Now that we have a relatively flat state machine, let's flatten it one more time.
 
 {{< details summary="___Click to reveal nearly flattened state machine___" >}}
 ```js
@@ -550,7 +549,7 @@ W1O: (
 ```
 {{< /details >}}
 
-Looking over the state machine, it seems that state 5 through 7 is a loop that decodes the encoded string returned by `R3kk`.
+Looking over the state machine, it seems that states 5 through 7 are a loop that decodes the encoded string returned by `R3kk`.
 
 {{< nobottommargin >}}Employing the same techniques above, here's the state machine flattened down to a typical function control flow and with renamed variables:{{< /nobottommargin >}}
 ```js
@@ -614,16 +613,16 @@ W1O: (function (key) {
 }) ('PMLUEC')
 ```
 
-Now that the function is easier to read, let's figure out what it does.
+Since we now have a human-readable function, let's figure out what it does.
 
-First it calls a function that returns some URI encoded cipher text. It then takes that cipher text and decodes it with the key `PMLUEC` using a repeating-key XOR decryption scheme. Next it takes the plain text string, and splits it along a delimiter to get all of the properties into a list.
+First, it calls a function that returns some URI-encoded cipher text. It then takes that cipher text and decodes it with the key `PMLUEC` using a repeating-key XOR decryption scheme. Next, it takes the plain text string and splits it along a delimiter to get all of the properties into a list.
 
-The end of this function is fairly interesting, if you were to start replacing all the `Y833.S0l()` function calls with the element in the argument, all the replacements will be wrong. The function initially defined in `retrieve_property` shifts and removes some entries based on the index passed into `W1O` and a value gets incremented every function call. If the function is not called with the indexes 31, 9, 32, 16, 38, 17, 27, 19 sequentially, the function will fail to reposition all properties correctly.
+The end of this function is pretty interesting. If you were to start replacing all the `Y833.S0l()` function calls with the element in the argument, all the replacements would be wrong. The function initially defined in `retrieve_property` shifts and removes some entries based on the index passed into `W1O`, and a value gets incremented every function call. If the function is not called with the indexes 31, 9, 32, 16, 38, 17, 27, and 19 sequentially, the function will fail to reposition all properties correctly.
 
-When I first saw this, I thought I would have to track down where the function was called the first x amount of times and get the value that it returns so I could replace the function call with the actual property. But thankfully, a little further down the file, another obfuscated function calls `Y833.S0l()` with the proper sequence.
+When I first saw this, I thought I would have to track down where the function was called the first x number of times to get the value it returns so I could replace the function call with the actual property. Thankfully, a little further down the file, another obfuscated function calls `Y833.S0l()` with the proper sequence.
 
 #### Streamlining
-To streamline the process of decoding the properties, I wrote a function that allows me to automatically decode, find the delimiter, split it along the delimiter into an array, and finally unshift the array to retrieve the full properties list:
+To streamline the process of decoding the properties, I wrote a function that allows me to automatically decode, find the delimiter, split it along the delimiter into an array, and finally unshift the array to retrieve the properties list:
 {{< details summary="___Click to reveal Properties Decoder Script___" >}}
 ```js
 function retrieve_shifted_properties_list(cypher_text, key, shift_rules) {
@@ -692,14 +691,14 @@ function retrieve_shifted_properties_list(cypher_text, key, shift_rules) {
 ```
 {{< /details >}}
 
-{{< nobottommargin >}}The arguments to this function correspond with a number of things in the property decoder deobfuscated previously.{{< /nobottommargin >}}
+{{< nobottommargin >}}The arguments to this function correspond with multiple items from the property decoder deobfuscated previously.{{< /nobottommargin >}}
 ```js
 retrieve_shifted_properties_list(R3kk(), 'PMLUEC', [[[-4, 4], [0, 3]], [[-3, 3], [0, 2]], [[-9, 9], [0, 8]], [[-4, 4], [0, 3]], [[-6, 6], [0, 5]], [[-6, 6], [0, 5]], [[-5, 5], [0, 3]], [[-6, 6], [0, 5]]]);
 ```
 
 The first two arguments are simple, it's the cipher text returning function and the key, `PMLUEC`. But the last argument is the sequence of unshifts in the `retrieve_property` function: `... properties.splice(-4, 4).splice(0, 3) ...`.
 
-{{< nobottommargin >}}Finally, to replace the properties in the file more efficiently, I wrote a bespoke python function using some Regex to find and replace all instances of the `Y833.S0l()` function calls with the corresponding property.{{< /nobottommargin >}}
+{{< nobottommargin >}}Finally, to replace the properties in the file more efficiently, I wrote a bespoke Python function using some Regex to find and replace all instances of the `Y833.S0l()` function calls with the corresponding property.{{< /nobottommargin >}}
 ```python
 import re
 from typing import List
@@ -731,48 +730,49 @@ mass_indexed_replace("gamecontrol.js", r"Y833\.[US]0l\((\d+?)\)", ["gGame", "mou
 
 ### Some loose ends
 #### If Guards
-{{< nobottommargin >}}In some of the functions there are these if statements that check against a bunch of seemingly random numbers.{{< /nobottommargin >}}
+{{< nobottommargin >}}In some of the functions, there are these if statements that check against a bunch of seemingly random numbers.{{< /nobottommargin >}}
 ```js
 var M2U = [arguments];
-  M2U[6] = -1627974560;
-  M2U[2] = -999255069;
-  M2U[5] = 1400892870;
-  if (
-    !(
-      y2U.k9X(0, !1, 211226) !== M2U[6] &&
-      y2U.O9X(0, !1, 577795) !== M2U[2] &&
-      y2U.k9X(0, !!0, 663643) !== M2U[5] &&
-      !Y833.w7a()
-    )
+
+M2U[6] = -1627974560;
+M2U[2] = -999255069;
+M2U[5] = 1400892870;
+if (
+  !(
+    y2U.k9X(0, !1, 211226) !== M2U[6] &&
+    y2U.O9X(0, !1, 577795) !== M2U[2] &&
+    y2U.k9X(0, !!0, 663643) !== M2U[5] &&
+    !Y833.w7a()
   )
+)
 ```
-The function being called is almost entirely unobfuscated, and it looks to be a hashing function. Instead of trying to understand that, I just replaced the array indexes with the data they reference and pasted it into firefox's JavaScript input interpreter. Every single time I did this it returned as `true` and I removed them.
+The function being called is almost entirely unobfuscated, and it looks to be a hashing function. Instead of trying to understand that, I replaced the array indexes with the data they reference and pasted it into the Firefox JavaScript input interpreter; every single time I did this, it returned `true`, and I removed them.
 
 #### Domain Enforcement
-When deobfuscating a whole file, I came across some a function that was sprinkled in a few places was checking the domain where the JavaScript file was being executed. I decided that instead of figuring out what it was doing, I would remove every reference to the function as it was a fair bit easier than trying to 'defuse' it. Then again, with FireFox's 'Script Override' feature, I didn't really need to stop the script from doing any domain checking.
+When deobfuscating a whole file, I found a function that was sprinkled in a few places that checked the domain where the JavaScript file was being executed. I decided that instead of figuring out what it was doing, I would remove every reference to the function, as it was a fair bit easier than trying to defuse it. Then again, with FireFox's script override feature, I didn't really need to stop the script from doing any domain checking.
 
 #### Fully Obfuscated Files
-Fully obfuscated files like `game_class.js` and `graphics.js` have all of their code encoded. Even further, none of my previous dynamic analysis techniques work as I believe the function self verifying, meaning I can't modify it at all without stripping out the verification method.
+Completely obfuscated files like `game_class.js` and `graphics.js` have all of their code encoded. Worse yet, none of my previous dynamic analysis techniques work, as I believe the function is self-verifying, meaning I can't modify it at all without stripping out the verification method.
 
-This would seem to be a dead end, but the obfuscation tooling didn't do enough to obfuscate it's own execution.
+This would seem to be a dead end, but the obfuscation tooling didn't do enough to obfuscate its own execution.
 
-To encode the javascript code, it needs to be in text form, and the only way text can be executed in javascript is with the `eval` function. So we should look for some `eval` function in the file, and using FireFox's JavaScript debugger, stop execution just before it to retrives the plaintext code.
+To encode the javascript code, it needs to be in text form, and the only way text can be executed in javascript is with the `eval` function. So, we should look for an `eval` function in the file. And using FireFox's JavaScript debugger, I can stop execution just before it retrieves the plaintext code.
 
 ![`DECODED CLASS FROM EVAL`](./decoded_code.webp "Decoded class from eval statement")
 
-There's the actual code for the `game_class` function. Copy it down and replace the entire `var game_class` assignment with it and continue with deobfuscation as we did above reveals the entirety of the code.
+There's the actual code for the `game_class` function. Copy it down and replace the entire `var game_class` assignment with it, and continue with deobfuscation as we did above will reveal the entirety of the code.
 
 ## Bug Fixing
-Now that all of the code is deobfuscated --- sorta, some of the original ActionScript code was originally obfuscated when they initially ported it to JavaScript, and I won't be deobfuscating this as it's not super important --- we can start bug fixing!
+Now that all of the code is deobfuscated — sorta, some of the original ActionScript code was originally obfuscated when they initially ported it to JavaScript, and I won't be deobfuscating this as it's not super important — we can start bug fixing!
 
 ### Missing Level Names
-For some reason, after level 10, the names of the scoop flavors don't show up. This is a pretty easy fix because the level names were just never included.
+For some reason, after level 10, the names of the scoop flavors don't show up. This is an easy fix because the level names were just never included.
 
 #### Before
 {{< nobottommargin >}}This bug displays itself like this:{{< /nobottommargin >}}
 ![`*BEFORE FIXING MISSING FLAVOR NAMES IMAGE HERE*`](./missing-names_before.webp "Before fixing missing flavor names")
 
-{{< nobottommargin >}}And this is the code responsible for the bug:{{< /nobottommargin >}}
+{{< nobottommargin >}}This is the code responsible for the bug:{{< /nobottommargin >}}
 ```js
 createjs.IDS_level_9 = "Vanilla Chocolate Swirl";
 createjs.IDS_level_10 = "Double Chocolate"; // More flavor names should come immediately after this
@@ -781,7 +781,7 @@ createjs.IDS_congrats = "CONGRATULATIONS!";
 ```
 
 #### After
-{{< nobottommargin >}}The fix is this simple, just add the names:{{< /nobottommargin >}}
+{{< nobottommargin >}}The fix is this simple, add the names:{{< /nobottommargin >}}
 ```js
 createjs.IDS_level_9 = "Vanilla Chocolate Swirl";
 createjs.IDS_level_10 = "Double Chocolate";
@@ -798,18 +798,18 @@ createjs.IDS_congrats = "CONGRATULATIONS!";
 Success!!!
 
 ### Sendscore Button Not Changing Graphics When Interacted With
-On the ending screens, the "Send Score" button does not highlight and return to normal on hover and unhover.
+On the ending screens, the Send Score button won't highlight or return to normal on hover and unhover.
 #### Before
 ![`*BEFORE FIXING SEND SCORE BUTTON HOVER STATE*`](./send_score_hover_broken.webp "Send button before fixing it")
 
-{{< nobottommargin >}}For this issue, I went to the `taskoneButtonsHandler` in `gamecontrol.js` and looked at the 'mouseover' and 'mouseout' button events. I didn't see anything that looked like the name of the send score button:{{< /nobottommargin >}}
+{{< nobottommargin >}}For this issue, I went to the `taskoneButtonsHandler` in `gamecontrol.js` and looked at the `mouseover` and `mouseout` button events. I didn't see anything that looked like the name of the send score button:{{< /nobottommargin >}}
 ```js
 if (this.name == "buthelp" || this.name == "butplay" || this.name == "butsound" || this.name == "butback" || this.name == "restart")
 ```
 
-so I went into the `graphics.js` file to find its name.
+So, I went into the `graphics.js` file to find its name.
 
-{{< nobottommargin >}}Since the "Restart" button works, I searched for its name and found this section of code:{{< /nobottommargin >}}
+{{< nobottommargin >}}Since the restart button works, I searched for its name and found this section of code:{{< /nobottommargin >}}
 ```js
 this.frame_0 = function() {
   this.stop();
@@ -818,15 +818,15 @@ this.frame_0 = function() {
 };
 ```
 
-Here we can see the reset and send score buttons add themself to the button event handler function.
+Here, we can see the reset and send score buttons attach themselves to the button event handler function.
 
 #### After
-{{< nobottommargin >}}Since we found the name for the send score button, let's add it to the 'mouseover' and 'mouseout' button events.{{< /nobottommargin >}}
+{{< nobottommargin >}}Since we found the name for the send score button, let's add it to the `mouseover` and `mouseout` button events.{{< /nobottommargin >}}
 ```js
 if (this.name == "buthelp" || this.name == "butplay" || this.name == "butsound" || this.name == "butback" || this.name == "restart" || this.name == "sendscore")
 ```
 
-{{< nobottommargin >}}After adding it, both hover and unhovering works as expected!{{< /nobottommargin >}}
+{{< nobottommargin >}}After adding it, both hovering and unhovering work as expected!{{< /nobottommargin >}}
 ![`*AFTER FIXING SEND SCORE BUTTON HOVER STATE*`](./send_score_hover_fixed.webp "Send button after fixing it")
 
 ### Next Level Screen Background Not Being Set Properly
@@ -835,7 +835,7 @@ Sometimes, when going to the next level, the screen's splash will not be set to 
 
 The splash should be Vanilla, but it's actually Strawberry.
 
-{{< nobottommargin >}}This happens because the splash graphic automatically resets after being added to a parent object and a Neopets developer attempted to fix this by writing this code:{{< /nobottommargin >}}
+{{< nobottommargin >}}This happens because the splash graphic automatically resets after being added to a parent object, and a Neopets developer attempted to fix this by writing this code:{{< /nobottommargin >}}
 ```js
 setTimeout(function() {
     Z56[2].splash.gotoAndStop(Z56[3] - 1);
@@ -850,9 +850,9 @@ setTimeout(function() {
 
 For a reason I don't entirely understand, the graphics resetting itself is a feature of the framework this game uses to translate ActionScript/Flash API to HTML5, [createjs](https://createjs.com/).
 
-A more complete solution to this issue would be to stop the object from resetting itself, and that's exactly what I did.
+A more full solution to this issue would be to prevent the object from resetting itself.
 
-Createjs has a built in property --- `autoReset` --- that will stop an object's graphics from being reset apon being made a child of a parent object.
+The Createjs framework has a built-in property — `autoReset` — that prevents an object's graphics from being reset when parenting it to an object.
 
 {{< nobottommargin >}}Effectively, I can replace the entire code section above with:{{< /nobottommargin >}}
 ```js
@@ -874,7 +874,7 @@ Z56[2].tfield3.text = "PRESS SPACE TO CONTINUE...";
 ![`*AFTER BEATING GAME BEFORE FIX*`](./after_beating_game.webp "After beating the game, before fixing")
 
 
-{{< nobottommargin >}}A simple mistake was made when attempting to set the main game state to `st_gamebeat`. Instead of setting the game class instance's state, it set `this.game_state`.{{< /nobottommargin >}}
+{{< nobottommargin >}}A simple mistake was made when attempting to set the game state to `st_gamebeat`. Instead of setting the game class instance's state, the code sets `this.game_state`.{{< /nobottommargin >}}
 ```js
 case game_class.instance.st_countdown1:
   if (!game_class.instance.zz()) {
@@ -893,36 +893,36 @@ case game_class.instance.st_countdown1:
 {{< nobottommargin >}}Now the win screen shows up, but there's another issue:{{< /nobottommargin >}}
 ![`*AFTER BEATING GAME AFTER FIX*`](./after_beating_game_fixed.webp "After beating the game, after fixing")
 
-This is just the game over screen, why is it not congratulating me on my win? Well, after tapping it out, the game over and win screen use the same function to throw a screen up on the ending state. But, the function only has code for the game over screen, so lets rewrite it to add the congratulations text.
+This is just the game over screen. Why is it not congratulating me on my win? Well, after tapping it out, the game over and win screen use the same function to display a screen on the ending state. However, the function only has code for the game over screen, so let's rewrite it to add the congratulations text.
 
-{{< nobottommargin >}}This is pretty simple, so I won't show the code.{{< /nobottommargin >}}
+{{< nobottommargin >}}Adding this is pretty simple, so I won't show the code.{{< /nobottommargin >}}
 ![`*CONGRATS TEXT FIX*`](./after_beating_game_congrats_fix.webp "Fixed congrats text")
 
 ### Win Screen Background Not Being Set Properly
-Ah, now the background refuses to be set to the "Garlicky Bratwurst" splash screen. Initially, I thought it was the same issue that the next level screen had, but when I tried to turn off the `autoReset`, it did nothing.
+Ah, now the background refuses to be set to the Garlicky Bratwurst splash screen. Initially, I thought it was the same issue that the level screen had, but when I tried to turn off the `autoReset` property, nothing happened.
 
-I had to go searching though the graphics code to fix this.
+I had to go searching through the graphics code to fix this.
 
 {{< nobottommargin >}}Thankfully, the code in the game over function constructs the graphics object:{{< /nobottommargin >}}
 ```js
 createjs.mcGameOver = new lib.mcGameOver();
 ```
-so searching through that graphics class, I found a property called `splash`.
+So, searching through that graphics class, I found a property called `splash`.
 
-{{< nobottommargin >}}It uses the same graphics class that the next level screen uses, and a few lines after instantiation, this line appears:{{< /nobottommargin >}}
+{{< nobottommargin >}}It uses the same graphics class that the level screen uses, and a few lines after instantiation, this line appears:{{< /nobottommargin >}}
 ```js
 this.splash.cache(-2, -2, 734, 594);
 ```
-{{< nobottommargin >}}This stood out to me instantly. Reading through the createjs documentation for the method [cache](https://createjs.com/docs/easeljs/classes/MovieClip.html#method_cache) it says:{{< /nobottommargin >}}
+{{< nobottommargin >}}This stood out to me instantly. Reading through the Createjs documentation for the [`cache`](https://createjs.com/docs/easeljs/classes/MovieClip.html#method_cache) function it says:{{< /nobottommargin >}}
 "Draws the display object into a new element, which is then used for subsequent draws"
 
-That's exactly why it's not changing! Removing this one line fixes it completely:
+That's why it's not changing! Removing this one line fixes it completely:
 ![`*CONGRATS SCREEN FIXED*`](./after_beating_game_congrats_bkg_fix.webp "Fixed congrats screen")
 ## Improvements
-Now that I fixed all the bugs I could find, lets improve somethings.
+Now that I fixed all the bugs I could find, let's improve some things.
 
 ### Reverting '_Vanilla Topping_' back to '_Caramel Topping_'
-This is a very small and pedantic change, but I'd like for the name for this to be more accurate.
+This is a small and pedantic change, but I'd like the name for this to be more accurate.
 
 {{< rawhtml >}}
 <style>
@@ -945,34 +945,34 @@ createjs.IDS_topping_3 = "Caramel Topping";
 ```
 
 ### 30 Frames Per Second!
-{{< nobottommargin >}}The game runs at an ungodly low framerate. Looking around for the main loop runner, I found this line of code:{{< /nobottommargin >}}
+{{< nobottommargin >}}The game runs at an ungodly low framerate. Looking around for the game loop runner, I found this line of code:{{< /nobottommargin >}}
 ```js
 mainLoopInterval = setInterval(game_class.instance.mainLoop, 100);
 ```
 
 Looking at the `setInterval` documentation on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval), the second argument is the delay between each function execution in _milliseconds_.
 
-To set the framerate you typically write something like this: `1 second / FPS`. Since `setInterval` uses milliseconds we need to use `1000 / FPS`.
+To set the framerate, typically, you'd write something like this: `1 second / FPS`. Since `setInterval` is timed with milliseconds, you need to use `1000 / FPS`.
 
 The only way to get 100 from `1000 / FPS` is `1000 / 10`, meaning the game runs at 10 FPS!
 
 The easy fix for this is to replace `100` with `1000 / 30` to get 30 FPS.
 
-I would like to replace the `setInterval` function with something like [`requestAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame), that way the framerate of the game matches the refresh rate of the browser, but I feel like that's a pretty large refactor to do right now, so I'll leave it alone for now.
+I would replace the `setInterval` function with the [`requestAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame) function. The reason for this change is to match the game's framerate to the browser's refresh rate. This change could be a bit tedious, so I leave it for a later date. (This is expanded on in the [addendum](#addendum) section)
 
 ### Full Settings Menu & Storing Settings Locally
-This is one of the most complex sections of all of the improvements. Thankfully, I didn't have to code a bunch of things together, but it was still an ordeal to get working.
+This is one of the most complex sections of all of the improvements. Thankfully, I didn't have to code my own tooling, but it was still a pain to get working.
 
-The biggest reason I added a settings menu was to make sure the user experience was customizable. If a person wanted to have the character float above the mouse --- something they may have grown accoustom --- or directly underneath it, the should have that choice.
+My reason for adding a settings menu was to make sure the user experience was customizable. If a person wanted to have the character float above the mouse — something they may have grown accustomed to — or directly underneath it, they should have that choice.
 
 #### Mockup
-{{< nobottommargin >}}I started by making a mockup of the settings menu in InkScape:{{< /nobottommargin >}}
+{{< nobottommargin >}}I started by making a mockup of the settings menu in Inkscape:{{< /nobottommargin >}}
 ![`*SETTINGS MOCKUP*`](./settings-mock-up.webp "Settings Mockup")
 
 It certainly doesn't look perfect, but it gets the job done.
 
 #### Start
-{{< nobottommargin >}}Firstly, I create a custom class called `settings_menu` that extends the createjs class `MovieClip` and add it into the main menu class.{{< /nobottommargin >}}
+{{< nobottommargin >}}Firstly, I created a custom class called `settings_menu` that extends the Createjs class `MovieClip` and then added it to the main menu class.{{< /nobottommargin >}}
 ```js
 class settings_menu extends MovieBase {
   ...
@@ -986,9 +986,9 @@ class settings_menu extends MovieBase {
 }
 ```
 
-Next, I replaced the music toggle button on the main menu screen. But first, I need to make the settings button.
+Next, I replaced the music toggle button on the main menu screen. First, though, I need to make the settings button.
 
-{{< nobottommargin >}}To create the "settings" button, I copied the definition for the music toggle button class, changed the text, then replaced the music button in the main menu. Resulting in this:{{< /nobottommargin >}}
+{{< nobottommargin >}}TTo create the settings button, I copied the definition for the music toggle button class, changed the text, and then replaced the music button in the main menu. Resulting in this:{{< /nobottommargin >}}
 ![`*SETTINGS BUTTON*`](./settings-button.webp "Settings Button")
 
 {{< nobottommargin >}}Then, in the `taskoneButtonsHandler`, I added a section in the `pressup` for the settings button that makes the settings menu visible:{{< /nobottommargin >}}
@@ -999,16 +999,16 @@ if (this.name == "butsettings") {
 ```
 
 #### Creating The Settings Menu
-After creating the base for the settings menu, I started by creating the background. And I immediately ran into a problem, createjs doesn't take svg commands, rather, it has its own way of constructing shapes.
+After creating the base for the settings menu, I started by making the background. And I immediately ran into a problem, Createjs doesn't use SVG commands; it has its own way of constructing shapes.
 
-Createjs allows developers to construct graphics by calling drawing functions via the fluent interface design pattern. Notably, you can also [encode a path](https://createjs.com/docs/easeljs/classes/Graphics.html#method_decodePath) to a base64 string, but there is no prebuilt svg path encoder, so I had to go with something else.
+Createjs allows developers to construct graphics by calling drawing functions via the fluent interface design pattern. Notably, you can also [encode a path](https://createjs.com/docs/easeljs/classes/Graphics.html#method_decodePath) to a base64 string, but there is no prebuilt SVG path encoder, so I had to go with something else.
 
-Thankfully, somebody has made an [svg to createjs path](https://github.com/StueyKent/svg-to-createjs-path) self-deployable webapp, which --- if it wasn't obvious from its name --- converts SVG paths to createjs drawing functions. It's quite old, the last commit to the repo was 8 years ago, but it still worked!
+Thankfully, somebody created an [SVG path to Createjs path](https://github.com/StueyKent/svg-to-createjs-path) elf-deployable web app that converts SVG paths to Createjs drawing functions. The last commit to the repo was 8 years ago, but despite its age, it still worked! Probably because the Neopets site uses a Createjs version from 2015 (this is actually a function of the Adobe Animate version they used).
 
 It only does _paths_, so I'll have to translate the text and regular shapes by hand.
 
 ##### Checkbox Prefab
-{{< nobottommargin >}}For the checkboxes, I need to make a reuseable checkbox class that has an unset, set, and hovered state.{{< /nobottommargin >}}
+{{< nobottommargin >}}For the checkboxes, I need to create a reusable checkbox class that has multiple states: unset, set, and hovered.{{< /nobottommargin >}}
 ```js
 class imp_checkbox extends MovieBase {
   constructor(Z31, u31, b31) {
@@ -1044,7 +1044,7 @@ class imp_checkbox extends MovieBase {
 }
 ```
 
-{{< nobottommargin >}}this checkbox it then followed up with a `ToggleButton` class that implements all the logic for the button, adds a text label, and a bounding box:{{< /nobottommargin >}}
+{{< nobottommargin >}}This checkbox was then followed up with a `ToggleButton` class that implements all the logic for the button, adds a text label, and a bounding box:{{< /nobottommargin >}}
 ```js
 class ToggleButton extends MovieBase {
   constructor(label_text, font, color, x, y, padding, Z31, u31, b31) {
@@ -1092,18 +1092,18 @@ class ToggleButton extends MovieBase {
 }
 ```
 
-This `ToggleButton` needs to have a bounding box, as if it didn't, the button would only work if you hover of the defined shapes. There is a small problem, the bounding box is a rectangle that would cover up everything, to stop that I set it's transparency to `0.01`. If you set it to zero, the
+This `ToggleButton` needs to have a bounding box; if it doesn't have one, the button only works if you hover on the defined shapes. There's a problem, though: the bounding box is a rectangle that would cover everything; to prevent that, I set its transparency to `0.01`. If you set it to zero, Createjs will disable the bounding box.
 
-There's also supporting logic that allows a dev to toggle the button and set its state.
+There's also supporting logic that allows a developer to toggle the button and set its state.
 
-The function `left_no_bb` is useful when positioning the checkbox as the bounding box offsets the top-left position.
+The function `left_no_bb` is used when positioning the checkbox as the bounding box offsets the top-left position.
 
 ##### The Rest of The Layout
-Now that the one reuseable thing has been implemented, I can get on to the rest of the layout.
+Now that the single reusable thing has been implemented, I can get on to the rest of the layout.
 
-The settings box background is easy to translate over, but the transparent background gave me some trouble in the svg path tool; Breaking it down into 4 individual paths made it work, though.
+The settings box background was easy to translate to Createjs, but the transparent background gave me some trouble in the SVG path tool. Breaking it down into 4 individual paths made it work, though.
 
-To make things easier on myself, I collected related objects into containers so all elements can be positioned easier.
+To make things easier for myself, I collected related objects into containers for them to be positioned more easily.
 
 I'm not going to go into much more detail, as the code can speak for itself:
 {{< details summary="___Click to Reveal Full Settings Menu Code___" >}}
@@ -1234,13 +1234,13 @@ f8s[8].settings_menu = settings_menu;
 {{< /details >}}
 
 ##### Button Logic
-Some of the options are mutually exclusive --- like running at 10 FPS or 30 FPS --- and I need to ensure they are not selectable at the same time, to do this, I modify `taskoneButtonsHandler`.
+Some of the options are mutually exclusive — 10 FPS or 30 FPS — and I need to ensure they cannot be toggled at the same time. To do this, I modify `taskoneButtonsHandler`.
 
 I could have added a new handler for the settings menu buttons, but the buttons below the settings screen still work and need to be disabled while the settings menu is up.
 
-This method was a bit spaghetti, and looking back, I could have used a global bool to track when you're inside the settings menu and stop the main menu buttons from working accordingly, but it works right now so I'm not gonna mess with it.
+This method was a bit spaghetti, and looking back, I could have used a global bool to track when you're inside the settings menu and stop the main menu buttons from working accordingly. However, it works right now, so I'm not willing to mess with it.
 
-{{< nobottommargin >}}Otherwise, the logic for keeping the buttons mutually exclusive is pretty simple: if one box is clicked, set its state to 'on' and set all other mutually exclusive buttons to their 'off' state.{{< /nobottommargin >}}
+{{< nobottommargin >}}Otherwise, the logic for keeping the buttons mutually exclusive is pretty simple. If one box is clicked, set its state to `on` and all other mutually exclusive buttons to their `off` state.{{< /nobottommargin >}}
 ```js
 device_toggle.set_state(true);
 mobile_toggle.set_state(false);
@@ -1256,9 +1256,9 @@ desktop_toggle.set_state(false);
 { sound: true, fps: 1, hover_dist: 0 };
 ```
 
-`sound` is fairly obvious, as it can only be on or off, so it's a boolean.
+`sound` is straightforward, as it can only be on or off, so it's a boolean.
 
-The `fps` and `hover_dist` settings are slightly weird, though; You would think it would be the actual framerate (10 or 30) or hovering distance, but I didn't want to have someone modify the settings in a way that could make the game misbehave. I did, however, want to write the supporting code to be able to support more than two settings for both in the future, so I went with storing indexes instead of outright storing the framerate.
+The `fps` and `hover_dist` settings are slightly weird, though; You would think it would be the actual framerate (10 or 30) or hovering distance, but I didn't want to have someone modify the settings in a way that could make the game misbehave. I did, however, want to write supporting code to support more than two settings for both in the future, so I stored indexes instead of storing the game framerate.
 
 {{< nobottommargin >}}Now that I'm storing the settings data in a global variable, I'll use it while starting the main game loop to change the framerate:{{< /nobottommargin >}}
 ```js
@@ -1271,7 +1271,7 @@ var framerate = 1;
 mainLoopInterval = setInterval(game_class.instance.mainLoop, 1000 / framerates[framerate]);
 ```
 
-{{< nobottommargin >}}To modify adee's hover distance, I add `hover_distance` to the y-axis offset inside the player movement code:{{< /nobottommargin >}}
+{{< nobottommargin >}}To modify Adee's hover distance, I add `hover_distance` to the y-axis offset inside the player movement code:{{< /nobottommargin >}}
 ```js
 const hover_distances = [is_mobile() ? -58 : 0, -58, 0];
 // Hover distance as an index into 'hover_distances'
@@ -1282,12 +1282,12 @@ var hover_distance = 0;
 game_class.instance.chief.m.y += hover_distance;
 ```
 
-And as for the sound setting, I just set `gvolume`, the global volume variable, to 1 or 0 if sound is on or off respectively.
+As for the sound setting, I set `gvolume`, the global volume variable, to 1 if the sound is on and 0 if it's off.
 
 ##### Saving Settings Locally
-It's great that the settings work now, but when I reload the page, the settings are reset to the defaults that I initially set them to. To solve this, I need to store data locally.
+It's great that the settings system works now, but when I reload the page, the settings are reset to the defaults that I initially set them to. To solve this, I need to store data locally.
 
-I didn't want use cookies as the reading and writing interfaces seem like they kinda suck to deal with.
+I didn't want to use cookies as the reading and writing interfaces seem like they suck to deal with.
 
 So, instead, I decided to go with [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 
@@ -1362,7 +1362,7 @@ After all that bug fixing and all those improvements, we get:
 
 I'm relatively happy with the results of my bug fixes and improvements, but there are definitely more improvements to be made.
 
-The game still isn't super responsive though, but I did come up with a decent solution to this in the [addendum](#addendum) section.
+The game still isn't super responsive, though. I did come up with a decent solution to this in the addendum section.
 
 But this all leaves one question...
 
@@ -1371,24 +1371,25 @@ You can't.
 
 I'm not releasing the source code for a number of reasons.
 
-While I have removed the function that sends your score to the Neopets servers, it's not particularly difficult to "rearm" it by adding that function back in and I don't feel like giving players a potential advantage over other players.
+While I have removed the function that sends your score to the Neopets servers, it's not particularly difficult to rearm it by adding that function back in, and I don't feel like giving players a potential advantage over other players.
 
-Also, I would be redistributing source code that is not mine, which is almost certainly against the Neopets EULA and could probably get me into some legal troubles.
+I would also be redistributing source code that is not mine, which is almost certainly against the Neopets EULA and could probably get me into some legal trouble.
 
 # Finally
-I hope that this information is useful for anyone, mostly Neopets developers though, because it would drastically improve the user experience. I understand that _World of Neopia, Inc._ is currently working on their sim game _World of Neopets_, but I would love to see more love being put into the main site.
+This whole experience was surprisingly fun. It taught me what not to do when obfuscating code, like attempting to hide the code instead of modifying the control flow of the code itself --- although I understand this method would be absurdly complex due to the number of ways Javascript can be written but function identically --- and it also gives me a few project ideas, like a program that automatically deobfuscates this entire obfuscation format.
 
-If a member of The Neopets Team sees this, please do get in contact with me, I would love to work on fixing these html ports. I get that the Ruffle flash player exists, but if the HTML5 versions of the games are pushed more than the originals, they should ideally function better than the originals running on a compatability layer.
+I hope this information is useful for anyone, especially Neopets developers, as it would drastically improve the user experience. I understand that World of Neopia, Inc. is currently working on its simulation game World of Neopets, but I would love to see more love being put into the main site.
 
+If a member of The Neopets Team sees this, please do get in contact with me. I would love to work on fixing these html ports. I understand that the Ruffle Flash player exists. However, since the HTML5 versions of the games are pushed more than the originals, they should ideally function better than the originals running on a compatibility layer.
 
 ##### Addendum
-I found out that it was way easier to use `requestAnimationFrame` in my deobfuscated codebase with [`createjs.Ticker`](https://createjs.com/docs/easeljs/classes/Ticker.html). By setting `Ticker.timingMode` to `RAF_SYNCED` and then hooking `game_class.instance.mainLoop` into `createjs.Ticker`'s `tick` event, the game is now in sync with your browser's refresh rate, meaning the game is being updated just before the browser draws everything to your screen, which greatly improves the responsiveness of the game. This also fits fairly well with the FPS selection in the settings menu, but I would need to update it to add a "sync" option.
+I found out that it was way easier to use `requestAnimationFrame` in my deobfuscated codebase with [`createjs.Ticker`](https://createjs.com/docs/easeljs/classes/Ticker.html). BBy setting `Ticker.timingMode` to `RAF_SYNCED` and then hooking `game_class.instance.mainLoop` into `createjs.Ticker`'s `tick` event, the game is now in sync with your browser's refresh rate, meaning the game is being updated just before the browser draws everything to your screen, which considerably improves the responsiveness of the game. This also fits well with the FPS selection in the settings menu, but I would need to update it to add a sync option.
 
 This has the issue of the framerate changing depending on the capabilities of your device, but I'm gonna trust that the developers of createjs were aware of this and handled it properly. As well, adee's animation runs faster when changing the Ticker framerate from 24 to the default refresh rate of your browser, this is an easy fix though, just set the `framerate` property of the adee `MovieClip` child class to 24.
 
 {{< nobottommargin >}}The result of this is:{{< /nobottommargin >}}
 {{< video src="after-raf.webm" width="500px" controls="true" >}}
 
-It's super smooth, but there is definitely a little bit of delay left to remove.
+It's really smooth, but I can still feel some delay that could be removed.
 
-Also While playing my improved version, I noticed that, on higher levels, the icecream scoops spawn at a faster rate when on higher framerates, making it practically impossible to beat without pure luck. This could be solved by further deobfuscation and restructuring of the game code by bodging in some [delta timing](https://en.wikipedia.org/wiki/Delta_timing), but I'll leave that for another day.
+Also, while playing my improved version, I noticed that, on higher levels, the ice cream scoops spawn at a faster rate when on higher framerates, making it practically impossible to beat without pure luck. This could be solved by further deobfuscation and restructuring of the game code by bodging in some [delta timing](https://en.wikipedia.org/wiki/Delta_timing), but I'll leave that for another day.
