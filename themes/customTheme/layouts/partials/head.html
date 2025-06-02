@@ -1,24 +1,35 @@
 {{ $are_prof_slice := reflect.IsSlice .Params.authors }}
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="{{ .Params.description }}">
 {{ range $key, $value := $.Params.meta }}
     <meta name="{{ $key }}" {{ range $k, $v := $value }}{{ printf "%s=\"%s\"" $k $v | safeHTMLAttr }}{{ end }}>
 {{ end }}
 
-<title>{{ .Page.Title }} - {{ if $are_prof_slice }}{{ delimit .Params.authors ", " }}{{ else }}{{ .Params.authors }}{{ end }}</title>
-<meta property="og:title" content="{{ .Params.Title }}" />
-<meta property="og:description" content="{{ .Params.summary }}" />
-<meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta name="title" property="og:title" content="{{ .Params.Title }}" />
+<meta property="og:description" content="{{ .Params.summary }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+{{ with .Resources.Get .Params.open_graph.image }}
+    <meta name="image" property="og:image" content="{{ .Permalink }}">
+    <meta name="image" property="og:image:width" content="{{ .Width }}">
+    <meta name="image" property="og:image:height" content="{{ .Height }}">
+    <meta name="image" property="og:image:type" content="{{ .MediaType.Type }}">
+{{ end }}
+
+{{ with .Resources.Get .Params.open_graph.video }}
+    <meta property="og:video" content="{{ .Permalink }}">
+    <meta property="og:video:type" content="{{ .MediaType.Type }}">
+{{ end }}
 
 {{ if $are_prof_slice }}
     {{ range .Params.authors }}
-        <meta property="article:author" content="{{ . }}">
+        <meta name="author" property="article:author" content="{{ . }}">
+
     {{ end }}
 {{ else }}
-        <meta property="article:author" content="{{ .Params.authors }}">
+        <meta name="author" property="article:author" content="{{ .Params.authors }}">
 {{ end }}
 
 {{ $are_tags_slice := reflect.IsSlice .Params.tags }}
@@ -35,9 +46,8 @@
     <meta property="article:published_time" content="{{ time.AsTime .Params.date | time.Format $layout }}">
 {{ end }}
 
-<meta property="og:image" content="{{ with .Resources.Get .Params.open_graph.image }}{{ .Permalink }}{{ end }}">
-<meta property="og:video" content="{{ with .Resources.Get .Params.open_graph.video }}{{ .Permalink }}{{ end }}">
-<!-- <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" /> -->
+<title>{{ .Page.Title }}</title>
+<meta name="description" content="{{ .Params.summary }}" />
 
 <link rel="icon" type="image/x-icon" href="/img/favicon.png">
 

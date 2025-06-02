@@ -6,7 +6,7 @@ type: blog
 tags: ["Neopets", "Reverse Engineering"]
 summary: "A Neopets game doesn't work too good, so I learned how to deobfuscate JavaScript to fix it."
 open_graph:
-  image: "settings-mock-up.webp"
+  image: "settings-mock-up-1200x672.webp"
   video: "after-raf.webm"
 toc: false
 ---
