@@ -4,6 +4,14 @@
 <meta name="{{ $key }}" {{ range $k, $v := $value }}{{ printf "%s=\"%s\"" $k $v | safeHTMLAttr }}{{ end }}>
 {{ end }}
 <title>{{ .Page.Title }} - {{ .Site.Data._author.name }}</title>
+<meta property="og:title" content="{{ .Params.Title }}" />
+<meta property="og:description" content="{{ .Params.summary }}" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:video" content="{{ with .Resources.Get "after-raf.webm" }} {{ .Permalink }} {{ end }}">
+<!-- <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" /> -->
+
 <link rel="icon" type="image/x-icon" href="/img/favicon.png">
 
 <link href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" rel="stylesheet" />
