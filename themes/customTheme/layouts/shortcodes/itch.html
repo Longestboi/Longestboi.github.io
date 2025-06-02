@@ -14,7 +14,7 @@
 
 {{ $user_link := (print "https://" $user_name ".itch.io/") }}
 {{ $link := (print $user_link $game_title) }}
-
+{{ $fallback := (print "cached/" $game_title "/data.json") }}
 
 {{ $u := (print $link "/data.json")}}
 
@@ -22,18 +22,27 @@
 
 {{/*  Get remote resource from itch.io  */}}
 {{ with try (resources.GetRemote $u) }}
-    {{ with .Err }}
-        {{ errorf "$s" . }}
-    {{ else }}
-        {{ $opts := dict "delimiter" "," }}
-        {{ $data = .Value | transform.Unmarshal $opts }}
+    {{ $value := "" }}
 
-        {{ if $data.errors }}
-            {{ errorf "Itch.io: %s" (delimit $data.errors ", ") }}
+    {{ with .Err }}
+        {{ warnf "could not fetch resource from: `%s`, falling back to %s" $u $fallback }}
+        {{ with try (resources.Get $fallback) }}
+            {{ with .Err }}
+                {{ errorf "s%" . }}
+            {{ else }}
+                {{ $value = .Value }}
+            {{ end }}
         {{ end }}
+    {{ else }}
+        {{ $value = .Value }}
     {{ end }}
-{{ else }}
-    {{ errorf "Unable to get remote resource %q" $u }}
+
+    {{ $opts := dict "delimiter" "," }}
+    {{ $data = $value | transform.Unmarshal $opts }}
+
+    {{ if $data.errors }}
+        {{ errorf "Itch.io: %s" (delimit $data.errors ", ") }}
+    {{ end }}
 {{ end }}
 
 {{/*  Create and populate widget  */}}
