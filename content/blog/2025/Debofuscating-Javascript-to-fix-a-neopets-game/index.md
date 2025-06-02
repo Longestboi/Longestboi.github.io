@@ -4,9 +4,9 @@ date: 2025-06-01
 authors: Andrew Long
 type: blog
 tags: ["Neopets", "Reverse Engineering"]
-summary: "A Neopets game doesn't work too good, so I learned how to deobfuscate JavaScript to fix it."
+summary: "The game 'IceCream Machine' doesn't work well after Neopets developers hastily ported it to HTML5. To fix it, I had to learn how to deobfuscate JavaScript."
 open_graph:
-  image: "settings-mock-up-1200x672.webp"
+  image: "settings-mock-up-1200x672.png"
   video: "after-raf.webm"
 toc: false
 ---
