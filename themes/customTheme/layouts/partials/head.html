@@ -1,15 +1,42 @@
+{{ $are_prof_slice := reflect.IsSlice .Params.authors }}
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{{ .Params.description }}">
 {{ range $key, $value := $.Params.meta }}
-<meta name="{{ $key }}" {{ range $k, $v := $value }}{{ printf "%s=\"%s\"" $k $v | safeHTMLAttr }}{{ end }}>
+    <meta name="{{ $key }}" {{ range $k, $v := $value }}{{ printf "%s=\"%s\"" $k $v | safeHTMLAttr }}{{ end }}>
 {{ end }}
-<title>{{ .Page.Title }} - {{ .Site.Data._author.name }}</title>
+
+<title>{{ .Page.Title }} - {{ if $are_prof_slice }}{{ delimit .Params.authors ", " }}{{ else }}{{ .Params.authors }}{{ end }}</title>
 <meta property="og:title" content="{{ .Params.Title }}" />
 <meta property="og:description" content="{{ .Params.summary }}" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:url" content="{{ .Permalink }}" />
-<meta property="og:video" content="{{ with .Resources.Get "after-raf.webm" }} {{ .Permalink }} {{ end }}">
+
+{{ if $are_prof_slice }}
+    {{ range .Params.authors }}
+        <meta property="article:author" content="{{ . }}">
+    {{ end }}
+{{ else }}
+        <meta property="article:author" content="{{ .Params.authors }}">
+{{ end }}
+
+{{ $are_tags_slice := reflect.IsSlice .Params.tags }}
+{{ if $are_tags_slice }}
+    {{ range .Params.tags }}
+        <meta property="og:tag" content="{{ . }}" />
+    {{ end }}
+{{ else }}
+    <meta property="og:tag" content="{{ .Params.tags }}" />
+{{ end }}
+
+{{ $layout := "2006-01-02T15:04:05-07:00" }}
+{{ if .Params.date }}
+    <meta property="article:published_time" content="{{ time.AsTime .Params.date | time.Format $layout }}">
+{{ end }}
+
+<meta property="og:image" content="{{ with .Resources.Get .Params.open_graph.image }}{{ .Permalink }}{{ end }}">
+<meta property="og:video" content="{{ with .Resources.Get .Params.open_graph.video }}{{ .Permalink }}{{ end }}">
 <!-- <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" /> -->
 
 <link rel="icon" type="image/x-icon" href="/img/favicon.png">
